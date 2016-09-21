@@ -98,6 +98,7 @@
             (my/pomodoro-notification :body "Long Break time now")))
 
 ;; howm
+(setq howm-directory "~/howm.git")
 (add-to-list 'load-path "~/.emacs.d/elisp/howm")
 (setq howm-menu-lang 'ja)
 (global-set-key "\C-c,," 'howm-menu)
