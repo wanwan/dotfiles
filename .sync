@@ -1,0 +1,18 @@
+#export http_proxy=http://proxy.tdc.sony.co.jp:10080/
+#export ftp_proxy=http://proxy.tdc.sony.co.jp:10080/
+#export http_proxy=http://157.79.100.64:8080/
+#export https_proxy=http://proxy1.tjsys.co.jp:8080/
+
+REVISION_COMMAND=/usr/bin/git
+HOWM_DIR=$HOME/howm
+HOWM_BITBUCKET_SERVER_USER=wanwan
+HOWM_BITBUCKET_SERVER_PASS=kcl38zcl3
+HOWM_BITBUCKET_REPO_SERVER=bitbucket.org
+HOWM_BITBUCKET_PATH=/wanwan/howm.git/
+HOWM_BITBUCKET_URL=https://${HOWM_BITBUCKET_SERVER_USER}:${HOWM_BITBUCKET_SERVER_PASS}@${HOWM_BITBUCKET_REPO_SERVER}${HOWM_BITBUCKET_PATH}
+
+HOWM_GITHUB_SERVER_USER=wanwan
+HOWM_GITHUB_SERVER_PASS=kcl38zcl3
+HOWM_GITHUB_REPO_SERVER=github.com
+HOWM_GITHUB_PATH=/wanwan/howm.git
+HOWM_GITHUB_URL=https://${HOWM_GITHUB_SERVER_USER}:${HOWM_GITHUB_SERVER_PASS}@${HOWM_GITHUB_REPO_SERVER}${HOWM_GITHUB_PATH}
