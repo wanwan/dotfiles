@@ -14,7 +14,10 @@
 (display-time)
 (setq truncate-lines t)
 (setq inhibit-startup-message nil)
-(if window-system (server-start))
+(require 'server)
+(if window-system
+    (unless (server-running-p)
+    (server-start)))
 
 ;; moji-code
 (prefer-coding-system 'utf-8)
