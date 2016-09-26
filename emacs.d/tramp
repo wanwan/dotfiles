@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*-
+;; -*- emacs-lisp -*- <16/09/26 19:01:29 c:/msys32/home/admin/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -36,4 +36,25 @@
   ("local-decoding" base64-decode-region)
   ("remote-encoding" "base64")
   ("remote-decoding" "base64 -d -i")
-  ("uid-integer" 500)))
+  ("uid-integer" 500))
+ (["plink" "awakabayashi" "10.60.92.21" nil nil]
+  ("locale" "LC_ALL=en_US.utf8")
+  ("uname" "Linux 3.13.0-24-generic")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin" "/opt/bin"))
+  ("remote-shell" "/bin/sh")
+  ("~" "/home/awakabayashi")
+  ("file-exists" "test -e")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("readlink" "\\readlink")
+  ("stat" "\\stat")
+  ("ls" "/bin/ls --color=never")
+  ("id" "/usr/bin/id")
+  ("gid-string" "simva")
+  ("gid-integer" 1000)
+  ("git" "\\git"))
+ (["plink" "awakabayashi" "10.92.60.21" nil nil]
+  nil))

@@ -165,7 +165,7 @@
 
 
 ;; tramp
-(when (equal system-type 'w32)
+(when (or (equal system-type 'w32) (equal system-type 'windows-nt)) 
   (setenv "PATH" (concat "c:/putty" ";" (getenv "PATH")))
   (require 'tramp)
   (setq tramp-default-method "plink"))
