@@ -58,10 +58,10 @@
               )))
 
 ;; package.el
-(require 'package)
-(add-to-list 'package-archives '("melpa"."http://melpa.org/packages/") t)
-(package-initialize)
-
+(when (version< "24.0" emacs-version )
+  (require 'package)
+  (add-to-list 'package-archives '("melpa"."http://melpa.org/packages/") t)
+  (package-initialize))
 
 ;; remove tool bar
 (tool-bar-mode -1)
