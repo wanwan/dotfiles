@@ -3,3 +3,4 @@
 .DS_Store
 private
 emacs.d/server/server
+emacs.d/tramp
