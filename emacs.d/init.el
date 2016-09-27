@@ -122,7 +122,9 @@
 
 ;; auto-save
 (require 'auto-save-buffers-enhanced)
+(setq auto-save-buffers-enhanced-exclude-regexps '("^/ssh:" "/sudo:" "/multi:" "plink:"))
 (auto-save-buffers-enhanced t)
+
 
 ;; skk
 (add-to-list 'load-path "~/.emacs.d/elisp/skk")
