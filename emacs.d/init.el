@@ -176,26 +176,9 @@
 (add-hook 'isearch-mode-end-hook 'skk-isearch-mode-cleanup) ; isearch で skk のクリーンアップ
 (setq skk-isearch-start-mode 'latin)						; isearch で skk の初期状態
 
-;; anything
-;;(add-to-list 'load-path "~/.emacs.d/auto-install/")
-;;(require 'anything-startup)
-
-;; gtags
-;;(add-to-list 'load-path "~/.emacs.d/elisp/gtags")
-;;(autoload 'gtags-mode "gtags" "" t)
-;;(setq gtags-mode-hook
-;;      '(lambda ()
-;;         (local-set-key "\M-t" 'gtags-find-tag)
-;;         (local-set-key "\M-r" 'gtags-find-rtag)
-;;         (local-set-key "\M-s" 'gtags-find-symbol)
-;;         (local-set-key "\C-t" 'gtags-pop-stack)))
-;;(add-hook 'c-mode-common-hook
-;;          '(lambda()
-;;             (gtags-mode 1)
-;;             (gtags-make-complete-list)))
-;;(put 'upcase-region 'disabled nil)
-;;(put 'downcase-region 'disabled nil)
-
+;; uniquify
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 ;; gtags
 (add-hook 'c-mode-common-hook
