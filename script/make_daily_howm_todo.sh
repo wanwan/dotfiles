@@ -1,14 +1,14 @@
 #!/bin/bash
 
 HOWMDIR=$HOME/howm.git
-FILENAME=`date "+%Y-%m-%d-000000.txt"`
-YEAR=`date "+%Y"`
-MONTH=`date "+%m"`
-DAY=`date "+%d"`
-DAY_OF_YEAR=`date "+%j"`
-DAY_OF_WEEK=`date "+%u"`
-DAY_OF_MONTH=`date "+%e"`
-WEEK_NUMBER=`date "+%U"`
+FILENAME=`date -v+1d "+%Y-%m-%d-000000.txt"`
+YEAR=`date -v+1d "+%Y"`
+MONTH=`date -v+1d "+%m"`
+DAY=`date -v+1d "+%d"`
+DAY_OF_YEAR=`date -v+1d "+%j"`
+DAY_OF_WEEK=`date -v+1d "+%u"`
+DAY_OF_MONTH=`date -v+1d "+%e"`
+WEEK_NUMBER=`date -v+1d "+%U"`
 
 HOWMFILE=$HOWMDIR/$YEAR/$MONTH/$FILENAME
 HOWMFILE_DIR=$HOWMDIR/$YEAR/$MONTH/
