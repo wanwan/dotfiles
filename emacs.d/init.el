@@ -101,6 +101,7 @@
             (my/pomodoro-notification :body "Long Break time now")))
 
 ;; howm
+;;(defvar howm-view-title-header "#")  ; this should be evaluated in advance to handle markdown
 (setq howm-directory "~/howm.git")
 (add-to-list 'load-path "~/.emacs.d/elisp/howm")
 (setq howm-menu-lang 'ja)
@@ -116,9 +117,16 @@
   (interactive)
   (save-buffer)
   (kill-buffer nil))
-(eval-after-load "howm-mode"
-  '(progn
-     (define-key howm-mode-map "\C-c\C-c" 'my-save-and-kill-buffer)))
+;(eval-after-load "howm-mode"
+;  '(progn
+;     (define-key howm-mode-map "\C-c\C-c" 'my-save-and-kill-buffer)))
+; file associations
+;(defun markdown-text-mode ()
+;  (markdown-mode)       ; major
+;  (outline-minor-mode)  ; minor
+;)
+;(add-to-list 'auto-mode-alist '("\\.txt$" . markdown-text-mode))
+
 
 ;; auto-save
 (require 'auto-save-buffers-enhanced)
@@ -128,6 +136,7 @@
 
 ;; skk
 (add-to-list 'load-path "~/.emacs.d/elisp/skk")
+(setq skk-user-directory (concat "~/.emacs.d/ddskk" "." (system-name)))
 (require 'skk-autoloads)
 (setq skk-user-directory "~/.emacs.d/ddskk/")
 (setq skk-large-jisyo "~/.emacs.d/ddskk/SKK-JISYO.L")
@@ -178,26 +187,9 @@
 (add-hook 'isearch-mode-end-hook 'skk-isearch-mode-cleanup) ; isearch で skk のクリーンアップ
 (setq skk-isearch-start-mode 'latin)						; isearch で skk の初期状態
 
-;; anything
-;;(add-to-list 'load-path "~/.emacs.d/auto-install/")
-;;(require 'anything-startup)
-
-;; gtags
-;;(add-to-list 'load-path "~/.emacs.d/elisp/gtags")
-;;(autoload 'gtags-mode "gtags" "" t)
-;;(setq gtags-mode-hook
-;;      '(lambda ()
-;;         (local-set-key "\M-t" 'gtags-find-tag)
-;;         (local-set-key "\M-r" 'gtags-find-rtag)
-;;         (local-set-key "\M-s" 'gtags-find-symbol)
-;;         (local-set-key "\C-t" 'gtags-pop-stack)))
-;;(add-hook 'c-mode-common-hook
-;;          '(lambda()
-;;             (gtags-mode 1)
-;;             (gtags-make-complete-list)))
-;;(put 'upcase-region 'disabled nil)
-;;(put 'downcase-region 'disabled nil)
-
+;; uniquify
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 ;; gtags
 (add-hook 'c-mode-common-hook
@@ -218,6 +210,8 @@
 (autoload 'gfm-mode "markdown-mode"
   "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+
+(setq markdown-open-command "markdown_viewer.sh")
 
 
 
