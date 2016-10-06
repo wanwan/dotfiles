@@ -136,9 +136,9 @@
 
 ;; skk
 (add-to-list 'load-path "~/.emacs.d/elisp/skk")
-(setq skk-user-directory (concat "~/.emacs.d/ddskk" "." (system-name)))
 (require 'skk-autoloads)
-(setq skk-user-directory "~/.emacs.d/ddskk/")
+(setq skk-user-directory (concat "~/.emacs.d/ddskk" "." (system-name)))
+;;(setq skk-user-directory "~/.emacs.d/ddskk/")
 (setq skk-large-jisyo "~/.emacs.d/ddskk/SKK-JISYO.L")
 (when (require 'skk-autoloads nil t)  
   (define-key global-map (kbd "C-x C-j") 'skk-mode)   ;; C-x j で skk モードを起動  
