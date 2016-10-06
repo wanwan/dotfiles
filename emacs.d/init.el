@@ -101,6 +101,7 @@
             (my/pomodoro-notification :body "Long Break time now")))
 
 ;; howm
+;;(defvar howm-view-title-header "#")  ; this should be evaluated in advance to handle markdown
 (setq howm-directory "~/howm.git")
 (add-to-list 'load-path "~/.emacs.d/elisp/howm")
 (setq howm-menu-lang 'ja)
@@ -116,9 +117,16 @@
   (interactive)
   (save-buffer)
   (kill-buffer nil))
-(eval-after-load "howm-mode"
-  '(progn
-     (define-key howm-mode-map "\C-c\C-c" 'my-save-and-kill-buffer)))
+;(eval-after-load "howm-mode"
+;  '(progn
+;     (define-key howm-mode-map "\C-c\C-c" 'my-save-and-kill-buffer)))
+; file associations
+;(defun markdown-text-mode ()
+;  (markdown-mode)       ; major
+;  (outline-minor-mode)  ; minor
+;)
+;(add-to-list 'auto-mode-alist '("\\.txt$" . markdown-text-mode))
+
 
 ;; auto-save
 (require 'auto-save-buffers-enhanced)
@@ -201,6 +209,8 @@
 (autoload 'gfm-mode "markdown-mode"
   "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+
+(setq markdown-open-command "markdown_viewer.sh")
 
 
 
