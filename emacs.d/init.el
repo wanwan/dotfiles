@@ -26,6 +26,9 @@
 ;; os depend (for mac)
 (when (fboundp 'mac-add-ignore-shortcut) (mac-add-ignore-shortcut '(control ? )))
 
+;; use environment PATH for emacs path
+(exec-path-from-shell-initialize)
+
 ;; default path
 (add-to-list 'load-path "~/.emacs.d/elisp")                              
 ;;(let ((default-directory (expand-file-name "~/.emacs.d/site-lisp")))
@@ -61,7 +64,10 @@
 (when (version< "24.0" emacs-version )
   (require 'package)
   (add-to-list 'package-archives '("melpa"."http://melpa.org/packages/") t)
-  (package-initialize))
+  (package-initialize)
+;;  (exec-path-from-shell-initialize)
+  )
+
 
 ;; remove tool bar
 (tool-bar-mode -1)
@@ -204,7 +210,7 @@
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+;;(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 (autoload 'gfm-mode "markdown-mode"
   "Major mode for editing GitHub Flavored Markdown files" t)
