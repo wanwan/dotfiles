@@ -26,17 +26,17 @@
 ;; os depend (for mac)
 (when (fboundp 'mac-add-ignore-shortcut) (mac-add-ignore-shortcut '(control ? )))
 
-;; use environment PATH for emacs path
-(exec-path-from-shell-initialize)
 
 ;; default path
-(add-to-list 'load-path "~/.emacs.d/elisp")                              
+(add-to-list 'load-path "~/.emacs.d/elisp")
 ;;(let ((default-directory (expand-file-name "~/.emacs.d/site-lisp")))
 ;;  (add-to-list 'load-path default-directory)
 ;;  (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
 ;;      (normal-top-level-add-subdirs-to-load-path)))
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/elpa")
+
+
 
 ;; japanese font
 (when (eq window-system 'ns)
@@ -68,6 +68,11 @@
 ;;  (exec-path-from-shell-initialize)
   )
 
+;; use environment PATH for emacs path
+(exec-path-from-shell-initialize)
+
+
+
 
 ;; remove tool bar
 (tool-bar-mode -1)
@@ -84,6 +89,9 @@
       (run-with-idle-timer 0.03 t 'global-hl-line-timer-function))
 ;; (cancel-timer global-hl-line-timer)
 
+;; paren check
+(show-paren-mode 1)
+
 ;; pomodoro
 ;; http://d.hatena.ne.jp/syohex/20121215/1355579575
 ;; https://raw.github.com/syohex/emacs-utils/master/pomodoro.el
@@ -97,10 +105,10 @@
 ;;                                       body
 ;;                                       (urgency 'critical))
 ;;  (notifications-notify :title title :body body :urgency urgency))
-(defun* my/pomodoro-notification (&key (title "Pomodoro")
-                                       body
-                                       (urgency 'critical))
-  (notifications-notify :title title :body body :urgency urgency))
+;;(defun* my/pomodoro-notification (&key (title "Pomodoro")
+;;                                       body
+;;                                       (urgency 'critical))
+;;  (notifications-notify :title title :body body :urgency urgency))
 
 ;; 作業終了後の hook
 (add-hook 'pomodoro:finish-work-hook
@@ -137,7 +145,11 @@
 ;(eval-after-load "howm-mode"
 ;  '(progn
 ;     (define-key howm-mode-map "\C-c\C-c" 'my-save-and-kill-buffer)))
-; file associations
+;(eval-after-load "howm-mode"
+;  '(progn
+;     (define-key howm-mode-map (kbd \C-c \C-c \C-c) 'my-save-and-kill-buffer)))
+
+;file associations
 ;(defun markdown-text-mode ()
 ;  (markdown-mode)       ; major
 ;  (outline-minor-mode)  ; minor
@@ -242,8 +254,6 @@
      (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
      (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
      (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
-
-
 
 ;; functions
 ;; from http://www.emacswiki.org/emacs/TransposeWindows
