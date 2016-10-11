@@ -141,9 +141,9 @@
 ;(eval-after-load "howm-mode"
 ;  '(progn
 ;     (define-key howm-mode-map "\C-c\C-c" 'my-save-and-kill-buffer)))
-;(eval-after-load "howm-mode"
-;  '(progn
-;     (define-key howm-mode-map (kbd \C-c \C-c \C-c) 'my-save-and-kill-buffer)))
+(eval-after-load "howm-mode"
+  '(progn
+     (define-key howm-mode-map (kbd "C-c C-c C-c") 'my-save-and-kill-buffer)))
 
 ;file associations
 ;(defun markdown-text-mode ()
