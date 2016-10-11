@@ -87,10 +87,21 @@
 ;; pomodoro
 ;; http://d.hatena.ne.jp/syohex/20121215/1355579575
 ;; https://raw.github.com/syohex/emacs-utils/master/pomodoro.el
+(require 'pomodoro)
 (setq pomodoro:file "~/.emacs.d/pomodoro.txt")
-(setq pomodoro:work-time 25
-      pomodoro:rest-time 5
-      pomodoro:long-rest-time 20) ;; 作業時間関連
+(setq pomodoro:work-time 1
+      pomodoro:rest-time 1
+      pomodoro:long-rest-time 1) ;; 作業時間関連
+(require 'notifications)
+;;(defun* my/pomodoro-notification (&key (title "Pomodoro")
+;;                                       body
+;;                                       (urgency 'critical))
+;;  (notifications-notify :title title :body body :urgency urgency))
+(defun* my/pomodoro-notification (&key (title "Pomodoro")
+                                       body
+                                       (urgency 'critical))
+  (notifications-notify :title title :body body :urgency urgency))
+
 ;; 作業終了後の hook
 (add-hook 'pomodoro:finish-work-hook
           (lambda ()
@@ -143,7 +154,8 @@
 ;; skk
 (add-to-list 'load-path "~/.emacs.d/elisp/skk")
 (require 'skk-autoloads)
-(setq skk-user-directory "~/.emacs.d/ddskk/")
+(setq skk-user-directory (concat "~/.emacs.d/ddskk" "." (system-name)))
+;;(setq skk-user-directory "~/.emacs.d/ddskk/")
 (setq skk-large-jisyo "~/.emacs.d/ddskk/SKK-JISYO.L")
 (when (require 'skk-autoloads nil t)  
   (define-key global-map (kbd "C-x C-j") 'skk-mode)   ;; C-x j で skk モードを起動  
