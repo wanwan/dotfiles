@@ -2,6 +2,7 @@
 
 HOWMDIR=$HOME/howm.git
 NEWLINE=$'\n'
+DATE=date
 
 # 与えられた日にちに対しての week no を導出し, その一週間分の task を書き出す
 # blog file の書式
@@ -15,24 +16,24 @@ NEWLINE=$'\n'
 #
 
 
-#FILENAME=`date "+%Y-%m-%d-000001.txt"`
-YEAR=`date "+%Y"`
-MONTH=`date "+%m"`
-DAY=`date "+%d"`
-DAY_OF_YEAR=`date "+%j"`
-DAY_OF_WEEK=`date "+%u"`
-DAY_OF_MONTH=`date "+%e"`
-WEEK_NUMBER=`date "+%U"`
+#FILENAME=`${DATE} "+%Y-%m-%d-000001.txt"`
+YEAR=`${DATE} "+%Y"`
+MONTH=`${DATE} "+%m"`
+DAY=`${DATE} "+%d"`
+DAY_OF_YEAR=`${DATE} "+%j"`
+DAY_OF_WEEK=`${DATE} "+%u"`
+DAY_OF_MONTH=`${DATE} "+%e"`
+WEEK_NUMBER=`${DATE} "+%U"`
 
 if [ $# -ne 0 ]; then
     if [[ $1 =~ ([0-9][0-9][0-9][0-9])([0-9][0-9])([0-9][0-9]) ]]; then
-	YEAR=`date -j -f "%Y%m%d" $1 "+%Y"`
-	MONTH=`date -j -f "%Y%m%d" $1 "+%m"`
-	DAY=`date -j -f "%Y%m%d" $1 "+%d"`
-	DAY_OF_YEAR=`date -j -f "%Y%m%d" $1 "+%j"`
-	DAY_OF_WEEK=`date -j -f "%Y%m%d" $1 "+%u"`
-	DAY_OF_MONTH=`date -j -f "%Y%m%d" $1 "+%e"`
-	WEEK_NUMBER=`date -j -f "%Y%m%d" $1 "+%U"`
+	YEAR=`${DATE} -d $1 "+%Y"`
+	MONTH=`${DATE} -d $1 "+%m"`
+	DAY=`${DATE} -d $1 "+%d"`
+	DAY_OF_YEAR=`${DATE} -d $1 "+%j"`
+	DAY_OF_WEEK=`${DATE} -d $1 "+%u"`
+	DAY_OF_MONTH=`${DATE} -d $1 "+%e"`
+	WEEK_NUMBER=`${DATE} -d $1 "+%U"`
     fi
 fi
 
@@ -61,7 +62,7 @@ function make_day_task() {
 
     echo "== " ${year}${month}${day} >> $HOWMFILE
 
-    day_of_week=`date -j -f "%Y%m%d" ${year}${month}${day} "+%u"`
+    day_of_week=`${DATE} -d ${year}${month}${day} "+%u"`
     
 }
 
@@ -74,8 +75,8 @@ function weekof()
     local date_fmt="%Y-%m-%d"
     local mon tue wed thr fri sat sun
 
-    week_num_of_Jan_1=$(date -j -f "$date_fmt" $year-01-01 +%W)
-    week_day_of_Jan_1=$(date -j -f "$date_fmt" $year-01-01 +%u)
+    week_num_of_Jan_1=$(${DATE} -d $year-01-01 +%W)
+    week_day_of_Jan_1=$(${DATE} -d $year-01-01 +%u)
 
     if ((week_num_of_Jan_1)); then
         first_Mon=$year-01-01
@@ -83,13 +84,13 @@ function weekof()
         first_Mon=$year-01-$((01 + (7 - week_day_of_Jan_1 + 1) ))
     fi
 
-    mon=$(date -v+$((week - 1))w       -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    tue=$(date -v+$((week - 1))w -v+1d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    wed=$(date -v+$((week - 1))w -v+2d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    thr=$(date -v+$((week - 1))w -v+3d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    fri=$(date -v+$((week - 1))w -v+4d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    sat=$(date -v+$((week - 1))w -v+5d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    sun=$(date -v+$((week - 1))w -v+6d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
+    mon=$(${DATE} -v+$((week - 1))w       -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
+    tue=$(${DATE} -v+$((week - 1))w -v+1d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
+    wed=$(${DATE} -v+$((week - 1))w -v+2d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
+    thr=$(${DATE} -v+$((week - 1))w -v+3d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
+    fri=$(${DATE} -v+$((week - 1))w -v+4d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
+    sat=$(${DATE} -v+$((week - 1))w -v+5d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
+    sun=$(${DATE} -v+$((week - 1))w -v+6d -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
     //echo "\"$mon\" - \"$sun\""
     echo $mon
     echo $tue
@@ -109,8 +110,8 @@ function calc_weekday()
     local date_fmt="%Y-%m-%d"
     local mon tue wed thr fri sat
 
-    week_num_of_Jan_1=$(date -j -f "$date_fmt" $year-01-01 +%W)
-    week_day_of_Jan_1=$(date -j -f "$date_fmt" $year-01-01 +%u)
+    week_num_of_Jan_1=$(${DATE} -d $year-01-01 +%W)
+    week_day_of_Jan_1=$(${DATE} -d $year-01-01 +%u)
 
     if ((week_num_of_Jan_1)); then
         first_Mon=$year-01-01
@@ -118,13 +119,13 @@ function calc_weekday()
         first_Mon=$year-01-$((01 + (7 - week_day_of_Jan_1 + 1) ))
     fi
 
-    mon=$(date -v+$((week - 1))w            -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    tue=$(date -v+$((week - 1))w    -v+1d   -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    wed=$(date -v+$((week - 1))w    -v+2d   -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    thr=$(date -v+$((week - 1))w    -v+3d   -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    fri=$(date -v+$((week - 1))w    -v+4d   -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    sat=$(date -v+$((week - 1))w    -v+5d   -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
-    sun=$(date -v+$((week - 1))w    -v+6d   -j -f "$date_fmt" "$first_Mon" "+%Y%m%d" )
+    mon=$(${DATE} -d "$((week - 1)) weeks       $first_Mon" "+%Y%m%d" )
+    tue=$(${DATE} -d "$((week - 1)) weeks 1 day $first_Mon" "+%Y%m%d" )
+    wed=$(${DATE} -d "$((week - 1)) weeks 2 day $first_Mon" "+%Y%m%d" )
+    thr=$(${DATE} -d "$((week - 1)) weeks 3 day $first_Mon" "+%Y%m%d" )
+    fri=$(${DATE} -d "$((week - 1)) weeks 4 day $first_Mon" "+%Y%m%d" )
+    sat=$(${DATE} -d "$((week - 1)) weeks 5 day $first_Mon" "+%Y%m%d" )
+    sun=$(${DATE} -d "$((week - 1)) weeks 6 day $first_Mon" "+%Y%m%d" )
 
     echo "${mon} ${tue} ${wed} ${thr} ${fri} ${sat} ${sun}"
 }
@@ -169,7 +170,7 @@ SUNDAY_MONTH=${SUNDAY_STR:4:2}
 SUNDAY_DAY=${SUNDAY_STR:6:2}
 
 
-#FILENAME=`date "+%Y-%m-%d-000001.txt"`
+#FILENAME=`${DATE} "+%Y-%m-%d-000001.txt"`
 FILENAME=${MONDAY_YEAR}-${MONDAY_MONTH}-${MONDAY_DAY}"-000002.txt"
 
 HOWMFILE=$HOWMDIR/$YEAR/$MONTH/$FILENAME

@@ -1,6 +1,7 @@
 
 #NEWLINE=$'\n'
 NEWLINE='\n'
+DATE=date
 
 function make_header() {
 
@@ -24,7 +25,7 @@ function get_day_of_week_from_yyyy_mm_dd() {
     month=$2
     day=$3
 
-    day_of_week=`date -j -f "%Y%m%d" ${year}${month}${day} "+%u"`
+    day_of_week=`${DATE} -d ${year}${month}${day} "+%u"`
     echo ${day_of_week}
 }
 
@@ -124,7 +125,7 @@ function make_evening_task() {
     month=$2
     day=$3
 
-    day_of_year=`date -j -f "%Y%m%d" ${year}${month}${day} "+%j"`
+    day_of_year=`${DATE} -d ${year}${month}${day} "+%j"`
     day_of_week=`get_day_of_week_from_yyyy_mm_dd $year $month $day`    
 
     ret=""    
@@ -218,7 +219,7 @@ function make_weekend_task() {
     day=$3
 
     day_of_week=`get_day_of_week_from_yyyy_mm_dd $year $month $day`    
-    week_number=`date -j -f "%Y%m%d" ${year}${month}${day} "+%U"`
+    week_number=`${DATE} -d ${year}${month}${day} "+%U"`
     ret=""
     
     # Saturday (Weekend Task is here)
@@ -256,7 +257,7 @@ function make_monthly_task() {
     month=$2
     day=$3
 
-    day_of_month=`date -j -f "%Y%m%d" ${year}${month}${day} "+%e"`
+    day_of_month=`${DATE} -d ${year}${month}${day} "+%e"`
     ret=""
     
     # 1st day of Month
