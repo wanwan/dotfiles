@@ -2,6 +2,9 @@
 #NEWLINE=$'\n'
 NEWLINE='\n'
 DATE=date
+if [ -x /usr/local/bin/gdate ]; then
+    DATE=gdate
+fi
 
 function make_header() {
 
