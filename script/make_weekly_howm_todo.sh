@@ -3,6 +3,9 @@
 HOWMDIR=$HOME/howm.git
 NEWLINE=$'\n'
 DATE=date
+if [ -x /usr/local/bin/gdate ]; then
+    DATE=gdate
+fi
 
 # 与えられた日にちに対しての week no を導出し, その一週間分の task を書き出す
 # todo file の書式
