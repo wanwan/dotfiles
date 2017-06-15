@@ -8,9 +8,11 @@
 (global-set-key "\C-h" 'delete-backward-char)
 (global-set-key [C-tab] 'other-window)
 (global-set-key "\M-g" 'goto-line)
-(menu-bar-mode t)
+;;(menu-bar-mode t)
+(menu-bar-mode -1)
 (tool-bar-mode -1)
 (tooltip-mode -1)
+(scroll-bar-mode -1)
 (display-time)
 (setq truncate-lines t)
 (setq inhibit-startup-message nil)
@@ -48,6 +50,15 @@
 		    'append)
   (add-to-list 'default-frame-alist '(font . "fontset-menlokakugo")))
 
+(when (eq window-system 'x)
+  ;; Japanese font
+  (set-default-font "Inconsolata-12")
+  (set-face-font 'variable-pitch "Inconsolata-12")
+  (set-fontset-font (frame-parameter nil 'font)
+                  'japanese-jisx0208
+                  '("Takaoゴシック" . "unicode-bmp")))
+
+  
 ;; info
 (require 'info)
 (add-to-list 'Info-additional-directory-list "~/.emacs.d/info")
@@ -238,6 +249,37 @@
 
 (setq markdown-open-command "markdown_viewer.sh")
 
+;; haskell
+;;(add-to-list 'load-path "~/.emacs.d/elpa/haskell-mode-20170519.1555")
+(autoload 'haskell-mode "haskell-mode" nil t)
+(autoload 'haskell-cabal "haskell-cabal" nil t)
+
+(add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
+(add-to-list 'auto-mode-alist '("\\.lhs$" . literate-haskell-mode))
+(add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
+
+(add-to-list 'interpreter-mode-alist '("runghc" . haskell-mode))     ;#!/usr/bin/env runghc 用       
+(add-to-list 'interpreter-mode-alist '("runhaskell" . haskell-mode)) ;#!/usr/bin/env runhaskell 用   
+
+;; ghc-mod (haskell)
+;;(add-to-list 'exec-path "~/.cabal/bin")  ; これをしてないと*Message*に"ghc-mod not found"と出て動かない
+;;(add-to-list 'load-path "~/.emacs.d/elisp/ghc-mod")
+(add-to-list 'load-path "/usr/share/ghc-mod/elisp")
+
+(autoload 'ghc-init "ghc" nil t)
+(add-hook 'haskell-mode-hook
+          (lambda ()
+            (ghc-init)
+            (flymake-mode)))
+
+;(setq haskell-program-name "/usr/bin/ghci")                                                         
+;(add-hook 'haskell-mode-hook 'inf-haskell-mode) ;; enable                                           
+(defadvice inferior-haskell-load-file (after change-focus-after-load)
+  "Change focus to GHCi window after C-c C-l command"
+  (other-window 1))
+(ad-activate 'inferior-haskell-load-file)
+
+
 
 
 ;; Set key bindings
@@ -270,3 +312,17 @@
       (set-window-point (selected-window) other-window-point)
       (set-window-start (selected-window) other-window-start))
     (select-window other-window)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
