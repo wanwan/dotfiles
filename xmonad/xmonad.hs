@@ -25,7 +25,7 @@ myBorderWidth = 3
 -- define workspace
 myWorkspaces = [ "shell"
 	       ,"editor"
-	       ,"web"
+	       ,"browser"
 	       ,"idea"
 	       ,"vm"
 	       ,"media"
@@ -37,19 +37,17 @@ myStartupHook :: X()
 myStartupHook = do
   setWMName "LG3D"
   --spawnOn "editor" "emacs"
-  --spawnOn "web" "google-chrome-stable --force-device-scale-factor=2"
+  --spawnOn "browser" "google-chrome-stable --force-device-scale-factor=2"
   --spawnOn "idea" "intellij-idea-ultimate-edition"  
 
 myManageHook = composeAll . concat $
   [ [ className =? "Emacs" --> doShift "editor" ]
-  , [ className =? "Google-chrome" --> doShift "web" ]
+--  , [ className =? "Google-chrome" --> doShift "browser" ]
   , [ className =? "jetbrains-idea" --> doShift "idea" ]
   , [ className =? "skypeforlinux" --> doShift "media" ]
   , [ className =? "whatsapp-desktop" --> doShift "media" ]
   ]
 
-
-myBitmapsDir="/home/waka/.xmonad/dzen2/icons"
 
 -- Define ShortCuts
 myShortCuts = [
@@ -65,33 +63,22 @@ myShortCuts = [
 --    ((mod1Mask, xK_p), shellPrompt myXmonadPromptConfig)
     ]
 
--- | The default pretty printing options, as seen in 'dynamicLog'.
+
 --my_dzen_PP h = defaultPP
 my_dzen_PP h = dzenPP
-       { ppCurrent         = wrap "[" "]"
-       , ppVisible         = wrap "<" ">"
-       , ppHidden          = id
-       , ppHiddenNoWindows = const ""
-       , ppUrgent          = id
-       , ppSep             = " : "
-       , ppWsSep           = " "
-       , ppTitle           = shorten 80
-       , ppLayout          = id
-       , ppOrder           = id
-       , ppOutput          = hPutStrLn h
---       , ppSort            = getSortByIndex
-       , ppExtras          = []
+       { 
+         ppOutput          = hPutStrLn h
        }  
 
 
 myXmonadBar = "dzen2 -x '0' -y '0' -h '32' -w '1600' -ta 'l' -fg '#FFFFFF' -bg '#1B1D1E' -fn 'terminus-12' -dock"
-myStatusBar = "conky -c /home/waka/.xmonad/conkyrc | dzen2 -x '1600' -w '1600' -h '32' -ta 'r' -bg '#1B1D1E' -fg '#FFFFFF' -y '0' -fn 'terminus-12' -dock"
+myStatusBar = "LC_TIME=C conky -c /home/waka/.xmonad/conkyrc | dzen2 -x '1600' -w '1600' -h '32' -ta 'r' -bg '#1B1D1E' -fg '#FFFFFF' -y '0' -fn 'terminus-12' -dock"
 
 
 --customLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full ||| simpleFloat
 --  where
 --    tiled   = ResizableTall 1 (2/100) (1/2) []
-customLayout = avoidStruts tiled ||| Full 
+customLayout = avoidStruts (tiled) ||| Full 
   where
     tiled = ResizableTall 1 (2/100) (1/2) []
 --customLayout = Full ||| avoidStruts simpleFloat
@@ -100,22 +87,18 @@ customLayout = avoidStruts tiled ||| Full
 main = do
   dzenLeftBar <- spawnPipe myXmonadBar
   spawn myStatusBar
-  xmonad $ defaultConfig
-  --xmonad $ desktopConfig   
+  --xmonad $ defaultConfig
+  xmonad $ desktopConfig   
      { terminal		= myTerminal
      , modMask		= myModMask
      , borderWidth	= myBorderWidth
      , workspaces	= myWorkspaces     
---     , startupHook	= do
---       	setWMName "LG3D"
---	spawnOn "workspace2" "emacs"
-     , manageHook = myManageHook <+> manageHook defaultConfig <+> manageDocks
-     , startupHook = myStartupHook
---     , logHook		= myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
---     , layoutHook       = avoidStruts $ layoutHook defaultConfig
+--     , manageHook       = myManageHook <+> manageHook defaultConfig <+> manageDocks
+     , manageHook       = myManageHook <+> manageHook desktopConfig <+> manageDocks     
+--     , startupHook      = myStartupHook <+> docksStartupHook
+     , startupHook      = myStartupHook <+> docksStartupHook     
      , layoutHook       = customLayout
---     , logHook		= myLogHook dzenLeftBar
      , logHook          = dynamicLogWithPP $ my_dzen_PP dzenLeftBar
---     , handleEventHook  = docksEventHook
-     , handleEventHook  = docksEventHook <+> fullscreenEventHook
+     , handleEventHook  = docksEventHook
+--     , handleEventHook  = docksEventHook <+> fullscreenEventHook
      } `additionalKeys` myShortCuts
