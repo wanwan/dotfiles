@@ -155,7 +155,7 @@
 
 ;; auto-save
 (require 'auto-save-buffers-enhanced)
-(setq auto-save-buffers-enhanced-exclude-regexps '("^/ssh:" "/sudo:" "/multi:" "plink:"))
+(setq auto-save-buffers-enhanced-exclude-regexps '("^/ssh:" "/sudo:" "/multi:" "plink:" "*scratch*"))
 (auto-save-buffers-enhanced t)
 
 
@@ -270,3 +270,4 @@
       (set-window-point (selected-window) other-window-point)
       (set-window-start (selected-window) other-window-start))
     (select-window other-window)))
+(put 'upcase-region 'disabled nil)
