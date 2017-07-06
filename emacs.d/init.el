@@ -58,7 +58,18 @@
                   'japanese-jisx0208
                   '("Takaoゴシック" . "unicode-bmp")))
 
-  
+;; for windows
+(when (eq window-system 'w32)
+  (defadvice grep-compute-defaults (around grep-compute-defaults-advice-null-device)
+  "Use cygwin's /dev/null as the null-device."
+  (let ((null-device "/dev/null"))
+	ad-do-it))
+  (ad-activate 'grep-compute-defaults)
+  (setq grep-find-template
+      "find . <X> -type f <F> -exec grep <C> -nH -e <R> \\{\\} +")
+)
+
+
 ;; info
 (require 'info)
 (add-to-list 'Info-additional-directory-list "~/.emacs.d/info")
@@ -291,7 +302,9 @@
      (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
      (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
      (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
-     (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
+     (define-key helm-gtags-mode-map (kbd "C-t") 'helm-gtags-pop-stack)
+;(define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+     ))
 
 ;; functions
 ;; from http://www.emacswiki.org/emacs/TransposeWindows
