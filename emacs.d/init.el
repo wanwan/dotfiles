@@ -58,7 +58,18 @@
                   'japanese-jisx0208
                   '("Takaoゴシック" . "unicode-bmp")))
 
-  
+;; for windows
+(when (eq window-system 'w32)
+  (defadvice grep-compute-defaults (around grep-compute-defaults-advice-null-device)
+  "Use cygwin's /dev/null as the null-device."
+  (let ((null-device "/dev/null"))
+	ad-do-it))
+  (ad-activate 'grep-compute-defaults)
+  (setq grep-find-template
+      "find . <X> -type f <F> -exec grep <C> -nH -e <R> \\{\\} +")
+)
+
+
 ;; info
 (require 'info)
 (add-to-list 'Info-additional-directory-list "~/.emacs.d/info")
@@ -166,7 +177,7 @@
 
 ;; auto-save
 (require 'auto-save-buffers-enhanced)
-(setq auto-save-buffers-enhanced-exclude-regexps '("^/ssh:" "/sudo:" "/multi:" "plink:"))
+(setq auto-save-buffers-enhanced-exclude-regexps '("^/ssh:" "/sudo:" "/multi:" "plink:" "*scratch*"))
 (auto-save-buffers-enhanced t)
 
 
@@ -291,7 +302,9 @@
      (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
      (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
      (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
-     (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
+     (define-key helm-gtags-mode-map (kbd "C-t") 'helm-gtags-pop-stack)
+;(define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+     ))
 
 ;; functions
 ;; from http://www.emacswiki.org/emacs/TransposeWindows
@@ -312,6 +325,9 @@
       (set-window-point (selected-window) other-window-point)
       (set-window-start (selected-window) other-window-start))
     (select-window other-window)))
+
+(put 'upcase-region 'disabled nil)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -326,3 +342,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
