@@ -40,15 +40,15 @@ if [ $# -ne 0 ]; then
     fi
 fi
 
-source make_howm_todo.sh
+source ${HOME}/dotfiles/private/script/make_howm_todo.sh
 
 function make_blog_header() {
 
     local ret
     
     ret=""
-    ret+="= [${YEAR}][week][blog] ${WEEK_NUMBER}${NEWLINE}"
-    ret+="[${YEAR}-${MONTH}-${DAY} 00:00]${NEWLINE}"
+    ret+="= [${YEAR}][week][blog] ${WEEK_NUMBER} ${NEWLINE}"
+    ret+="[${YEAR}-${MONTH}-${DAY} 00:00] ${NEWLINE}"
     ret+="${NEWLINE}"
 
     echo ${ret}
