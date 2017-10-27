@@ -1,0 +1,32 @@
+! X default resources
+! ! is comment
+
+Xft.dpi: 180
+Xft.autohint: 0
+Xft.Lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+URxvt*scrollBar: false
+URxvt*scrollTtyOutput: false
+U$xvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+
+!URxvt.font: xft:Mona:size=12
+URxvt.font: xft:Inconsolata:size=11
+
+Emacs*UseXIM: false
+
+! for X error message like xmonad
+!Xmessage*fontSet: -*-*-*-*-*--28-*
+Xmessage*font: -*-*-*-*-*--28-*
+
+
+xfontsel*font: -*-*-*-*-*--28-*
+
+dzen2*font: -*-terminus-bold-*-*-*-32-*-*-*-*-*-*-*
+
+
+*font: -*-*-*-*-*--28-*
