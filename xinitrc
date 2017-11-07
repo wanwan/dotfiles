@@ -1,6 +1,6 @@
 
 # mouse accel
-xset m 2048 8
+#xset m 2048 8
 
 #swap caps to ctrl
 setxkbmap -option "ctrl:nocaps"
