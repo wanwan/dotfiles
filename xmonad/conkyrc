@@ -6,4 +6,4 @@ total_run_times 0
 use_spacer none
 
 TEXT
-uptime: ^fg(\#ff0000)${loadavg 1 2 3}^fg()  time: ${time %a %b %d %H:%M}  battery: ^fg()${battery_percent BAT0} %
+uptime: ^fg(\#ff0000)${loadavg 1 2 3}^fg()  time: ${time %a %b %d %H:%M}  battery: ^fg()${battery_percent BAT0} % ${battery_percent BAT1} %
