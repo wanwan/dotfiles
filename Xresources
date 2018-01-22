@@ -14,9 +14,10 @@ URxvt*scrollBar: false
 URxvt*scrollTtyOutput: false
 U$xvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
+URxvt*saveLines: 100000
 
 !URxvt.font: xft:Mona:size=12
-URxvt.font: xft:Inconsolata:size=12
+URxvt.font: xft:Inconsolata:size=12,xft:IPAGothic:size=11
 
 !! Color Scheme and Opacity - gruvbox-dark https://github.com/morhetz/gruvbox
 URxvt.depth:                32

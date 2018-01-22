@@ -46,6 +46,8 @@ myManageHook = composeAll . concat $
   , [ className =? "jetbrains-idea" --> doShift "idea" ]
   , [ className =? "skypeforlinux" --> doShift "media" ]
   , [ className =? "whatsapp-desktop" --> doShift "media" ]
+--  , [ className =? "net-minecraft-launcher-Main" --> doShift "media" | doFloat]
+--  , [ className =? "Minecraft 1.12.2" --> doShift "media" | doFloat]
   ]
 
 

@@ -38,6 +38,9 @@
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/elpa")
 
+;; default theme
+(load-theme 'misterioso t)
+
 
 
 ;; japanese font
@@ -146,7 +149,7 @@
 ;; howm
 ;;(defvar howm-view-title-header "#")  ; this should be evaluated in advance to handle markdown
 (setq howm-directory "~/howm.git")
-(add-to-list 'load-path "~/.emacs.d/elisp/howm")
+;;(add-to-list 'load-path "~/.emacs.d/elisp/howm")
 (setq howm-menu-lang 'ja)
 (global-set-key "\C-c,," 'howm-menu)
 (autoload 'howm-menu "howm-mode" "Hitori Otegaru Wiki Modoki" t)
@@ -335,11 +338,11 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
+    (howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(howm-reminder-normal-face ((t (:foreground "deep sky blue")))))
 
