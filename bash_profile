@@ -8,3 +8,6 @@ PATH=$PATH:$ANT_HOME/bin
 
 export PATH
 export ANT_HOME
+
+LC_CTYPE=ja_JP.UTF-8
+export LC_CTYPE
