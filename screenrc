@@ -2,7 +2,7 @@ defencoding utf-8
 startup_message off
 escape ^Tt
 
-defscrollback 10000
+defscrollback 100000
 
 #hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
 hardstatus alwayslastline "%{= rw} %H %{= wk}%-Lw%{= bw}%n%f* %t%{= wk}%+Lw %{= wk}%=%{= gk} %y/%m/%d %c "
