@@ -41,7 +41,7 @@ if [ $# -ne 0 ]; then
     fi
 fi
 
-source make_howm_todo.sh
+source ${HOME}/dotfiles/private/script/make_howm_todo.sh
 
 function make_blog_header() {
 
