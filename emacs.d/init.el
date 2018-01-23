@@ -170,6 +170,17 @@
   '(progn
      (define-key howm-mode-map (kbd "C-c C-c C-c") 'my-save-and-kill-buffer)))
 
+(if (file-exists-p "/usr/bin/rg")
+    (progn
+      (setq howm-view-use-grep t)
+      (setq howm-view-grep-command "rg")
+      (setq howm-view-grep-option "-nH --no-heading --color never")
+      (setq howm-view-grep-extended-option nil)
+      (setq howm-view-grep-fixed-option "-F")
+      (setq howm-view-grep-expr-option nil)
+      (setq howm-view-grep-file-stdin-option nil)))
+
+
 ;file associations
 ;(defun markdown-text-mode ()
 ;  (markdown-mode)       ; major
@@ -226,10 +237,16 @@
 
 
 ;; tramp
+(require 'tramp)
 (when (or (equal system-type 'w32) (equal system-type 'windows-nt)) 
   (setenv "PATH" (concat "c:/putty" ";" (getenv "PATH")))
-  (require 'tramp)
   (setq tramp-default-method "plink"))
+;;;; for android
+(add-to-list 'tramp-connection-properties
+     	     (list (regexp-quote "192.168.11.3") "remote-shell" "sh"))
+(add-to-list 'tramp-remote-path 'tramp-own-remote-path)
+(add-to-list 'tramp-remote-path "/system/xbin")
+;;(add-to-list 'tramp-remote-process-environment "TMPDIR=$HOME") ;; for non-rooted device
 
 
 ;; isearch
@@ -330,6 +347,17 @@
     (select-window other-window)))
 
 (put 'upcase-region 'disabled nil)
+
+;;; 現在のファイルをIntelliJで開く
+(defun open-by-intellij ()
+  (interactive)
+  (shell-command
+   (format "/usr/bin/intellij-idea-ue-bundled-jre --line %d %s >/dev/null 2>&1"
+           (line-number-at-pos)
+           (buffer-file-name))))
+  ;;(shell-command "open -a /usr/bin/intellij-idea-ue-bundled-jre"))
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
