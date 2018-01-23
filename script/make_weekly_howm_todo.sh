@@ -26,7 +26,8 @@ DAY=`${DATE} "+%d"`
 DAY_OF_YEAR=`${DATE} "+%j"`
 DAY_OF_WEEK=`${DATE} "+%u"`
 DAY_OF_MONTH=`${DATE} "+%e"`
-WEEK_NUMBER=`${DATE} "+%U"`
+_WEEK_NUMBER=$((`${DATE} "+%U"` + 1))
+WEEK_NUMBER=`printf %02d $_WEEK_NUMBER`
 
 if [ $# -ne 0 ]; then
     if [[ $1 =~ ([0-9][0-9][0-9][0-9])([0-9][0-9])([0-9][0-9]) ]]; then

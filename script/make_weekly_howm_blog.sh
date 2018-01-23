@@ -26,7 +26,8 @@ DAY=`${DATE} "+%d"`
 DAY_OF_YEAR=`${DATE} "+%j"`
 DAY_OF_WEEK=`${DATE} "+%u"`
 DAY_OF_MONTH=`${DATE} "+%e"`
-WEEK_NUMBER=`${DATE} "+%U"`
+_WEEK_NUMBER=$((`${DATE} "+%U"` + 1))
+WEEK_NUMBER=`printf %02d $_WEEK_NUMBER`
 
 if [ $# -ne 0 ]; then
     if [[ $1 =~ ([0-9][0-9][0-9][0-9])([0-9][0-9])([0-9][0-9]) ]]; then
@@ -47,8 +48,10 @@ function make_blog_header() {
     local ret
     
     ret=""
-    ret+="= [${YEAR}][week][blog] ${WEEK_NUMBER}${NEWLINE}"
-    ret+="[${YEAR}-${MONTH}-${DAY} 00:00]${NEWLINE}"
+    ret+="= [${YEAR}][week][blog] ${WEEK_NUMBER}"
+    ret+="${NEWLINE}"    
+    ret+="[${YEAR}-${MONTH}-${DAY} 00:00]"
+    ret+="${NEWLINE}"
     ret+="${NEWLINE}"
 
     echo ${ret}
@@ -190,7 +193,7 @@ echo "HOWMFILE: " $HOWMFILE
 ## make header
 touch $HOWMFILE
 ret=`make_blog_header`
-echo -n -e ${ret} >> $HOWMFILE
+echo -e ${ret} >> $HOWMFILE
 
 make_day_task ${MONDAY_YEAR} ${MONDAY_MONTH} ${MONDAY_DAY}
 

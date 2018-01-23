@@ -51,7 +51,7 @@ echo "" >> $HOWMFILE
 
 HOWM_DATE_FORM=${YEAR}-${MONTH}-${DAY}
 
-grep -r -e "\[${HOWM_DATE_FORM}\][+@]" ${HOWMDIR} | awk -F ":" '/2/ {print $2}' | sed -e 's/\[[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\]+/{ }/' >> $HOWMFILE
+#grep -r -e "\[${HOWM_DATE_FORM}\][+@]" ${HOWMDIR} | awk -F ":" '/2/ {print $2}' | sed -e 's/\[[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\]+/{ }/' >> $HOWMFILE
 
 ## space
 echo "" >> $HOWMFILE
