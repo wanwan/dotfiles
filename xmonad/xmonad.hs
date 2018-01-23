@@ -29,23 +29,28 @@ myWorkspaces = [ "shell"
 	       ,"idea"
 	       ,"vm"
 	       ,"media"
-	       ,"7"
+	       ,"game"
 	       ,"8"
-	       ,"9"]
+	       ,"system" ]
 
 myStartupHook :: X()
 myStartupHook = do
   setWMName "LG3D"
-  --spawnOn "editor" "emacs"
+  spawnOn "shell" "urxvt -e screen"
+  spawnOn "editor" "emacs"
+  spawnOn "browser" "google-chrome-stable"
+  spawnOn "idea" "intellij-idea-ue-bundled-jre"
+  spawnOn "system" "urxvt -e top"
   --spawnOn "browser" "google-chrome-stable --force-device-scale-factor=2"
   --spawnOn "idea" "intellij-idea-ultimate-edition"  
 
 myManageHook = composeAll . concat $
   [ [ className =? "Emacs" --> doShift "editor" ]
---  , [ className =? "Google-chrome" --> doShift "browser" ]
+  , [ className =? "Google-chrome" --> doShift "browser" ]
   , [ className =? "jetbrains-idea" --> doShift "idea" ]
   , [ className =? "skypeforlinux" --> doShift "media" ]
   , [ className =? "whatsapp-desktop" --> doShift "media" ]
+  , [ title =? "top" --> doShift "system" ]  
 --  , [ className =? "net-minecraft-launcher-Main" --> doShift "media" | doFloat]
 --  , [ className =? "Minecraft 1.12.2" --> doShift "media" | doFloat]
   ]

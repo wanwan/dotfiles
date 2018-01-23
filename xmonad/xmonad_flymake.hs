@@ -29,23 +29,30 @@ myWorkspaces = [ "shell"
 	       ,"idea"
 	       ,"vm"
 	       ,"media"
-	       ,"7"
+	       ,"game"
 	       ,"8"
-	       ,"9"]
+	       ,"system" ]
 
 myStartupHook :: X()
 myStartupHook = do
   setWMName "LG3D"
-  --spawnOn "editor" "emacs"
+  spawnOn "shell" "urxvt -e screen"
+  spawnOn "editor" "emacs"
+  spawnOn "browser" "google-chrome-stable"
+  spawnOn "idea" "intellij-idea-ue-bundled-jre"
+  spawnOn "system" "urxvt -e top"
   --spawnOn "browser" "google-chrome-stable --force-device-scale-factor=2"
   --spawnOn "idea" "intellij-idea-ultimate-edition"  
 
 myManageHook = composeAll . concat $
   [ [ className =? "Emacs" --> doShift "editor" ]
---  , [ className =? "Google-chrome" --> doShift "browser" ]
+  , [ className =? "Google-chrome" --> doShift "browser" ]
   , [ className =? "jetbrains-idea" --> doShift "idea" ]
   , [ className =? "skypeforlinux" --> doShift "media" ]
   , [ className =? "whatsapp-desktop" --> doShift "media" ]
+  , [ title =? "top" --> doShift "system" ]  
+--  , [ className =? "net-minecraft-launcher-Main" --> doShift "media" | doFloat]
+--  , [ className =? "Minecraft 1.12.2" --> doShift "media" | doFloat]
   ]
 
 
@@ -72,7 +79,7 @@ my_dzen_PP h = dzenPP
 
 
 myXmonadBar = "dzen2 -x '0' -y '0' -h '32' -w '1600' -ta 'l' -fg '#FFFFFF' -bg '#1B1D1E' -fn 'terminus-12' -dock"
-myStatusBar = "conky -c /home/waka/.xmonad/conkyrc | dzen2 -x '1600' -w '1600' -h '32' -ta 'r' -bg '#1B1D1E' -fg '#FFFFFF' -y '0' -fn 'terminus-12' -dock"
+myStatusBar = "LC_TIME=C conky -c /home/waka/.xmonad/conkyrc | dzen2 -x '1600' -w '1600' -h '32' -ta 'r' -bg '#1B1D1E' -fg '#FFFFFF' -y '0' -fn 'terminus-12' -dock"
 
 
 --customLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full ||| simpleFloat
