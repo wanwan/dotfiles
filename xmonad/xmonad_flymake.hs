@@ -41,6 +41,7 @@ myStartupHook = do
   spawnOn "browser" "google-chrome-stable"
   spawnOn "idea" "intellij-idea-ue-bundled-jre"
   spawnOn "system" "urxvt -e top"
+  spawnOn "system" "urxvt -e neofetch"  
   --spawnOn "browser" "google-chrome-stable --force-device-scale-factor=2"
   --spawnOn "idea" "intellij-idea-ultimate-edition"  
 
@@ -50,7 +51,8 @@ myManageHook = composeAll . concat $
   , [ className =? "jetbrains-idea" --> doShift "idea" ]
   , [ className =? "skypeforlinux" --> doShift "media" ]
   , [ className =? "whatsapp-desktop" --> doShift "media" ]
-  , [ title =? "top" --> doShift "system" ]  
+  , [ title =? "top" --> doShift "system" ]
+  , [ title =? "neofetch" --> doShift "system" ]    
 --  , [ className =? "net-minecraft-launcher-Main" --> doShift "media" | doFloat]
 --  , [ className =? "Minecraft 1.12.2" --> doShift "media" | doFloat]
   ]
@@ -85,7 +87,7 @@ myStatusBar = "LC_TIME=C conky -c /home/waka/.xmonad/conkyrc | dzen2 -x '1600' -
 --customLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full ||| simpleFloat
 --  where
 --    tiled   = ResizableTall 1 (2/100) (1/2) []
-customLayout = avoidStruts (tiled) ||| Full 
+customLayout = onWorkspace "system" tiled $ avoidStruts (tiled) ||| Full 
   where
     tiled = ResizableTall 1 (2/100) (1/2) []
 --customLayout = Full ||| avoidStruts simpleFloat
