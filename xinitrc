@@ -18,5 +18,7 @@ export QT_IM_MODULE='uim'
 uim-xim &
 export XMODIFIERS='@im=uim'
 
+xprop -root -remove _NET_WORKAREA
+
 #exec awesome
 exec xmonad >> /home/waka/tmp/xmonad.log

@@ -28,9 +28,9 @@ myWorkspaces = [ "shell"
 	       ,"browser"
 	       ,"idea"
 	       ,"vm"
+	       ,"chat"
 	       ,"media"
 	       ,"game"
-	       ,"8"
 	       ,"system" ]
 
 myStartupHook :: X()
@@ -41,6 +41,7 @@ myStartupHook = do
   spawnOn "browser" "google-chrome-stable"
   spawnOn "idea" "intellij-idea-ue-bundled-jre"
   spawnOn "system" "urxvt -e top"
+  spawnOn "system" "urxvt -e neofetch"  
   --spawnOn "browser" "google-chrome-stable --force-device-scale-factor=2"
   --spawnOn "idea" "intellij-idea-ultimate-edition"  
 
@@ -50,7 +51,8 @@ myManageHook = composeAll . concat $
   , [ className =? "jetbrains-idea" --> doShift "idea" ]
   , [ className =? "skypeforlinux" --> doShift "media" ]
   , [ className =? "whatsapp-desktop" --> doShift "media" ]
-  , [ title =? "top" --> doShift "system" ]  
+  , [ title =? "top" --> doShift "system" ]
+  , [ title =? "neofetch" --> doShift "system" ]    
 --  , [ className =? "net-minecraft-launcher-Main" --> doShift "media" | doFloat]
 --  , [ className =? "Minecraft 1.12.2" --> doShift "media" | doFloat]
   ]
