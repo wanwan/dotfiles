@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# original script
+# https://gist.github.com/ploth/556ef1620be411c8f66f96b9fc570bb3
+
 WWAN_IF=wwp0s20f0u6i12
 
 if [ `id -u` -ne 0 ]; then
