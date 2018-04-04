@@ -11,9 +11,6 @@ fi
 
 if [[ $1 == 'start' ]]; then
 
-  # start modem manager service
-  #/etc/init.d/modemmanager start
-
   # unblock the wwan device
   rfkill_device=$(rfkill list | grep tpacpi_wwan_sw | awk 'BEGIN { FS = ":" } ; { print $1 }')
   rfkill unblock ${rfkill_device}
@@ -53,8 +50,8 @@ if [[ $1 == 'start' ]]; then
 
   # deactivate all other devices
   # important cause it removes the default gateway and you dont want to have multiple
-  ip link set enp0s31f6 down
-  ip link set wlp58s0 down  
+  # ip link set enp0s31f6 down
+  # ip link set wlp58s0 down  
   
   if [[ $2 == '' || $2 == '4' ]]; then
     # ipv4
@@ -84,8 +81,5 @@ elif [[ $1 == 'stop' ]]; then
   # deactivate device
   ip link set $WWAN_IF down
   ip add flush dev $WWAN_IF
-
-  # stop modem manager service
-  #/etc/init.d/modemmanager stop
 
 fi
