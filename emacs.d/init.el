@@ -43,6 +43,11 @@
 
 
 
+; ずれ確認用
+; 0123456789012345678901234567890123456789
+; ｱｲｳｴｵｱｲｳｴｵｱｲｳｴｵｱｲｳｴｵｱｲｳｴｵｱｲｳｴｵｱｲｳｴｵｱｲｳｴｵ
+; あいうえおあいうえおあいうえおあいうえお
+
 ;; japanese font
 (when (eq window-system 'ns)
   (create-fontset-from-ascii-font "Menlo-11:weight=normal:slant=normal" nil "menlokakugo")
@@ -57,9 +62,11 @@
   ;; Japanese font
   (set-default-font "Inconsolata-11")
   (set-face-font 'variable-pitch "Inconsolata-11")
-  (set-fontset-font (frame-parameter nil 'font)
-                  'japanese-jisx0208
-                  '("Takaoゴシック" . "unicode-bmp")))
+  (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty")))
+  ;;(set-fontset-font t 'japanese-jisx0208 (font-spec :family "IPAExGothic")))
+  ;;(set-fontset-font (frame-parameter nil 'font)
+  ;;                'japanese-jisx0208
+  ;;                '("Takaoゴシック" . "unicode-bmp")))
 
 ;; for windows
 (when (eq window-system 'w32)
