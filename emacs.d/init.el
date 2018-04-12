@@ -25,6 +25,10 @@
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 
+;; disable upper/lower region cause sometime mistype C-x u (undo)
+(put 'upcase-region 'disabled t)
+(put 'upcase-region 'disabled t)
+
 ;; os depend (for mac)
 (when (fboundp 'mac-add-ignore-shortcut) (mac-add-ignore-shortcut '(control ? )))
 
@@ -352,8 +356,6 @@
       (set-window-point (selected-window) other-window-point)
       (set-window-start (selected-window) other-window-start))
     (select-window other-window)))
-
-(put 'upcase-region 'disabled nil)
 
 ;;; 現在のファイルをIntelliJで開く
 (defun open-by-intellij ()
