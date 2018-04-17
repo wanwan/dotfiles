@@ -51,10 +51,16 @@ myManageHook = composeAll . concat $
   , [ className =? "jetbrains-idea" --> doShift "idea" ]
   , [ className =? "skypeforlinux" --> doShift "media" ]
   , [ className =? "whatsapp-desktop" --> doShift "media" ]
+  , [ className	=? "emulator64-x86" --> doShift "idea" ]
+  , [ className	=? "emulator-arm"   --> doShift "idea" ]
+  , [ className =? "net-minecraft-launcher-Main" --> doShift "media" ]
+  , [ className =? "Minecraft 1.12.2" --> doShift "media" ]
+  , [ className	=? "emulator64-x86" --> doFloat ]
+  , [ className	=? "emulator-arm"   --> doFloat ]
+  , [ className =? "net-minecraft-launcher-Main" --> doFloat]
+  , [ className =? "Minecraft 1.12.2" --> doFloat]
   , [ title =? "top" --> doShift "system" ]
   , [ title =? "neofetch" --> doShift "system" ]    
---  , [ className =? "net-minecraft-launcher-Main" --> doShift "media" | doFloat]
---  , [ className =? "Minecraft 1.12.2" --> doShift "media" | doFloat]
   ]
 
 
