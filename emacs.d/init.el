@@ -27,7 +27,6 @@
 
 ;; disable upper/lower region cause sometime mistype C-x u (undo)
 (put 'upcase-region 'disabled t)
-(put 'upcase-region 'disabled t)
 
 ;; os depend (for mac)
 (when (fboundp 'mac-add-ignore-shortcut) (mac-add-ignore-shortcut '(control ? )))
@@ -383,3 +382,4 @@
  ;; If there is more than one, they won't work right.
  '(howm-reminder-normal-face ((t (:foreground "deep sky blue")))))
 
+(put 'upcase-region 'disabled nil)
