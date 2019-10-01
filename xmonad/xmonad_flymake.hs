@@ -1,113 +1,78 @@
-import System.IO
-import System.Exit
-
 import XMonad
-import XMonad.Util.Run
-import XMonad.Config.Desktop
-import XMonad.Hooks.SetWMName
-import XMonad.Actions.SpawnOn
-import XMonad.Layout.SimpleFloat
-import XMonad.Layout.ResizableTile
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
-import XMonad.Util.EZConfig (additionalKeys)
-import XMonad.Hooks.EwmhDesktops
+import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.EZConfig(additionalKeys)
+import System.IO
+
+import XMonad.Actions.WindowGo
+
+import XMonad.Layout.MultiToggle
+import XMonad.Layout.MultiToggle.Instances
+import XMonad.Config.Desktop (desktopLayoutModifiers)
+import XMonad.Layout.Named
+
+
 
 -- define default terminal
-myTerminal = "urxvt -e screen"
+myTerminal = "/usr/bin/urxvt -e screen"
 
 -- define mod key
-myModMask = mod4Mask -- Win key or Super_L
+myModMask = mod1Mask -- Alt_L
+--myModMask = mod3Mask
+--myModMask = mod4Mask
 
 -- define window border
 myBorderWidth = 3
 
--- define workspace
-myWorkspaces = [ "shell"
-	       ,"editor"
-	       ,"browser"
-	       ,"idea"
-	       ,"vm"
-	       ,"media"
-	       ,"game"
-	       ,"8"
-	       ,"system" ]
 
-myStartupHook :: X()
-myStartupHook = do
-  setWMName "LG3D"
-  spawnOn "shell" "urxvt -e screen"
-  spawnOn "editor" "emacs"
-  spawnOn "browser" "google-chrome-stable"
-  spawnOn "idea" "intellij-idea-ue-bundled-jre"
-  spawnOn "system" "urxvt -e top"
-  spawnOn "system" "urxvt -e neofetch"  
-  --spawnOn "browser" "google-chrome-stable --force-device-scale-factor=2"
-  --spawnOn "idea" "intellij-idea-ultimate-edition"  
+-- for keyboard shortcut mod4 is windows ShortcutKey
+--modm = mod4Mask
 
-myManageHook = composeAll . concat $
-  [ [ className =? "Emacs" --> doShift "editor" ]
-  , [ className =? "Google-chrome" --> doShift "browser" ]
-  , [ className =? "jetbrains-idea" --> doShift "idea" ]
-  , [ className =? "skypeforlinux" --> doShift "media" ]
-  , [ className =? "whatsapp-desktop" --> doShift "media" ]
-  , [ title =? "top" --> doShift "system" ]
-  , [ title =? "neofetch" --> doShift "system" ]    
---  , [ className =? "net-minecraft-launcher-Main" --> doShift "media" | doFloat]
---  , [ className =? "Minecraft 1.12.2" --> doShift "media" | doFloat]
-  ]
+--tall = Tall 1 (3/100) (1/2)
 
-
--- Define ShortCuts
-myShortCuts = [
---    ((mod4Mask, xK_l), spawn "slock"),
---    ((0, xF86XK_MonBrightnessUp), spawn "xbacklight +20"),
---    ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -20"),
-      ((mod4Mask, xK_c), spawn "google-chrome-stable")
---    ((mod4Mask, xK_m), spawn "mysql-workbench"),
---    ((mod4Mask, xK_t), spawn "thunderbird"),
---    ((mod4Mask, xK_a), spawn "sleep 0.2; scrot -s -e 'mv $f /data/samba/shots/'"),
-    , ((mod4Mask, xK_b), sendMessage ToggleStruts)
---    ((mod1Mask, xK_Tab), goToSelected def),
---    ((mod1Mask, xK_p), shellPrompt myXmonadPromptConfig)
-    ]
-
-
---my_dzen_PP h = defaultPP
-my_dzen_PP h = dzenPP
-       { 
-         ppOutput          = hPutStrLn h
-       }  
-
-
-myXmonadBar = "dzen2 -x '0' -y '0' -h '32' -w '1600' -ta 'l' -fg '#FFFFFF' -bg '#1B1D1E' -fn 'terminus-12' -dock"
-myStatusBar = "LC_TIME=C conky -c /home/waka/.xmonad/conkyrc | dzen2 -x '1600' -w '1600' -h '32' -ta 'r' -bg '#1B1D1E' -fg '#FFFFFF' -y '0' -fn 'terminus-12' -dock"
-
-
---customLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full ||| simpleFloat
---  where
---    tiled   = ResizableTall 1 (2/100) (1/2) []
-customLayout = onWorkspace "system" tiled $ avoidStruts (tiled) ||| Full 
-  where
-    tiled = ResizableTall 1 (2/100) (1/2) []
---customLayout = Full ||| avoidStruts simpleFloat
-
-
+{-|
 main = do
-  dzenLeftBar <- spawnPipe myXmonadBar
-  spawn myStatusBar
-  --xmonad $ defaultConfig
-  xmonad $ desktopConfig   
-     { terminal		= myTerminal
-     , modMask		= myModMask
-     , borderWidth	= myBorderWidth
-     , workspaces	= myWorkspaces     
---     , manageHook       = myManageHook <+> manageHook defaultConfig <+> manageDocks
-     , manageHook       = myManageHook <+> manageHook desktopConfig <+> manageDocks     
---     , startupHook      = myStartupHook <+> docksStartupHook
-     , startupHook      = myStartupHook <+> docksStartupHook     
-     , layoutHook       = customLayout
-     , logHook          = dynamicLogWithPP $ my_dzen_PP dzenLeftBar
-     , handleEventHook  = docksEventHook
---     , handleEventHook  = docksEventHook <+> fullscreenEventHook
-     } `additionalKeys` myShortCuts
+        xmproc <- spawnPipe "/usr/bin/xmobar /home/waka/.xmobarrc"
+        xmonad $ defaultConfig
+        { manageHook = manageDocks <+> manageHook defaultConfig
+        --, layoutHook = avoidStruts  $  layoutHook defaultConfig
+    , layoutHook = mkToggle1 FULL $ desktopLayoutModifiers (named "V" tall ||| (named "H" $ Mirror tall))
+
+      -- sometimes, xmonad freese,comment out these lines 
+          -- , logHook = dynamicLogWithPP $ xmobarPP
+          -- { ppOutput = hPutStrLn xmproc
+          --    , ppTitle = xmobarColor "green" "" . shorten 50
+          -- }
+
+          -- Border settings
+      , borderWidth = 2
+          , normalBorderColor  = "#99ccff"
+          , focusedBorderColor = "#0033dd" -- blue
+
+          -- Rebind Mod to the Hiragana_Katakana 
+      , modMask = mod3Mask
+      -- , modMask = mod1Mask        
+
+          -- use rxvt-unicode 
+      , terminal = "urxvt" 
+          }
+          -- windows キーでショートカット
+          `additionalKeys`
+          [
+            ((modm, xK_l), spawn "gnome-screensaver-command -l")
+          , ((modm, xK_t), runOrRaise "urxvt" (className =? "URxvt"))
+          , ((modm, xK_k), runOrRaise "conkeror" (className =? "conkeror"))
+      , ((modm, xK_f), sendMessage (Toggle FULL))
+          , ((modm, xK_q), spawn "xinput --set-prop \"SynPS/2 Synaptics TouchPad\" \"Device Enabled\" 0")
+          , ((modm, xK_w), spawn "xinput --set-prop \"SynPS/2 Synaptics TouchPad\" \"Device Enabled\" 1")
+          ]
+
+-}
+
+
+main = xmonad =<< xmobar defaultConfig
+        { terminal = myTerminal
+        , modMask = myModMask
+        , borderWidth = myBorderWidth
+        }
