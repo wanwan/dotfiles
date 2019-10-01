@@ -2,7 +2,7 @@
 ! ! is comment
 
 !Xft.dpi: 210
-Xft.dpi: 140
+Xft.dpi: 96
 Xft.autohint: 0
 Xft.Lcdfilter: lcddefault
 Xft.hintstyle: hintfull
@@ -47,15 +47,17 @@ URxvt.scrollColor:          [90]#504945
 
 
 Emacs*UseXIM: false
+Emacs24*UseXIM: false
+*inputMethod: uim
 
 ! for X error message like xmonad
-!Xmessage*fontSet: -*-*-*-*-*--28-*
-Xmessage*font: -*-*-*-*-*--28-*
+!Xmessage*fontSet: -*-*-*-*-*--18-*
+Xmessage*font: -*-*-*-*-*--20-*
 
 
-xfontsel*font: -*-*-*-*-*--28-*
+xfontsel*font: -*-*-*-*-*--14-*
 
-dzen2*font: -*-terminus-bold-*-*-*-32-*-*-*-*-*-*-*
+dzen2*font: -*-terminus-bold-*-*-*-16-*-*-*-*-*-*-*
 
 
-*font: -*-*-*-*-*--28-*
+*font: -*-*-*-*-*--14-*
