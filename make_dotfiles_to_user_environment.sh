@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -d $HOME/bin ]; then
+	mkdir $HOME/bin
+fi
+
 git clone https://github.com/wanwan/dotfiles.private.git private
 ln -s $HOME/dotfiles/emacs.d $HOME/.emacs.d
 ln -s $HOME/dotfiles/bashrc $HOME/.bashrc
