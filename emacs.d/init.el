@@ -8,6 +8,7 @@
 (global-set-key "\C-h" 'delete-backward-char)
 (global-set-key [C-tab] 'other-window)
 (global-set-key "\M-g" 'goto-line)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 ;;(menu-bar-mode t)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -27,6 +28,7 @@
 
 ;; disable upper/lower region cause sometime mistype C-x u (undo)
 (put 'upcase-region 'disabled t)
+(put 'downcase-region 'disabled t)
 
 ;; os depend (for mac)
 (when (fboundp 'mac-add-ignore-shortcut) (mac-add-ignore-shortcut '(control ? )))
@@ -290,6 +292,15 @@
 
 (setq markdown-open-command "markdown_viewer.sh")
 
+;; C / C++
+(setq my-c-style
+  '((c-comment-only-line-offset . 4)
+    (c-cleanup-list . (scope-operator
+                       empty-defun-braces
+                       defun-close-semi))))
+(add-hook 'c-mode-common-hook
+  (lambda () (c-add-style "my-style" my-c-style t)))
+
 ;; haskell
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/haskell-mode-20170519.1555")
 (autoload 'haskell-mode "haskell-mode" nil t)
@@ -329,7 +340,7 @@
      (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
      (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
      (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
-     (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+     ;;(define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
      (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
      (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
      (define-key helm-gtags-mode-map (kbd "C-t") 'helm-gtags-pop-stack)
@@ -372,6 +383,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(desktop-save-mode t)
  '(package-selected-packages
    (quote
     (howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
@@ -382,4 +394,3 @@
  ;; If there is more than one, they won't work right.
  '(howm-reminder-normal-face ((t (:foreground "deep sky blue")))))
 
-(put 'upcase-region 'disabled nil)
