@@ -131,31 +131,30 @@
 ;; pomodoro
 ;; http://d.hatena.ne.jp/syohex/20121215/1355579575
 ;; https://raw.github.com/syohex/emacs-utils/master/pomodoro.el
-;;(require 'pomodoro)
-;;(setq pomodoro:file "~/.emacs.d/pomodoro.txt")
-;;(setq pomodoro:work-time 1
-;;      pomodoro:rest-time 1
-;;      pomodoro:long-rest-time 1) ;; 作業時間関連
-;;(require 'notifications)
-;;(defun* my/pomodoro-notification (&key (title "Pomodoro")
-;;                                       body
-;;                                       (urgency 'critical))
-;;  (notifications-notify :title title :body body :urgency urgency))
-;;
-;;;; 作業終了後の hook
-;;(add-hook 'pomodoro:finish-work-hook
-;;          (lambda ()
-;;            (my/pomodoro-notification :body "Work is Finish")))
-;;
-;;;; 休憩終了後の hook
-;;(add-hook 'pomodoro:finish-rest-hook
-;;          (lambda ()
-;;            (my/pomodoro-notification :body "Break time is finished")))
-;;
-;;;; 長期休憩後の hook
-;;(add-hook 'pomodoro:long-rest-hook
-;;          (lambda ()
-;;            (my/pomodoro-notification :body "Long Break time now")))
+(require 'pomodoro)
+(setq pomodoro:file "~/.emacs.d/pomodoro.txt")
+(setq pomodoro:work-time 1
+      pomodoro:rest-time 1
+      pomodoro:long-rest-time 1) ;; 作業時間関連
+(require 'notifications)
+(defun my/pomodoro-notification (&key (title "Pomodoro")
+                                       body
+                                       (urgency 'critical))
+  (notifications-notify :title title :body body :urgency urgency))
+
+;; 作業終了後の hook
+(add-hook 'pomodoro:finish-work-hook
+          (lambda ()
+            (my/pomodoro-notification :body "Work is Finish")))
+;; 休憩終了後の hook
+(add-hook 'pomodoro:finish-rest-hook
+          (lambda ()
+            (my/pomodoro-notification :body "Break time is finished")))
+
+;; 長期休憩後の hook
+(add-hook 'pomodoro:long-rest-hook
+          (lambda ()
+            (my/pomodoro-notification :body "Long Break time now")))
 
 ;; howm
 ;;(defvar howm-view-title-header "#")  ; this should be evaluated in advance to handle markdown
@@ -330,7 +329,7 @@
      (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
      (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
      (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
-     (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+;     (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
      (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
      (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
      (define-key helm-gtags-mode-map (kbd "C-t") 'helm-gtags-pop-stack)
