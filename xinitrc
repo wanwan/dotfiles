@@ -7,7 +7,7 @@ setxkbmap -option "ctrl:nocaps"
 
 #wall paper
 #setroot ~/wallpapers/5290131_p0.jpg
-setroot ~/wallpapers/Xmbindings.png
+#setroot ~/wallpapers/Xmbindings.png
 
 if [ -f ~/.Xresources ]; then
   xrdb -merge ~/.Xresources
