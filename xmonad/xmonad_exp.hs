@@ -18,16 +18,24 @@ import XMonad.Layout.Named
 myTerminal = "/usr/bin/urxvt -e screen"
 
 -- define mod key
-myModMask = mod1Mask -- Alt_L
+--myModMask = mod1Mask -- Alt_L
 --myModMask = mod3Mask
---myModMask = mod4Mask
+myModMask = mod4Mask
 
 -- define window border
 myBorderWidth = 3
 
+-- define workspace
+myWorkspaces = [ "shell"
+	       ,"editor"
+	       ,"browser"
+	       ,"idea"
+	       ,"vm"
+	       ,"chat"
+	       ,"media"
+	       ,"game"
+	       ,"system" ]
 
--- for keyboard shortcut mod4 is windows ShortcutKey
---modm = mod4Mask
 
 --tall = Tall 1 (3/100) (1/2)
 
@@ -75,4 +83,5 @@ main = xmonad =<< xmobar defaultConfig
         { terminal = myTerminal
         , modMask = myModMask
         , borderWidth = myBorderWidth
+        , workspaces	= myWorkspaces
         }

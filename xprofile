@@ -4,4 +4,4 @@ uim-xim &
 export XMODIFIERS='@im=uim'
 
 #/usr/bin/urxvt -e screen &
-xmodmap ~/.Xmodmap
+#xmodmap ~/.Xmodmap
