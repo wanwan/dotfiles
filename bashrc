@@ -17,7 +17,9 @@ PS1="\h:\w $ "
 
 export PS1
 
-# for mac os only
+export LIBVIRT_DEFAULT_URI="qemu:///system"
+
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias ls='ls -F'
 alias intellij='LANG=ja_JP.UTF-8 intellij-idea-ue-bundled-jre'
+alias virt='virt-viewer -c qemu:///system'
