@@ -29,9 +29,11 @@ tall = Tall 1 (3/100) (1/2)
 
 main = 	xmonad defaultConfig
 	{ 
+		manageHook = manageDocks <+> manageHook defaultConfig,
+		layoutHook = mkToggle1 FULL $ desktopLayoutModifiers (named "V" tall ||| (named "H" $ Mirror tall)),
 		borderWidth = 2,
 		normalBorderColor  = "#99ccff",
-		focusedBorderColor = "#ff0000", -- blue
+		focusedBorderColor = "#0033dd", -- blue
 		modMask = myModMask,
 		terminal = myTerminal
           }
