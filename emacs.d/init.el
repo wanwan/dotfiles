@@ -132,31 +132,30 @@
 ;; pomodoro
 ;; http://d.hatena.ne.jp/syohex/20121215/1355579575
 ;; https://raw.github.com/syohex/emacs-utils/master/pomodoro.el
-;;(require 'pomodoro)
-;;(setq pomodoro:file "~/.emacs.d/pomodoro.txt")
-;;(setq pomodoro:work-time 1
-;;      pomodoro:rest-time 1
-;;      pomodoro:long-rest-time 1) ;; 作業時間関連
-;;(require 'notifications)
-;;(defun* my/pomodoro-notification (&key (title "Pomodoro")
-;;                                       body
-;;                                       (urgency 'critical))
-;;  (notifications-notify :title title :body body :urgency urgency))
-;;
-;;;; 作業終了後の hook
-;;(add-hook 'pomodoro:finish-work-hook
-;;          (lambda ()
-;;            (my/pomodoro-notification :body "Work is Finish")))
-;;
-;;;; 休憩終了後の hook
-;;(add-hook 'pomodoro:finish-rest-hook
-;;          (lambda ()
-;;            (my/pomodoro-notification :body "Break time is finished")))
-;;
-;;;; 長期休憩後の hook
-;;(add-hook 'pomodoro:long-rest-hook
-;;          (lambda ()
-;;            (my/pomodoro-notification :body "Long Break time now")))
+(require 'pomodoro)
+(setq pomodoro:file "~/.emacs.d/pomodoro.txt")
+(setq pomodoro:work-time 1
+      pomodoro:rest-time 1
+      pomodoro:long-rest-time 1) ;; 作業時間関連
+(require 'notifications)
+(defun my/pomodoro-notification (&key (title "Pomodoro")
+                                       body
+                                       (urgency 'critical))
+  (notifications-notify :title title :body body :urgency urgency))
+
+;; 作業終了後の hook
+(add-hook 'pomodoro:finish-work-hook
+          (lambda ()
+            (my/pomodoro-notification :body "Work is Finish")))
+;; 休憩終了後の hook
+(add-hook 'pomodoro:finish-rest-hook
+          (lambda ()
+            (my/pomodoro-notification :body "Break time is finished")))
+
+;; 長期休憩後の hook
+(add-hook 'pomodoro:long-rest-hook
+          (lambda ()
+            (my/pomodoro-notification :body "Long Break time now")))
 
 ;; howm
 ;;(defvar howm-view-title-header "#")  ; this should be evaluated in advance to handle markdown
@@ -375,6 +374,22 @@
            (line-number-at-pos)
            (buffer-file-name))))
   ;;(shell-command "open -a /usr/bin/intellij-idea-ue-bundled-jre"))
+
+;; persp-mode
+(setq persp-keymap-prefix (kbd "C-c p")) ;prefix
+(setq persp-add-on-switch-or-display t) ;バッファを切り替えたら見えるようにする
+(persp-mode 1)
+(defun persp-register-buffers-on-create ()
+  (interactive)
+  (dolist (bufname (condition-case _
+                       (helm-comp-read
+                        "Buffers: "
+                        (mapcar 'buffer-name (buffer-list))
+                        :must-match t
+                        :marked-candidates t)
+                     (quit nil)))
+    (persp-add-buffer (get-buffer bufname))))
+(add-hook 'persp-activated-hook 'persp-register-buffers-on-create)
 
 
 
