@@ -1,1 +1,1 @@
-xmonad_ruri.hs
+xmonad_lela.hs
