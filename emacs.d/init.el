@@ -391,6 +391,10 @@
     (persp-add-buffer (get-buffer bufname))))
 (add-hook 'persp-activated-hook 'persp-register-buffers-on-create)
 
+;; desktop
+(require 'desktop)
+(setq desktop-path (list "~/.emacs_desktop"))
+(desktop-save-mode t)
 
 
 (custom-set-variables
@@ -398,7 +402,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(desktop-save-mode t)
  '(package-selected-packages
    (quote
     (howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
