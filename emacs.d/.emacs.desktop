@@ -2,21 +2,76 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Fri Oct 25 17:03:15 2019
+;; Created Mon Oct 28 15:11:47 2019
 ;; Desktop file format version 206
 ;; Emacs version 24.5.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (23986 44099 817640 400000) (desktop . "206") "waka@lela" nil nil ((((font-backend xft x) (font . "-PfEd-Inconsolata-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Inconsolata-11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#e1e1e0") (background-color . "#2d3743") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "#415160") (environment) (persp . [cl-struct-perspective "howm" ("Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity") (((min-height . 4) (min-width . 20) (min-height-ignore . 3) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 64) (min-pixel-width . 160) (min-pixel-height-ignore . 48) (min-pixel-width-ignore . 64) (min-pixel-height-safe . 16) (min-pixel-width-safe . 32)) hc (pixel-width . 1916) (pixel-height . 1060) (total-width . 240) (total-height . 66) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 956) (pixel-height . 1060) (total-width . 120) (total-height . 66) (normal-height . 1.0) (normal-width . 0.5) (buffer "*howmM:%menu%*" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1))) (leaf (last . t) (pixel-width . 960) (pixel-height . 1060) (total-width . 120) (total-height . 66) (normal-height . 1.0) (normal-width . 0.5) (buffer "action-lock.el" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 9910) (start . 8738)))) nil nil nil nil]) (persp-buffer-predicate-old . "Unprintable entity") (persp-buffer-predicate-generated . "Unprintable entity") (frameset--id . "A534-3636-A336-78FE") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (visibility . icon) (display . ":0") (explicit-name) (frame-cursor-color . "#415160") (frame-foreground-color . "#e1e1e0") (frame-background-color . "#2d3743") (height . 67) (width . 237)) ((min-height . 4) (min-width . 20) (min-height-ignore . 3) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 64) (min-pixel-width . 160) (min-pixel-height-ignore . 48) (min-pixel-width-ignore . 64) (min-pixel-height-safe . 16) (min-pixel-width-safe . 32)) hc (pixel-width . 1916) (pixel-height . 1060) (total-width . 240) (total-height . 66) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 956) (pixel-height . 1060) (total-width . 120) (total-height . 66) (normal-height . 1.0) (normal-width . 0.4989561586638831) (buffer "howm-version.el" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 107) (start . 1))) (leaf (last . t) (pixel-width . 960) (pixel-height . 1060) (total-width . 120) (total-height . 66) (normal-height . 1.0) (normal-width . 0.5010438413361169) (buffer "action-lock.el" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars 0 0 nil nil) (vscroll . 0) (dedicated) (point . 9910) (start . 8738)))))])
+(setq desktop-saved-frameset [frameset 1 (23990 34467 230336 48000) (desktop . "206") "waka@lela" nil nil ((((font-backend xft x) (font . "-PfEd-Inconsolata-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Inconsolata-11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#e1e1e0") (background-color . "#2d3743") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "#415160") (environment) (persp . [cl-struct-perspective "howm" ("Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity") (((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 64) (min-pixel-width . 80) (min-pixel-height-ignore . 48) (min-pixel-width-ignore . 32) (min-pixel-height-safe . 16) (min-pixel-width-safe . 16)) leaf (pixel-width . 1916) (pixel-height . 1060) (total-width . 240) (total-height . 66) (normal-height . 1.0) (normal-width . 1.0) (buffer "init.el" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 13516) (start . 12518))) nil nil nil nil]) (persp-buffer-predicate-old . "Unprintable entity") (persp-buffer-predicate-generated . "Unprintable entity") (frameset--id . "A534-3636-A336-78FE") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (visibility . t) (display . ":0") (explicit-name) (frame-cursor-color . "#415160") (frame-foreground-color . "#e1e1e0") (frame-background-color . "#2d3743") (height . 67) (width . 237) (left . 0) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 64) (min-pixel-width . 80) (min-pixel-height-ignore . 48) (min-pixel-width-ignore . 32) (min-pixel-height-safe . 16) (min-pixel-width-safe . 16)) leaf (pixel-width . 1916) (pixel-height . 1060) (total-width . 240) (total-height . 66) (normal-height . 1.0) (normal-width . 1.0) (buffer "init.el" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 13516) (start . 12518))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("magic" "AL" "RET" "howm" "vers" "version" "eli" "C-j" "RET" "R" "howm" "hook" "mode" "vert" "howm-view-summary-buffer" "howm"))
+(setq search-ring '("desktop" "Init" "magic" "AL" "RET" "howm" "vers" "version" "eli" "C-j" "RET" "R" "howm" "hook" "mode" "vert"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/.emacs.d/elisp/" "~/dotfiles/emacs.d/elpa/howm-20171225.652/" "~/.emacs.d/" "~/dotfiles/emacs.d/elpa/howm-20171225.652/" "~/dotfiles/emacs.d/" "~/.emacs.d/init.el" "~/.emacs.d/ini" "~/dotfiles/emacs.d/init.el" "~/.emacs.d/init.el" "~/.emacs.d/" "~/.emacs.d/init.el" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/" "~/workspace/hgrm/master/hagoromo/services/soundservice/src/include/" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/include/" "~/workspace/hgrm/master/hagoromo/services/soundservice/src/filters/stationary/include/" "~/workspace/hgrm/master/hagoromo/services/soundservice/" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/include/F2i.h" "~/workspace/hgrm/master/hagoromo/services/soundservice/src/filters/stationary/include/F2i.h" "~/workspace/hgrm/master/hagoromo/services/F2i.h.diff" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/tools/make_effector.sh" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/F2i/F2i.cc" "~/workspace/hgrm/master/hagoromo/services/soundservice/src/filters/stationary/F2i/F2i.cc" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/tools/" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/" "~/workspace/hgrm/master/hagoromo/services/soundservice/src/filters" "~/workspace/" "~/works/study/osaskbook/"))
+(setq file-name-history '("~/dotfiles/emacs.d/init.el" "~/.emacs.d/elisp/" "~/dotfiles/emacs.d/elpa/howm-20171225.652/" "~/.emacs.d/" "~/dotfiles/emacs.d/elpa/howm-20171225.652/" "~/dotfiles/emacs.d/" "~/.emacs.d/init.el" "~/.emacs.d/ini" "~/dotfiles/emacs.d/init.el" "~/.emacs.d/init.el" "~/.emacs.d/" "~/.emacs.d/init.el" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/" "~/workspace/hgrm/master/hagoromo/services/soundservice/src/include/" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/include/" "~/workspace/hgrm/master/hagoromo/services/soundservice/src/filters/stationary/include/" "~/workspace/hgrm/master/hagoromo/services/soundservice/" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/include/F2i.h" "~/workspace/hgrm/master/hagoromo/services/soundservice/src/filters/stationary/include/F2i.h" "~/workspace/hgrm/master/hagoromo/services/F2i.h.diff" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/tools/make_effector.sh" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/F2i/F2i.cc" "~/workspace/hgrm/master/hagoromo/services/soundservice/src/filters/stationary/F2i/F2i.cc" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/tools/" "~/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/" "~/workspace/hgrm/master/hagoromo/services/soundservice/src/filters" "~/workspace/" "~/works/study/osaskbook/"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/waka/dotfiles/emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(persp-mode)
+  13516
+  '(13495 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/waka/howm.git/2019/10/2019-10-25-171922.txt"
+  "2019-10-25-171922.txt"
+  'text-mode
+  '(persp-mode action-lock-mode howm-mode)
+  54
+  '(3 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/waka/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/tools/make_effector.sh"
+  "make_effector.sh"
+  'sh-mode
+  '(persp-mode)
+  2475
+  '(28946 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/waka/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/F2i/F2i.cc"
+  "F2i.cc"
+  'c++-mode
+  '(abbrev-mode persp-mode ggtags-mode helm-gtags-mode)
+  3773
+  '(1029 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/waka/workspace/hgrm/master/hagoromo/services/F2i.diff"
+  "F2i.diff"
+  'diff-mode
+  '(persp-mode)
+  2837
+  '(8441 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
 (desktop-create-buffer 206
   "/home/waka/dotfiles/emacs.d/elpa/howm-20171225.652/action-lock.el"
   "action-lock.el"
@@ -29,15 +84,15 @@
   '((buffer-file-coding-system . prefer-utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/home/waka/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/tools/make_effector.sh"
-  "make_effector.sh"
-  'sh-mode
-  '(persp-mode)
-  18557
-  '(17735 nil)
+  "/home/waka/howm.git/2015/12/2015-12-24-143339.txt"
+  "2015-12-24-143339.txt"
+  'text-mode
+  '(persp-mode action-lock-mode howm-mode)
+  2902
+  '(1 nil)
   nil
   nil
-  '((buffer-file-coding-system . undecided-unix)))
+  '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
   "/home/waka/workspace/hgrm/master/hagoromo/services/soundservice/src/filters/stationary/tools/make_effector.sh"
@@ -99,7 +154,7 @@
   "howm-version.el"
   'emacs-lisp-mode
   '(persp-mode)
-  107
+  85
   '(nil nil)
   nil
   nil
@@ -192,39 +247,6 @@
   t
   '("/home/waka/dotfiles/emacs.d/")
   nil)
-
-(desktop-create-buffer 206
-  "/home/waka/dotfiles/emacs.d/init.el"
-  "init.el"
-  'emacs-lisp-mode
-  '(persp-mode)
-  5427
-  '(5552 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/waka/workspace/hgrm/master/hagoromo/services/soundpostcontrolservice/src/pipeline/filters/F2i/F2i.cc"
-  "F2i.cc"
-  'c++-mode
-  '(abbrev-mode persp-mode ggtags-mode helm-gtags-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/waka/workspace/hgrm/master/hagoromo/services/F2i.diff"
-  "F2i.diff"
-  'diff-mode
-  '(persp-mode)
-  257
-  '(8819 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
   "/home/waka/.howm-keys"
@@ -588,4 +610,26 @@
   t
   '("/home/waka/dotfiles/emacs.d/")
   nil)
+
+(desktop-create-buffer 206
+  "/home/waka/.howm-history"
+  " *howm-log:.howm-history*"
+  'fundamental-mode
+  '(persp-mode)
+  202
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/waka/dotfiles/emacs.d/persp-confs/persp-auto-save"
+  "persp-auto-save"
+  'emacs-lisp-mode
+  '(persp-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
 
