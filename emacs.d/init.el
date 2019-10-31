@@ -166,7 +166,9 @@
 (autoload 'howm-menu "howm-mode" "Hitori Otegaru Wiki Modoki" t)
 (setq howm-menu-refresh-after-save t)    ;; save 時にメニューを自動更新
 (setq howm-list-title t)                 ;; タイトルを表示
-(setq howm-view-summary-persistent nil)  ;; 一覧バッファを消す. C-u して [return] だと, 一覧を残す.
+;;(setq howm-view-summary-persistent nil)  ;; 一覧バッファを消す. C-u して [return] だと, 一覧を残す.
+(setq howm-view-summary-persistent t)
+(setq howm-view-split-horizontally t)
 (setq howm-menu-schedule-days-before 0)  ;; 予定とToDoの表示数 ;; 今日から
 (setq howm-menu-schedule-days 60)        ;; 予定とToDoの表示数 ;; 2週間後まで
 (setq howm-menu-todo-num 99)
