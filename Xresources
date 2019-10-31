@@ -2,7 +2,8 @@
 ! ! is comment
 
 !Xft.dpi: 210
-Xft.dpi: 96
+!Xft.dpi: 96
+Xft.dpi: 128
 Xft.autohint: 0
 Xft.Lcdfilter: lcddefault
 Xft.hintstyle: hintfull
