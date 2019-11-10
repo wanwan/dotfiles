@@ -170,6 +170,10 @@
 (setq howm-menu-schedule-days-before 0)  ;; 予定とToDoの表示数 ;; 今日から
 (setq howm-menu-schedule-days 60)        ;; 予定とToDoの表示数 ;; 2週間後まで
 (setq howm-menu-todo-num 99)
+
+(setq howm-view-summary-persistent t)
+(setq howm-view-split-horizontally t)
+
 (defun my-save-and-kill-buffer ()
   (interactive)
   (save-buffer)
