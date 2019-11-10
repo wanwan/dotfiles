@@ -1,0 +1,9 @@
+[Unit]
+Description=Howm Sync process
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/waka/bin/sync_howm.sh
+
+[Install]
+WantedBy=default.target

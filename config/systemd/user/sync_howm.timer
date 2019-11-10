@@ -1,0 +1,11 @@
+[Unit]
+Description=Howm Sync process
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=5min
+#ExecStart=/bin/bash $HOME/bin/sync_howm.sh
+Unit=sync_howm.service
+
+[Install]
+WantedBy=timers.target
