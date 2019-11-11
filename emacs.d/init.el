@@ -132,30 +132,31 @@
 ;; pomodoro
 ;; http://d.hatena.ne.jp/syohex/20121215/1355579575
 ;; https://raw.github.com/syohex/emacs-utils/master/pomodoro.el
-;;(require 'pomodoro)
-;;(setq pomodoro:file "~/.emacs.d/pomodoro.txt")
-;;(setq pomodoro:work-time 1
-;;      pomodoro:rest-time 1
-;;      pomodoro:long-rest-time 1) ;; 作業時間関連
-;;(require 'notifications)
-;;(defun my/pomodoro-notification (&key (title "Pomodoro")
-;;                                       body
-;;                                       (urgency 'critical))
-;;  (notifications-notify :title title :body body :urgency urgency))
+(require 'pomodoro)
+(setq pomodoro:file "~/.emacs.d/pomodoro.txt")
+(setq pomodoro:work-time 25
+      pomodoro:rest-time 5
+      pomodoro:long-rest-time 15
+      pomodoro:max-iteration 1) ;; 作業時間関連
+(require 'notifications)
+(defun my/pomodoro-notification (:body body)
+  (setq title "Pomodoro")
+  (setq urgency 'critical)
+  (notifications-notify :title title :body body :urgency urgency))
 
 ;; 作業終了後の hook
-;;(add-hook 'pomodoro:finish-work-hook
-;;          (lambda ()
-;;            (my/pomodoro-notification :body "Work is Finish")))
+(add-hook 'pomodoro:finish-work-hook
+          (lambda ()
+            (my/pomodoro-notification :body "Work is Finish")))
 ;; 休憩終了後の hook
-;;(add-hook 'pomodoro:finish-rest-hook
-;;          (lambda ()
-;;            (my/pomodoro-notification :body "Break time is finished")))
+(add-hook 'pomodoro:finish-rest-hook
+          (lambda ()
+            (my/pomodoro-notification :body "Break time is finished")))
 
 ;; 長期休憩後の hook
-;;(add-hook 'pomodoro:long-rest-hook
-;;          (lambda ()
-;;            (my/pomodoro-notification :body "Long Break time now")))
+(add-hook 'pomodoro:long-rest-hook
+          (lambda ()
+            (my/pomodoro-notification :body "Long Break time now")))
 
 ;; howm
 ;;(defvar howm-view-title-header "#")  ; this should be evaluated in advance to handle markdown
@@ -166,7 +167,9 @@
 (autoload 'howm-menu "howm-mode" "Hitori Otegaru Wiki Modoki" t)
 (setq howm-menu-refresh-after-save t)    ;; save 時にメニューを自動更新
 (setq howm-list-title t)                 ;; タイトルを表示
-(setq howm-view-summary-persistent nil)  ;; 一覧バッファを消す. C-u して [return] だと, 一覧を残す.
+;;(setq howm-view-summary-persistent nil)  ;; 一覧バッファを消す. C-u して [return] だと, 一覧を残す.
+(setq howm-view-summary-persistent t)
+(setq howm-view-split-horizontally t)
 (setq howm-menu-schedule-days-before 0)  ;; 予定とToDoの表示数 ;; 今日から
 (setq howm-menu-schedule-days 60)        ;; 予定とToDoの表示数 ;; 2週間後まで
 (setq howm-menu-todo-num 99)
@@ -395,6 +398,10 @@
     (persp-add-buffer (get-buffer bufname))))
 (add-hook 'persp-activated-hook 'persp-register-buffers-on-create)
 
+;; desktop
+(require 'desktop)
+(setq desktop-path (list "~/.emacs_desktop"))
+(desktop-save-mode t)
 
 
 (custom-set-variables
@@ -402,7 +409,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(desktop-save-mode t)
  '(package-selected-packages
    (quote
     (howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))

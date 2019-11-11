@@ -2,8 +2,10 @@
 ! ! is comment
 
 !Xft.dpi: 210
-!Xft.dpi: 96
-Xft.dpi: 128
+! default
+Xft.dpi: 96
+! for thinkpad T470s/480s
+!Xft.dpi: 128
 Xft.autohint: 0
 Xft.Lcdfilter: lcddefault
 Xft.hintstyle: hintfull
