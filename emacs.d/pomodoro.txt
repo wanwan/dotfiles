@@ -1,2 +1,7 @@
-日本語
+* xmonad layout の設定
+* emacs に pomodoro.el の追加というか修正 (notification 関数の key 記法が何故か上手くいかないので修正)
+
+
+
+
 
