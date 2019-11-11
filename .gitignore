@@ -5,6 +5,7 @@ private
 emacs.d/server/server
 emacs.d/tramp
 emacs.d/ddskk.*
+emacs.d/persp-confs/*
 emacs.d/.emacs.desktop
 emacs.d/.emacs.desktop.lock
 xmonad/xmonad-x86_64-linux
