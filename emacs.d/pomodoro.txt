@@ -1,7 +1,10 @@
 * xmonad layout の設定
 * emacs に pomodoro.el の追加というか修正 (notification 関数の key 記法が何故か上手くいかないので修正)
 
-
+* ZeroAdd の Ch 関連というか, InternalInfo の ch 関係のリーディング
+  -> どうも変更されているっぽいのでそのまま、というわけにはいかない.
+  -> とりあえず厳密でなくてもよいが音がでる、でなんとかならんか?
+  -> output stream がまるっと, ch line で pos とかがその index という理解なんだが正しいだろうか?
 
 
 
