@@ -1,5 +1,14 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
+# arg1 msg
+function notify() {
+    #    notify-send -i /usr/share/icons/gnome/32x32/emotes -u normal "message"
+    #notify-send -i /usr/share/icons/gnome/32x32/emotes/face-smile.png -u normal "message"
+    notify-send -i /usr/share/icons/gnome/32x32/status/info.png -u normal "$1"
+    aplay $HOME/data/system-ready.wav
+}
+
+
 # If not running interactively, don't do anything
 case $- in
     *i*) 
@@ -134,3 +143,6 @@ export PS1
 
 # never use Ctrl-s as stop
 stty stop undef
+
+
+
