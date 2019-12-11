@@ -109,8 +109,6 @@
 (exec-path-from-shell-initialize)
 
 
-
-
 ;; remove tool bar
 (tool-bar-mode -1)
 ;; remove initial splash
@@ -220,7 +218,20 @@
 ;; auto-save
 (require 'auto-save-buffers-enhanced)
 (setq auto-save-buffers-enhanced-exclude-regexps '("^/ssh:" "/sudo:" "/multi:" "plink:" "*scratch*"))
+;;; Wroteのメッセージを抑制
+(setq auto-save-buffers-enhanced-quiet-save-p t)
+;;; *scratch*も ~/.emacs.d/scratch に自動保存
+(setq auto-save-buffers-enhanced-save-scratch-buffer-to-file-p t)
+(setq auto-save-buffers-enhanced-file-related-with-scratch-buffer
+      (locate-user-emacs-file "scratch"))
 (auto-save-buffers-enhanced t)
+
+
+;; vc silent
+;; シンボリックリンクの読み込みを許可
+(setq vc-follow-symlinks t)
+;; シンボリックリンク先のVCS内で更新が入った場合にバッファを自動更新
+(setq auto-revert-check-vc-info t)
 
 
 ;; skk
@@ -409,9 +420,9 @@
 (add-hook 'persp-activated-hook 'persp-register-buffers-on-create)
 
 ;; desktop
-(require 'desktop)
-(setq desktop-path (list "~/.emacs_desktop"))
-(desktop-save-mode t)
+;;(require 'desktop)
+;;(setq desktop-path (list "~/.emacs_desktop"))
+;;(desktop-save-mode t)
 
 
 (custom-set-variables
