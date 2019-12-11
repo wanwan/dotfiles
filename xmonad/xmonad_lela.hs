@@ -13,7 +13,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig (additionalKeys)
 import XMonad.Hooks.EwmhDesktops
 --import XMonad.Hooks.DynamicLog
---import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageDocks
 --import XMonad.Util.Run(spawnPipe)
 --import XMonad.Util.EZConfig(additionalKeys)
 --import System.IO
