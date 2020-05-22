@@ -33,6 +33,9 @@
 ;; os depend (for mac)
 (when (fboundp 'mac-add-ignore-shortcut) (mac-add-ignore-shortcut '(control ? )))
 
+;; disable eof newline
+(setq require-final-newline nil)
+
 
 ;; default path
 (add-to-list 'load-path "~/.emacs.d/elisp")
@@ -46,6 +49,9 @@
 ;; default theme
 (load-theme 'misterioso t)
 
+;; disable dialog
+(defalias 'message-box 'message)
+(setq use-dialog-box nil)
 
 
 ; ずれ確認用
@@ -297,15 +303,70 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
-;; gtags
+;; whitespace
+(require 'whitespace)
+(setq whitespace-style '(face           ; faceで可視化
+                         trailing       ; 行末
+                         tabs           ; タブ
+                         empty          ; 先頭/末尾の空行
+                         space-mark     ; 表示のマッピング
+                         tab-mark
+                         ))
+
+(setq whitespace-display-mappings
+      '((tab-mark ?\t [?\u00BB ?\t] [?\\ ?\t])))
+(global-whitespace-mode 1)
+
+;;;; gtags
+;;(add-hook 'c-mode-common-hook
+;;	  (lambda ()
+;;	    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+;;	      (ggtags-mode 1))))
+;;;; Enable helm-gtags-mode
+;;(add-hook 'c-mode-hook 'helm-gtags-mode)
+;;(add-hook 'c++-mode-hook 'helm-gtags-mode)
+;;(add-hook 'asm-mode-hook 'helm-gtags-mode)
+;; gtags/rtags
+;; only run this if rtags is installed
+(when (require 'rtags nil :noerror)
+  (define-key c-mode-base-map (kbd "M-.")
+    (function rtags-find-symbol-at-point))
+  (define-key c-mode-base-map (kbd "M-,")
+    (function rtags-find-references-at-point))
+  ;; disable prelude's use of C-c r, as this is the rtags keyboard prefix
+  ;;(define-key prelude-mode-map (kbd "C-c r") nil)
+  ;; install standard rtags keybindings. Do M-. on the symbol below to
+  ;; jump to definition and see the keybindings.
+  (rtags-enable-standard-keybindings)
+  ;; comment this out if you don't have or don't use helm
+  (setq rtags-use-helm t)
+  ;; company completion setup
+  (setq rtags-autostart-diagnostics t)
+  (rtags-diagnostics)
+  (setq rtags-completions-enabled t)
+  (rtags-start-process-unless-running)
+  ;;(push 'company-rtags company-backends)
+  ;;(global-company-mode)
+  ;;(define-key c-mode-base-map (kbd "<C-tab>") (function company-complete))
+  ;;;; use rtags flycheck mode -- clang warnings shown inline
+  ;;(require 'flycheck-rtags)
+  ;;;; c-mode-common-hook is also called by c++-mode
+  ;;(add-hook 'c-mode-common-hook #'setup-flycheck-rtags)
+  )
 (add-hook 'c-mode-common-hook
 	  (lambda ()
-	    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+	    (when (derived-mode-p 'c-mode 'c++-mode)
+	      (rtags-mode 1))
+	    (when (derived-mode-p 'java-mode)
 	      (ggtags-mode 1))))
 ;; Enable helm-gtags-mode
-(add-hook 'c-mode-hook 'helm-gtags-mode)
-(add-hook 'c++-mode-hook 'helm-gtags-mode)
-(add-hook 'asm-mode-hook 'helm-gtags-mode)
+(add-hook 'c-mode-hook 'rtags-start-process-unless-running)
+(add-hook 'c++-mode-hook 'rtags-start-process-unless-running)
+(add-hook 'objc-mode-hook 'rtags-start-process-unless-running)
+;(add-hook 'c-mode-hook 'helm-gtags-mode)
+;(add-hook 'c++-mode-hook 'helm-gtags-mode)
+;(add-hook 'asm-mode-hook 'helm-gtags-mode)
+
 
 ;; markdown
 (autoload 'markdown-mode "markdown-mode"
@@ -319,7 +380,7 @@
 
 (setq markdown-open-command "markdown_viewer.sh")
 
-;; C / C++
+;; C/C++
 (setq my-c-style
   '((c-comment-only-line-offset . 4)
     (c-cleanup-list . (scope-operator
@@ -327,6 +388,36 @@
                        defun-close-semi))))
 (add-hook 'c-mode-common-hook
   (lambda () (c-add-style "my-style" my-c-style t)))
+
+;; C++ style
+(add-hook 'c++-mode-hook
+          '(lambda()
+             (c-set-style "gnu")
+             (setq indent-tabs-mode nil)       ; インデントは空白文字で行う（TABコードを空白に変換）
+             (c-set-offset 'innamespace 0)     ; namespace {}の中はインデントしない
+             (c-set-offset 'arglist-close 0))) ; 関数の引数リストの閉じ括弧はインデントしない
+
+;; https://qiita.com/awakia/items/b836e7792be0a7c65fd4
+;;; C系統,Pythonにて1行80文字を超えるとハイライト
+(add-hook 'c-mode-hook
+  (lambda ()
+    (font-lock-add-keywords nil
+      '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
+(add-hook 'c++-mode-hook
+  (lambda ()
+    (font-lock-add-keywords nil
+      '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
+(add-hook 'python-mode-hook
+  (lambda ()
+    (font-lock-add-keywords nil
+      '(("^[^\n]\\{80\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
+
+;;; Javaで1行100文字を超えるとハイライト
+(add-hook 'java-mode-hook
+  (lambda ()
+    (font-lock-add-keywords nil
+      '(("^[^\n]\\{100\\}\\(.*\\)$" 1 font-lock-warning-face t)))))
+
 
 ;; haskell
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/haskell-mode-20170519.1555")
@@ -337,8 +428,8 @@
 (add-to-list 'auto-mode-alist '("\\.lhs$" . literate-haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
 
-(add-to-list 'interpreter-mode-alist '("runghc" . haskell-mode))     ;#!/usr/bin/env runghc 用       
-(add-to-list 'interpreter-mode-alist '("runhaskell" . haskell-mode)) ;#!/usr/bin/env runhaskell 用   
+(add-to-list 'interpreter-mode-alist '("runghc" . haskell-mode))     ;#!/usr/bin/env runghc 用
+(add-to-list 'interpreter-mode-alist '("runhaskell" . haskell-mode)) ;#!/usr/bin/env runhaskell 用
 
 ;; ghc-mod (haskell)
 ;;(add-to-list 'exec-path "~/.cabal/bin")  ; これをしてないと*Message*に"ghc-mod not found"と出て動かない
@@ -351,15 +442,12 @@
             (ghc-init)
             (flymake-mode)))
 
-;(setq haskell-program-name "/usr/bin/ghci")                                                         
-;(add-hook 'haskell-mode-hook 'inf-haskell-mode) ;; enable                                           
+;(setq haskell-program-name "/usr/bin/ghci")
+;(add-hook 'haskell-mode-hook 'inf-haskell-mode) ;; enable
 (defadvice inferior-haskell-load-file (after change-focus-after-load)
   "Change focus to GHCi window after C-c C-l command"
   (other-window 1))
 (ad-activate 'inferior-haskell-load-file)
-
-
-
 
 ;; Set key bindings
 (eval-after-load "helm-gtags"
@@ -403,7 +491,7 @@
            (buffer-file-name))))
   ;;(shell-command "open -a /usr/bin/intellij-idea-ue-bundled-jre"))
 
-;; persp-mode
+;; persps-mode
 (setq persp-keymap-prefix (kbd "C-c p")) ;prefix
 (setq persp-add-on-switch-or-display t) ;バッファを切り替えたら見えるようにする
 (persp-mode 1)
@@ -432,11 +520,10 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
+    (flycheck company-rtags company-lsp howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(howm-reminder-normal-face ((t (:foreground "deep sky blue")))))
-

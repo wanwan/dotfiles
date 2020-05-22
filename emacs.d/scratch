@@ -1,0 +1,326 @@
+;; This buffer is for notes you don't want to save, and for Lisp evaluation.
+;; If you want to create a file, visit that file with C-x C-f,
+;; then enter the text in that file's own buffer.
+
+
+* bash -> zsh にして history も全同期はありか?
+
+* 同期させない
+.ICEauthority
+.Xauthority
+.ansible/
+.audacity-data/
+.bash_history
+.cabal/
+.compiz/
+
+* 同期させる (未)
+.Xdefaults
+.Xmodmap
+.bash_logout
+.bashrc_lela
+
+* 同期させる (済み)
+.Xresources -> /home/waka/dotfiles/Xresources
+.bash_aliases -> dotfiles/bash_aliases
+.bash_profile -> /home/waka/dotfiles/bash_profile
+.bashrc -> /home/waka/dotfiles/bashrc
+
+* 不明
+.android/
+.bowerrc
+.cache/
+.cargo/
+.ccache/
+
+
+drwx------  36 waka waka     4096  5月 21 17:22 .config/
+drwx------   3 waka waka     4096 10月  1  2019 .dbus/
+-rw-r--r--   1 waka waka       25  5月 18 16:32 .dmrc
+lrwxrwxrwx   1 waka waka       28 10月  1  2019 .emacs.d -> /home/waka/dotfiles/emacs.d//
+drwxrwxr-x   2 waka waka     4096 12月 10 16:26 .emacs_desktop/
+drwx------   2 waka waka     4096  5月 18 19:02 .gconf/
+drwxrwxr-x   4 waka waka     4096 11月  5  2019 .gem/
+drwxrwxr-x   3 waka waka     4096 10月 23  2019 .ghc/
+drwxr-xr-x  24 waka waka     4096  5月 16 17:36 .gimp-2.8/
+-rw-rw-r--   1 waka waka      346  4月 11 19:13 .gitconfig
+-rw-rw-r--   1 waka waka      432  4月  2 13:44 .gitconfig.izumo
+drwxrwxr-x   4 waka waka     4096  2月  6 21:13 .gitkraken/
+drwx------   3 waka waka     4096 10月  1  2019 .gnome/
+drwx------   3 waka waka     4096 11月  8  2019 .gnome2/
+drwx------   2 waka waka     4096 11月  8  2019 .gnome2_private/
+-rw-rw-r--   1 waka waka       51  5月 18 13:34 .gnomerc
+drwx------   4 waka waka     4096  5月 18 16:32 .gnupg/
+-rw-rw-r--   1 waka waka     1185  5月 21 15:26 .howm-history
+-rw-rw-r--   1 waka waka     1185  5月 17 00:36 .howm-history~
+-rw-rw-r--   1 waka waka      317  5月  1 11:53 .howm-keys
+-rw-rw-r--   1 waka waka      314  4月  9 15:14 .howm-keys~
+drwxrwxr-x   5 waka waka     4096  5月  8 16:04 .java/
+-rw-------   1 waka waka      767  5月 21 15:03 .lesshst
+drwx------   3 waka waka     4096 10月  1  2019 .local/
+drwx------   2 waka waka     4096 10月  1  2019 .mozc/
+drwx------   5 waka waka     4096 10月  1  2019 .mozilla/
+drwxrwxr-x   2 waka waka     4096 11月  5  2019 .narousetting/
+drwxrwxr-x 699 waka waka    20480  5月 11 17:11 .npm/
+drwx------   3 waka waka     4096 10月  1  2019 .pki/
+drwx------   2 waka waka     4096 10月  1  2019 .presage/
+-rw-r--r--   1 waka waka      655 10月  1  2019 .profile
+-rw-------   1 waka waka        0  5月 22 00:33 .python-history
+drwx------   2 waka waka     4096  2月 28 14:44 .remmina/
+-rw-rw-r--   1 waka waka      212  4月 14 15:26 .repo_.gitconfig.json
+drwxrwxr-x   3 waka waka     4096 10月  7  2019 .repoconfig/
+-rw-------   1 waka waka     1024 10月  2  2019 .rnd
+drwxrwxr-x  25 waka waka     4096 11月  5  2019 .rvm/
+lrwxrwxrwx   1 waka waka       28 10月  1  2019 .screenrc -> /home/waka/dotfiles/screenrc
+-rw-rw-r--   1 waka waka       74  4月 17 11:49 .selected_editor
+-rw-------   1 waka waka        0 10月  1  2019 .skk-jisyo.lock
+-rw-------   1 waka waka    23774  5月 21 21:36 .skk-uim-jisyo
+-rw-------   1 waka waka        0 10月  1  2019 .skk-uim-jisyo.lock
+drwx------   2 waka waka     4096  4月 11 19:12 .ssh/
+-rw-r--r--   1 waka waka        0 10月  1  2019 .sudo_as_admin_successful
+drwxrwxr-x   3 waka waka     4096 10月  2  2019 .synergy/
+-rw-r--r--   1 waka waka      405 10月  2  2019 .synergy.conf
+drwx------   3 waka waka     4096  4月 22 11:55 .thumbnails/
+lrwxrwxrwx   1 waka waka       15 10月  7  2019 .uim.d -> dotfiles/uim.d//
+drwx------   3 waka waka     4096 10月  1  2019 .uim.d.back/
+drwx------   2 waka waka     4096  5月 13 14:20 .vnc/
+drwxrwxr-x   3 waka waka     4096 11月 21 14:13 .vscode/
+-rw-rw-r--   1 waka waka      947  5月 22 00:12 .wget-hsts
+-rw-rw-r--   1 waka waka      130 10月  1  2019 .xinputrc
+lrwxrwxrwx   1 waka waka       35 10月  1  2019 .xmobarrc -> /home/waka/dotfiles/xmonad/xmobarrc
+lrwxrwxrwx   1 waka waka       26 10月  1  2019 .xmonad -> /home/waka/dotfiles/xmonad/
+lrwxrwxrwx   1 waka waka       28 10月  1  2019 .xprofile -> /home/waka/dotfiles/xprofile
+-rw-rw-r--   1 waka waka     8095 10月  3  2019 .xscreensaver
+-rwxr-xr-x   1 waka waka       51  5月  8 20:21 .xsession*
+-rw-------   1 waka waka     1060  5月 21 18:27 .xsession-errors
+-rw-------   1 waka waka     2119  5月 18 18:03 .xsession-errors.old
+
+
+
+-----
+proxy
+proxy.toshiba.co.jp:8080
+
+pac
+http://pac.tjsys.co.jp/proxy.pac
+
+dns
+133.199.160.67
+133.199.91.10
+
+*.tjsys.co.jp
+
+
+---
+sony proxy export list
+
+system/proxy ignore-hosts: 'www.tool.sony.biz', 'www2.tool.sony.biz', 'cas-web05.scas.sony.co.jp', 'cas-web04.scas.sony.co.jp', 'localhost', '127.0.0.0/8', '::1'
+
+
+sony
+jira: https://www.tool.sony.biz/jira3/browse/DEPFIS-13565
+conflu: https://www.tool.sony.biz/confluence/pages/viewpage.action?pageId=1667542749
+git: ssh://github.com/route384/hgrm.services.soundpostcontrolservice
+
+slack: route384.slack.com
+
+
+--
+
+4/10 現在のステータス
+
+* office
+** TJ Intra
+   アクセス可
+** The Internet
+   アクセス可
+
+* webEx
+** TJ Intra
+   アクセス不可? (通る、という人もいるので何か条件あるかも)
+   teams 移行というはなしなのでとりあえず現状放置
+** The Internet
+   アクセス可
+
+* teams
+** TJ Intra
+   アクセス可
+** The Internet
+   アクセス可
+
+* inazuma
+** TJ Intra
+   一応通る. 但し windows 機のみ.
+   linux は tool.sony.biz にのみアクセスできる
+     * manual にはないが firefox に先方発行のクライアント証明書を入れること
+   windows からなら conflu/jira へのアクセスが可能
+   この問題に関連した問題として, SONY マシンが現状検疫の問題からイントラに直接繋げていない.
+   このため現状既に社内に windows マシンを持っている若林とかができている.
+   協力会社の方の TJ Intra につながった windows マシンを何らかの方法で用意する必要がある.
+   ウィルス関連の除外申請を福井さんが出しているので結果まち?
+** The Internet
+   不可 (wimax で確認 / 不可とのこと by 福井さん)
+
+* jira/conflu
+** TJ Intra
+   上記(inazuma)理由で条件付きで可能
+** The Internet
+   上記(inazuma)理由で不可.
+   RAS 回線がきた場合, 申請した sony 貸与の windows マシンを持ち出せば可能かも.   
+
+* github
+** TJ Intra
+   http/https でのみアクセス可能
+   編集作業の commit は ssh になっていることから作業、という意味では不可
+   ssh の除外申請を出しているが通るかどうか.
+   ssh.github.com への除外申請でもいける可能性がある. (NEW!)
+   -> proxy への tunnel の挙動から https を再構成しようとしてはじいているのではないか? (extranet と挙動があきらかに違う)
+** The Internet
+   可能 (wimax 回線で確認済)
+   wimax ルータを何台かレンタルする予定?
+
+* slack
+** TJ Intra
+   不可 (東芝 proxy がはじいている)
+** The Internet
+   可能 (wimax 回線で確認済)
+   wimax ルータを何台かレンタルする予定?
+
+
+* リモートアクセス
+  linux で, 対外 default を wimax に向けて, ip forward を切る、という環境を作成すると,
+     note <-- vpn --> sony 貸与 linux <-- The internet --> github/slack, etc
+  という環境が構築できます. (一応今日確認済み)
+  原理的にリモートアクセス作業になるかと.
+  mic ひろうとか board の電源どうするとか問題山積ですが
+  ちなみに, 逆(対外 default を TJ に向ける) は残念ながら github のアドレスがどうも
+  CDN なのか, cloud なのかでできないです.
+
+
+[今後のタスク]
+* webカメラ + linux で音を対外から拾えるようにする.
+* ボードの電源コントロール (打ち合わせででていた件)
+  -> firm 焼き込みに必須 / SoundService だけ置き換えでならなんとかなるかも.
+
+
+
+
+
+--
+4/9 現在のステータス
+* office
+基本みんないけるはず.
+弊社ネットワークでもいけるし自宅等も ok
+
+* webex
+弊社 LAN を使用するとダメっぽい. (通る、という人もいるので何か条件あるかも)
+teams 移行というはなしなのでとりあえず現状放置
+
+* teams
+office と同じ.
+
+* inazuma
+TJ 回線で一応通る. (wimax 線はダメっぽい)
+検疫エージェントで邪魔されるはず、的な話があるが今のところは大丈夫.
+基幹/開発者 LAN ともいける.
+全トラフィックの VPN ではなく, tool.sony.biz だけやるためのものっぽいので
+これでは下記の github/slack の解決にはならない.
+wimax 線はダメっぽい. (福井さんトライで失敗している)
+Linux 側は ubuntu の場合証明書を firefox に入れるのが必要なので注意
+プロパ以外の人に展開するには windows の接続をどうするかを考える必要がある.
+(ウィルス関連の除外申請福井さんだしているが結果まち?)
+
+* jira/conflu
+inazuma + windows でアクセス可能.
+linux 環境下で inazuma アクセスすると, tool.sony.biz そのものはアクセスできるが,
+tool.sony.biz/jira tool.sony.biz/conflu といったかたちのアクセスはできない.
+正直 inazuma の提供クライアントが windows では pac を作成してふってきているが
+中身みると proxy を DIRECT にしているので linux がいけないのがよくわからん. 
+
+* github
+http は大丈夫. ssh は弊社 LAN からはだめ.
+wimax はたぶん ok.
+(repo sync 等はやってないが ssh github.com はいけてる / 青野さん 板崎さんはもうこれではじめているというはなし)
+除外申請は書いているが通るかは微妙
+wimax ルータを何台かレンタルする予定
+除外申請が通らずに wimax ルータになると対外からのアクセスは難しいのでリモートワークには難
+
+* slack
+弊社 LAN からはだめ. 締めているのは東芝側の proxy.
+wimax は ok.
+(青野さん 板崎さんはもうこれではじめているというはなし)
+除外申請は書いているが通るかは微妙
+wimax ルータを何台かレンタルする予定
+除外申請が通らずに wimax ルータになると対外からのアクセスは難しいのでリモートワークには難
+
+[今後のタスク]
+* 一応 github/slack は wimax からいくということで当面なんとかする.
+* wimax を default にして 157.79. だけアクセス可能で forward off という状況にすれば vpn
+  経由でリモートワークできるのではないか、ということを考えているので試してみる予定
+* webカメラ + linux で音を対外から拾えるようにする.
+* ボードの電源コントロール (打ち合わせででていた件)
+  -> firm 焼き込みに必須 / SoundService だけ置き換えでならなんとかなるかも.
+
+
+----
+
+
+[概要]
+https://github.com/route384/hgrm.services.soundpostcontrolservice/pull/26 の残件.
+* コメントとして, FALLTHROUGH がある場所を削除
+* uint8_t を base size として定義している ＬｏｏｐＢａｃｋＤａｔａＰａｒａｍ 内の値の表示を %hhu および uint8_t でキャストして出力するように修正
+
+[火入れ確認]
+- [x] ビルドが通ること
+- [ ] ビルドしたpf-sc FWを HA-BBに焼いて起動できること
+- [ ] Mrmcとdebug用effectorだけのflowをxmlで用意して、それが反映されること (添付SoundService.xml 確認)
+(以下は上記のflowでの確認)
+- [ ] flow 設定で起動後, ss4s_socket が LISTEN で開かれていること
+  - netstat -l で ss4s_socket が LISTEN になる
+- [ ] SsSocketSample を使用して, MrmcCom と接続ができること
+  - netstat -n で CONNECTED になる
+- [ ] コントロールパケット (kPlay, kStop, kDestroy)の通過確認
+  - 再生時に kPlay/kStop/kDestroy がログで出力される
+- [ ] InternalInfo の値が MrmcCom -> SsSocketSample に送信されること
+  - 以下の値を確認 (TrackParam.f_samp, bits_per_samp, num_of_ch, ch_config, multi_ch_config)
+- [ ] timestamp が正しく送信されることを確認
+  - MrmcCom 受領データが SsSocketSample に渡されることを確認
+- [ ] 再生系で音がなることを確認
+  - 2ch 
+  - 4ch
+  - 6ch
+  - 8ch
+  - 10ch
+  - 12ch
+  - 14ch
+  - 16ch
+
+[影響確認]
+ログとコメントのみの修正のため影響なし. 試験については単体系として, mrmc 作成時のもので単体昨日を確認
+
+
+----
+
+ok case / eth0 単体 (wimax なし)
+
+lela:~ $ netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         157.79.240.1    0.0.0.0         UG        0 0          0 enp0s31f6
+1.1.1.1         0.0.0.0         255.255.255.255 UH        0 0          0 tun0
+133.199.91.10   157.79.240.1    255.255.255.255 UGH       0 0          0 enp0s31f6
+133.199.160.67  157.79.240.1    255.255.255.255 UGH       0 0          0 enp0s31f6
+133.199.251.110 157.79.240.1    255.255.255.255 UGH       0 0          0 enp0s31f6
+146.215.9.102   1.1.1.1         255.255.255.255 UGH       0 0          0 tun0
+146.215.9.106   1.1.1.1         255.255.255.255 UGH       0 0          0 tun0
+157.79.240.0    0.0.0.0         255.255.255.0   U         0 0          0 enp0s31f6
+157.79.240.1    0.0.0.0         255.255.255.255 UH        0 0          0 enp0s31f6
+169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 enp0s31f6
+192.168.100.1   157.79.240.1    255.255.255.255 UGH       0 0          0 enp0s31f6
+192.168.231.0   1.1.1.1         255.255.255.0   UG        0 0          0 tun0
+192.168.231.160 1.1.1.1         255.255.255.255 UGH       0 0          0 tun0
+192.168.231.161 1.1.1.1         255.255.255.255 UGH       0 0          0 tun0
+192.168.231.162 1.1.1.1         255.255.255.255 UGH       0 0          0 tun0
+192.168.231.163 1.1.1.1         255.255.255.255 UGH       0 0          0 tun0
+192.168.231.228 1.1.1.1         255.255.255.255 UGH       0 0          0 tun0
+192.168.231.233 1.1.1.1         255.255.255.255 UGH       0 0          0 tun0
