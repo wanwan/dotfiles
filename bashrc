@@ -1,11 +1,16 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
 # arg1 msg
-function notify() {
+function notify_local() {
     #    notify-send -i /usr/share/icons/gnome/32x32/emotes -u normal "message"
     #notify-send -i /usr/share/icons/gnome/32x32/emotes/face-smile.png -u normal "message"
     notify-send -i /usr/share/icons/gnome/32x32/status/info.png -u normal "$1"
     aplay $HOME/data/system-ready.wav
+}
+
+# use pushover to notify android/ipad/notepc
+function notify_phone {
+    curl -s -F "token=a3m8tmcgsmetjx7t8hsgbw2edvg1ib" -F "user=u4ftprmtkvcfgrs17vtw38dm4vys7f" -F "title=$1" -F "message=$2" https://api.pushover.net/1/messages.json
 }
 
 
@@ -141,8 +146,15 @@ PS1="\h:\w $ "
 
 export PS1
 
+ARMGCC_DIR=/home/waka/toolchain/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-elf
+
+export ARMGCC_DIR
+
 # never use Ctrl-s as stop
 stty stop undef
 
+# cpplint path (for hagoromo)
+export BSP_ROOT=$HOME/workspace/master
+export PATH=$BSP_ROOT/hagoromo/external/google-styleguide/cpplint:$PATH
 
 
