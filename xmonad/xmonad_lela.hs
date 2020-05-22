@@ -12,6 +12,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig (additionalKeys)
 import XMonad.Hooks.EwmhDesktops
+--import XMonad.Config.Gnome
 --import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 --import XMonad.Util.Run(spawnPipe)
@@ -48,24 +49,30 @@ myWorkspaces = [ "shell"
 	       ,"game"
 	       ,"system" ]
 
-myStartupHook :: X()
-myStartupHook = do
-  setWMName "LG3D"
-  spawnOn "shell" "urxvt -e screen"
-  spawnOn "editor" "emacs"
-  spawnOn "browser" "google-chrome-stable"
-  --spawnOn "browser" "google-chrome-stable --force-device-scale-factor=2"
-  --spawnOn "idea" "intellij-idea-ultimate-edition"  
+--myStartupHook :: X()
+--myStartupHook = do
+--  setWMName "LG3D"
+--  spawnOn "shell" "urxvt -e screen"
+--  spawnOn "editor" "emacs"
+--  spawnOn "browser" "google-chrome-stable"
+--  --spawnOn "browser" "google-chrome-stable --force-device-scale-factor=2"
+--  --spawnOn "idea" "intellij-idea-ultimate-edition"  
+
+myManageHookFloat = composeAll
+    [ className =? "MotionPro"             --> doFloat
+    ]
 
 tall = Tall 1 (3/100) (1/2)
 
+--main = 	xmonad $ gnomeConfig
 main = 	xmonad defaultConfig
 	{ 
 		borderWidth = 2,
 		normalBorderColor  = "#99ccff",
 		focusedBorderColor = "#ff0000", -- blue
 		modMask = myModMask,
-                startupHook      = myStartupHook <+> docksStartupHook,
+--                startupHook      = myStartupHook <+> docksStartupHook,
+		manageHook	 = myManageHookFloat <+> manageDocks,
 		terminal = myTerminal
 
         }
