@@ -1,4 +1,4 @@
-;; from package
+; from package
 ;; ggtags
 ;; skk
 ;; helm
@@ -29,6 +29,8 @@
 ;; disable upper/lower region cause sometime mistype C-x u (undo)
 (put 'upcase-region 'disabled t)
 (put 'downcase-region 'disabled t)
+(global-set-key (kbd "C-x C-u") nil)
+(global-set-key (kbd "C-x C-l") nil)
 
 ;; os depend (for mac)
 (when (fboundp 'mac-add-ignore-shortcut) (mac-add-ignore-shortcut '(control ? )))
@@ -63,10 +65,10 @@
 (when (eq window-system 'ns)
   (create-fontset-from-ascii-font "Menlo-11:weight=normal:slant=normal" nil "menlokakugo")
   (set-fontset-font "fontset-menlokakugo"
-		    'unicode
-		    (font-spec :family "Hiragino Kaku Gothic ProN" :size 11)
-		    nil
-		    'append)
+                    'unicode
+                    (font-spec :family "Hiragino Kaku Gothic ProN" :size 11)
+                    nil
+                    'append)
   (add-to-list 'default-frame-alist '(font . "fontset-menlokakugo")))
 
 (when (eq window-system 'x)
@@ -84,7 +86,7 @@
   (defadvice grep-compute-defaults (around grep-compute-defaults-advice-null-device)
   "Use cygwin's /dev/null as the null-device."
   (let ((null-device "/dev/null"))
-	ad-do-it))
+        ad-do-it))
   (ad-activate 'grep-compute-defaults)
   (setq grep-find-template
       "find . <X> -type f <F> -exec grep <C> -nH -e <R> \\{\\} +")
@@ -99,7 +101,7 @@
 (when (eq window-system 'ns)
   (add-hook 'window-setup-hook
             (lambda ()
-	      (setq mac-autohide-menubar-on-maximize t)
+              (setq mac-autohide-menubar-on-maximize t)
               (set-frame-parameter nil 'fullscreen 'fullboth)
               )))
 
@@ -288,7 +290,7 @@
   (setq tramp-default-method "plink"))
 ;;;; for android
 (add-to-list 'tramp-connection-properties
-     	     (list (regexp-quote "192.168.11.3") "remote-shell" "sh"))
+             (list (regexp-quote "192.168.11.3") "remote-shell" "sh"))
 (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
 (add-to-list 'tramp-remote-path "/system/xbin")
 ;;(add-to-list 'tramp-remote-process-environment "TMPDIR=$HOME") ;; for non-rooted device
@@ -297,7 +299,7 @@
 ;; isearch
 (add-hook 'isearch-mode-hook 'skk-isearch-mode-setup) ; isearch で skk のセットアップ
 (add-hook 'isearch-mode-end-hook 'skk-isearch-mode-cleanup) ; isearch で skk のクリーンアップ
-(setq skk-isearch-start-mode 'latin)						; isearch で skk の初期状態
+(setq skk-isearch-start-mode 'latin)                                            ; isearch で skk の初期状態
 
 ;; uniquify
 (require 'uniquify)
@@ -319,14 +321,31 @@
 
 ;;;; gtags
 ;;(add-hook 'c-mode-common-hook
-;;	  (lambda ()
-;;	    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-;;	      (ggtags-mode 1))))
+;;        (lambda ()
+;;          (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+;;            (ggtags-mode 1))))
 ;;;; Enable helm-gtags-mode
 ;;(add-hook 'c-mode-hook 'helm-gtags-mode)
 ;;(add-hook 'c++-mode-hook 'helm-gtags-mode)
 ;;(add-hook 'asm-mode-hook 'helm-gtags-mode)
-;; gtags/rtags
+
+;; company
+;; https://qiita.com/sune2/items/b73037f9e85962f5afb7
+;; https://qiita.com/kod314/items/3a31719db27a166d2ec1
+(require 'company)
+(with-eval-after-load 'company
+  (global-company-mode)                  ;; 全バッファで有効にする
+  ;;(add-hook 'c-mode-hook 'company-mode)
+  ;;(add-hook 'c++-mode-hook 'company-mode)
+  ;;(add-hook 'java-mode-hook 'company-mode)
+  ;;(add-hook 'python-mode-hook 'company-mode)
+  (setq company-idle-delay 0)            ;; デフォルトは0.5
+  (setq company-minimum-prefix-length 2) ;; デフォルトは4
+  (setq company-selection-wrap-around t) ;; 候補の一番下でさらに下に行こうとすると一番上に戻る
+  (define-key company-active-map (kbd "C-h") nil) ;; C-hはバックスペース割当のため無効化
+  )
+
+;; rtags
 ;; only run this if rtags is installed
 (when (require 'rtags nil :noerror)
   (define-key c-mode-base-map (kbd "M-.")
@@ -354,11 +373,11 @@
   ;;(add-hook 'c-mode-common-hook #'setup-flycheck-rtags)
   )
 (add-hook 'c-mode-common-hook
-	  (lambda ()
-	    (when (derived-mode-p 'c-mode 'c++-mode)
-	      (rtags-mode 1))
-	    (when (derived-mode-p 'java-mode)
-	      (ggtags-mode 1))))
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode)
+              (rtags-mode 1))
+            (when (derived-mode-p 'java-mode)
+              (ggtags-mode 1))))
 ;; Enable helm-gtags-mode
 (add-hook 'c-mode-hook 'rtags-start-process-unless-running)
 (add-hook 'c++-mode-hook 'rtags-start-process-unless-running)
@@ -366,7 +385,6 @@
 ;(add-hook 'c-mode-hook 'helm-gtags-mode)
 ;(add-hook 'c++-mode-hook 'helm-gtags-mode)
 ;(add-hook 'asm-mode-hook 'helm-gtags-mode)
-
 
 ;; markdown
 (autoload 'markdown-mode "markdown-mode"
@@ -520,7 +538,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck company-rtags company-lsp howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
+    (company company-irony-c-headers flycheck company-rtags company-lsp howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

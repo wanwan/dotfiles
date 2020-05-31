@@ -3,6 +3,16 @@
 ;; then enter the text in that file's own buffer.
 
 
+(defun set-my-var (value)
+  "Revised version by Charlie Martin"
+  (interactive "p")
+  (setq my-var value))
+set-my-var
+
+(set-my-var "\C-h")
+
+(help-key-description [22] nil)
+
 * bash -> zsh にして history も全同期はありか?
 
 * 同期させない
