@@ -375,7 +375,7 @@
 (add-hook 'c-mode-common-hook
           (lambda ()
             (when (derived-mode-p 'c-mode 'c++-mode)
-              (rtags-mode 1))
+              (rtags-mode))
             (when (derived-mode-p 'java-mode)
               (ggtags-mode 1))))
 ;; Enable helm-gtags-mode
@@ -450,15 +450,16 @@
 (add-to-list 'interpreter-mode-alist '("runhaskell" . haskell-mode)) ;#!/usr/bin/env runhaskell 用
 
 ;; ghc-mod (haskell)
+;; obsorate されたぽいのでとりあえずコメントアウト
+;; https://qiita.com/ryuukin/items/680769fb899985acec96
 ;;(add-to-list 'exec-path "~/.cabal/bin")  ; これをしてないと*Message*に"ghc-mod not found"と出て動かない
 ;;(add-to-list 'load-path "~/.emacs.d/elisp/ghc-mod")
-(add-to-list 'load-path "/usr/share/ghc-mod/elisp")
-
-(autoload 'ghc-init "ghc" nil t)
-(add-hook 'haskell-mode-hook
-          (lambda ()
-            (ghc-init)
-            (flymake-mode)))
+;;(add-to-list 'load-path "/usr/share/ghc-mod/elisp")
+;;(autoload 'ghc-init "ghc" nil t)
+;;(add-hook 'haskell-mode-hook
+;;          (lambda ()
+;;            (ghc-init)
+;;            (flymake-mode)))
 
 ;(setq haskell-program-name "/usr/bin/ghci")
 ;(add-hook 'haskell-mode-hook 'inf-haskell-mode) ;; enable
