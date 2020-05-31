@@ -398,13 +398,13 @@
   (rtags-diagnostics)
   (setq rtags-completions-enabled t)
   (rtags-start-process-unless-running)
-  ;;(push 'company-rtags company-backends)
+  (push 'company-rtags company-backends)
   ;;(global-company-mode)
   ;;(define-key c-mode-base-map (kbd "<C-tab>") (function company-complete))
   ;;;; use rtags flycheck mode -- clang warnings shown inline
-  ;;(require 'flycheck-rtags)
+  (require 'flycheck-rtags)
   ;;;; c-mode-common-hook is also called by c++-mode
-  ;;(add-hook 'c-mode-common-hook #'setup-flycheck-rtags)
+  (add-hook 'c-mode-common-hook #'setup-flycheck-rtags)
   )
 (add-hook 'c-mode-common-hook
           (lambda ()
@@ -574,7 +574,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company company-irony-c-headers flycheck company-rtags company-lsp howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
+    (flycheck-rtags flycheck-irony flycheck-haskell company company-irony-c-headers flycheck company-rtags company-lsp howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

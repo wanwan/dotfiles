@@ -1,0 +1,2 @@
+;;; -*- no-byte-compile: t -*-
+(define-package "flycheck-rtags" "20191222.920" "RTags Flycheck integration" '((emacs "24") (flycheck "0.23") (rtags "2.10")) :commit "ed229d2e4070cc07ba76e537e8f5f93835ff0710" :authors '(("Christian Schwarzgruber" . "c.schwarzgruber.cs@gmail.com")) :maintainer '("Christian Schwarzgruber" . "c.schwarzgruber.cs@gmail.com") :url "https://github.com/Andersbakken/rtags")
