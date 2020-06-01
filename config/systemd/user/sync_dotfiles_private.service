@@ -1,0 +1,9 @@
+[Unit]
+Description=dotfiles(private) Sync process
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/waka/bin/sync_dotfiles_private.sh
+
+[Install]
+WantedBy=default.target
