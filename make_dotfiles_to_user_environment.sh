@@ -1,5 +1,6 @@
 #!/bin/bash
 
+<<<<<<< HEAD
 if [ ! -d $HOME/bin ]; then
 	mkdir $HOME/bin
 fi
@@ -14,3 +15,7 @@ ln -s $HOME/dotfiles/xmonad $HOME/.xmonad
 if [ -d private -a -x private/make_dotfiles_to_user_environment.sh ]; then
 	private/make_dotfiles_to_user_environment.sh
 fi
+=======
+ln -s $HOME/dotfiles/private/script/sync_howm.sh $HOME/bin
+ln -s $HOME/dotfiles/private/script/make_daily_howm_todo.sh $HOME/bin
+>>>>>>> 4ff24286d65ffcfe7a85eee48c629cd12a47b31f
