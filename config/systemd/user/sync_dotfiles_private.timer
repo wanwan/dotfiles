@@ -1,0 +1,12 @@
+[Unit]
+Description=dotfiles(private) Sync process
+
+[Timer]
+# every xx:20 cause daily master push method conflict script pull and push
+OnCalendar=*-*-* *:20:00
+#OnCalendar=0/1:00:00
+#OnCalendar=*:0,5,10,15,20,25,30,35,40,45,50,55
+Unit=sync_dotfiles_private.service
+
+[Install]
+WantedBy=timers.target
