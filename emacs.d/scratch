@@ -2,16 +2,38 @@
 ;; If you want to create a file, visit that file with C-x C-f,
 ;; then enter the text in that file's own buffer.
 
+ delete mode 100644 a
+ delete mode 100755 make_dotfiles_to_user_environment.sh
+ delete mode 100644 script/crontab
+ delete mode 100644 script/functions.sh
+ delete mode 100755 script/make_daily_howm_todo.sh
+ delete mode 100644 script/make_howm_todo.sh
+ delete mode 100755 script/make_weekly_howm_blog.sh
+ delete mode 100755 script/make_weekly_howm_todo.sh
+ delete mode 100755 script/sony.habb/build_ebisu.sh
+ delete mode 100755 script/sony.habb/build_ebisu_hagoromo_only.sh
+ delete mode 100644 script/sony.habb/build_hagodaemon.sh
+ delete mode 100755 script/sony.habb/build_jailhouse.sh
+ delete mode 100755 script/sony.habb/build_jailhouseservice.sh
+ delete mode 100755 script/sony.habb/build_lk.sh
+ delete mode 100755 script/sony.habb/get_difflist_for_release_note.sh
+ delete mode 100755 script/sony.habb/install_ebisu.sh
+ delete mode 100755 script/sony.habb/install_ebisu_hagoromo_only.sh
+ delete mode 100755 script/sony.habb/install_lk.sh
+ delete mode 100644 script/sony.habb/make_build_env.sh
+ delete mode 100755 script/sony.habb/make_daily_howm_todo.sh
+ delete mode 100755 script/sony.habb/make_ebisu_master_branch.sh
+ delete mode 100755 script/sony.habb/make_ebisu_master_branch_without_git05.sh
+ delete mode 100755 script/sony.habb/make_ebisu_repo_init.sh
+ delete mode 100755 script/sony.habb/make_ebisu_repo_init_without_git05.sh
+ delete mode 100755 script/sony.habb/make_master_branch.sh
+ delete mode 100755 script/sony.habb/make_repo_init.sh
+ delete mode 100755 script/sony.habb/setup_mrmc.sh
+ delete mode 100644 script/sony.habb/update_rtags.sh
+ delete mode 100755 script/sync_dotfiles.sh
+ delete mode 100755 script/sync_howm.sh
+ delete mode 100755 sync
 
-(defun set-my-var (value)
-  "Revised version by Charlie Martin"
-  (interactive "p")
-  (setq my-var value))
-set-my-var
-
-(set-my-var "\C-h")
-
-(help-key-description [22] nil)
 
 * bash -> zsh にして history も全同期はありか?
 
@@ -274,42 +296,6 @@ wimax ルータを何台かレンタルする予定
 
 ----
 
-
-[概要]
-https://github.com/route384/hgrm.services.soundpostcontrolservice/pull/26 の残件.
-* コメントとして, FALLTHROUGH がある場所を削除
-* uint8_t を base size として定義している ＬｏｏｐＢａｃｋＤａｔａＰａｒａｍ 内の値の表示を %hhu および uint8_t でキャストして出力するように修正
-
-[火入れ確認]
-- [x] ビルドが通ること
-- [ ] ビルドしたpf-sc FWを HA-BBに焼いて起動できること
-- [ ] Mrmcとdebug用effectorだけのflowをxmlで用意して、それが反映されること (添付SoundService.xml 確認)
-(以下は上記のflowでの確認)
-- [ ] flow 設定で起動後, ss4s_socket が LISTEN で開かれていること
-  - netstat -l で ss4s_socket が LISTEN になる
-- [ ] SsSocketSample を使用して, MrmcCom と接続ができること
-  - netstat -n で CONNECTED になる
-- [ ] コントロールパケット (kPlay, kStop, kDestroy)の通過確認
-  - 再生時に kPlay/kStop/kDestroy がログで出力される
-- [ ] InternalInfo の値が MrmcCom -> SsSocketSample に送信されること
-  - 以下の値を確認 (TrackParam.f_samp, bits_per_samp, num_of_ch, ch_config, multi_ch_config)
-- [ ] timestamp が正しく送信されることを確認
-  - MrmcCom 受領データが SsSocketSample に渡されることを確認
-- [ ] 再生系で音がなることを確認
-  - 2ch 
-  - 4ch
-  - 6ch
-  - 8ch
-  - 10ch
-  - 12ch
-  - 14ch
-  - 16ch
-
-[影響確認]
-ログとコメントのみの修正のため影響なし. 試験については単体系として, mrmc 作成時のもので単体昨日を確認
-
-
-----
 
 ok case / eth0 単体 (wimax なし)
 
