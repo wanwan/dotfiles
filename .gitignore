@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \#*#
 *~
 *.swp
@@ -14,3 +15,7 @@ xmonad/xmonad-x86_64-linux-back
 xmonad/xmonad.errors
 xmonad/xmonad.o
 xmonad/xmonad.hi
+=======
+*~
+#*#
+>>>>>>> 4ff24286d65ffcfe7a85eee48c629cd12a47b31f
