@@ -1,0 +1,33 @@
+#!/bin/bash
+
+HOWM_PASSWD=$HOME/dotfiles/private/sync
+if [ -x $HOWM_PASSWD ]; then
+  source $HOWM_PASSWD
+fi
+
+DOTFILES_DIR=$HOME/dotfiles
+DOTFILES_PRIVATE_DIR=$HOME/dotfiles
+DOTFILES_GITHUB_PATH=/wanwan/dotfiles.git
+DOTFILES_PRIVATE_GITHUB_PATH=/wanwan/dotfiles.private.git
+
+DOTFILES_GITHUB_URL=https://${HOWM_GITHUB_SERVER_USER}:${HOWM_GITHUB_SERVER_PASS}@${HOWM_GITHUB_REPO_SERVER}${DOTFILES_GITHUB_PATH}
+DOTFILES_PRIVATE_GITHUB_URL=https://${HOWM_GITHUB_SERVER_USER}:${HOWM_GITHUB_SERVER_PASS}@${HOWM_GITHUB_REPO_SERVER}${DOTFILES_PRIVATE_GITHUB_PATH}
+
+
+# dotfiles.private
+COMMENTTAG="sync_dotfiles.sh @ `hostname` (`date '+%Y-%m-%d_%T'`)"
+pushd "$DOTFILES_PRIVATE_DIR"
+${REVISION_COMMAND} add .
+${REVISION_COMMAND} commit -a -m "$COMMENTTAG"
+${REVISION_COMMAND} pull ${DOTFILES_PRIVATE_GITHUB_URL}
+${REVISION_COMMAND} push ${DOTFILES_PRIVATE_GITHUB_URL} master
+popd
+
+# dotfiles
+COMMENTTAG="sync_dotfiles.sh @ `hostname` (`date '+%Y-%m-%d_%T'`)"
+pushd "$DOTFILES_DIR"
+${REVISION_COMMAND} add .
+${REVISION_COMMAND} commit -a -m "$COMMENTTAG"
+${REVISION_COMMAND} pull ${DOTFILES_GITHUB_URL}
+${REVISION_COMMAND} push ${DOTFILES_GITHUB_URL} master
+popd
