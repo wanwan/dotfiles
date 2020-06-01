@@ -1,3 +1,0 @@
-# min hr day mon wk command
-0-59/30 * *  *   *  /Users/waka/bin/sync_howm.sh
-0    20  *   *   *  /Users/waka/bin/make_daily_howm_todo.sh
