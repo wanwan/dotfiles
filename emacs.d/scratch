@@ -2,6 +2,7 @@
 ;; If you want to create a file, visit that file with C-x C-f,
 ;; then enter the text in that file's own buffer.
 
+
  delete mode 100644 a
  delete mode 100755 make_dotfiles_to_user_environment.sh
  delete mode 100644 script/crontab
