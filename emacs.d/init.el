@@ -377,10 +377,13 @@
   (let ((it (cdr-safe (assq major-mode irony-lang-compile-option-alist))))
     (when it (append '("-x") (split-string it "\s")))))
 
-
-
 ;; rtags
 ;; only run this if rtags is installed
+(defun setup-flycheck-rtags ()
+  (flycheck-select-checker 'rtags)
+  (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
+  (setq-local flycheck-check-syntax-automatically nil)
+  )
 (when (require 'rtags nil :noerror)
   (define-key c-mode-base-map (kbd "M-.")
     (function rtags-find-symbol-at-point))
@@ -410,7 +413,7 @@
           (lambda ()
             (when (derived-mode-p 'c-mode 'c++-mode)
               ;;(rtags-mode)
-	      )
+              )
             (when (derived-mode-p 'java-mode)
               (ggtags-mode 1))))
 ;; Enable helm-gtags-mode
@@ -420,6 +423,7 @@
 ;(add-hook 'c-mode-hook 'helm-gtags-mode)
 ;(add-hook 'c++-mode-hook 'helm-gtags-mode)
 ;(add-hook 'asm-mode-hook 'helm-gtags-mode)
+
 
 ;; markdown
 (autoload 'markdown-mode "markdown-mode"
