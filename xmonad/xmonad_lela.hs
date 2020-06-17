@@ -59,9 +59,9 @@ myWorkspaces = [ "shell"
 --  --spawnOn "idea" "intellij-idea-ultimate-edition"
 
 myManageHookFloat = composeAll
-    [ className =? "MotionPro"                 --> doFloat,
-      className =? "microsoft teams - preview" --> doFloat,
-      className =? "Microsoft Teams - Preview" --> doFloat
+    [ className =? "MotionPro"                 --> doFloat
+--      className =? "microsoft teams - preview" --> doFloat,
+--      className =? "Microsoft Teams - Preview" --> doFloat
     ]
 
 tall = Tall 1 (3/100) (1/2)
