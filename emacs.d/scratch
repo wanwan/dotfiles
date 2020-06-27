@@ -22,7 +22,15 @@ fatal かは不明.
 ものはなさそう.
 ちなみにこれらはきほん皆はじかれている.
 
+* http (github/slack/office)
+github は どうも response がこない. office と slack は 302 で もどって
+http forward で失敗している.
 
+* ssh to github on windows
+wireshark で覗いたが dst port 22 への一番最初の packet に response
+がいないっぽい.
+
+* ssh to github on linux
 
 
 
