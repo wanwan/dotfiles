@@ -3,6 +3,32 @@
 ;; then enter the text in that file's own buffer.
 
 
+
+若林です.
+
+network の件の追加です.
+ちなみに作業は 6/27 2240 くらいから開始しています.
+
+* ras
+windows に wireshark をいれて追加で確認.
+接続開始時に 192.168.10.16 -> 211.125.134.20:443 で通信している.
+TLS handshake とかはやっている. 途中 Encrypt Alert がでているが
+fatal かは不明.
+その後いくつかパケットがとんでいるが, 通常の widnows 上でも
+色々飛んでいるのでちょっとどれが何へのか、というのは不明.
+# 逆引きできる DNS がないので IP から逆算は多過ぎてちょっとわからん.
+
+ただ斜めに読むかぎり福井さんが sony からもらったものを dst にしている
+ものはなさそう.
+ちなみにこれらはきほん皆はじかれている.
+
+
+
+
+
+
+------------------------
+
  delete mode 100644 a
  delete mode 100755 make_dotfiles_to_user_environment.sh
  delete mode 100644 script/crontab
