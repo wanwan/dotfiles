@@ -3,48 +3,29 @@
 ;; then enter the text in that file's own buffer.
 
 
+restriction
+* 16718
+* 16716
+* 16714
+* 16552
+* 16550
+* 16548
+* 16054
 
-若林です.
+* 16549
+jira に 13971 で対応と記載されているので削除
 
-network の件の追加です.
-ちなみに作業は 6/27 2240 くらいから開始しています.
-linux の切り替えとかでちょっと梃摺ったので間時間あいていますが.
+--
+known bugs
+* 15681
+-> 調査案件なので close
+* 15965
+-> 文面から 15964 で対処されているので削除.
+* 16434
+* 16610
+* 16700
 
-* ras
-windows に wireshark をいれて追加で確認.
-接続開始時に 192.168.10.16 -> 211.125.134.20:443 で通信している.
-TLS handshake とかはやっている. 途中 Encrypt Alert がでているが
-fatal かは不明.
-その後いくつかパケットがとんでいるが, 通常の widnows 上でも
-色々飛んでいるのでちょっとどれが何へのか、というのは不明.
-# 逆引きできる DNS がないので IP から逆算は多過ぎてちょっとわからん.
-
-ただ斜めに読むかぎり福井さんが sony からもらったものを dst にしている
-ものはなさそう.
-ちなみにこれらはきほん皆はじかれている.
-
-* http (github/slack/office)
-github は どうも response がこない. office と slack は 302 で もどって
-http forward で失敗している.
-
-* ssh to github on windows
-wireshark で覗いたが dst port 22 への一番最初の packet に response
-がいないっぽい.
-
-* ssh to github on linux
-timeout. 現象は変らず.
-
-特筆すべきはなしとしては, https によるgithub そのものはどうも github の root
-access でタイムアウトしているように見える.
-ただ, まれに github.com の範囲だけは上手くいっているようにみえることが
-あるのがげせない.
-(ひょっとして cache だったのかも, と思い消して再度やりなおして再現しない
-ので見間違いという可能性もある...)
-
-ssh は通らないのだが, 三分一さんのシート見直していて気付いたのですが
-port 22 の開放が firewall のリストにないのですが足りないのではないか
-という気がします.
-
+scpmix -> external にはいれた履歴があるけど一応削除
 
 
 
