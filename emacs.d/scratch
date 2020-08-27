@@ -95,6 +95,71 @@
 07-14 08:39:50.379 (hagodaemon)( 4509): [E| 4509|7f9e7fc130|SS  |SsCom.cc:404] **** cnt: 81 diff: 971 ****
 
 
+---------------
+buffer を間違えて,
+07-14 09:20:50.841 (hagodaemon)( 4341): [E| 4341|7fa1f65130|SS  |SsCom.cc:625] ***** SET PIPE SIZE header: 320 ch: 2 sample_num: 44100 datasz: 352800 *****
+にした場合. 1->1->6 になるのに 520step くらいかかっている.
+
+---------------
+
+たぶん buffer の理論的な正しい値.
+1024 になっているが linux 的には 4k が最小なのでいくつか余計にくわれているが,
+step25 からほぼコンスタントに 2.6+alpha (2700-3000) くらいの値の固定値になっている
+のでほぼ期待値であるとおもわれるが, 定常状態におちるまで 25step あるのが説明がつかない.
+
+
+07-14 08:43:08.319 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:626] ***** SET PIPE SIZE header: 320 ch: 2 sample_num: 128 datasz: 1024 *****
+07-14 08:43:08.319 (hagodaemon)( 4370): [N| 4370|7f87aa2130|SS  |SsPipe.cc:248] update fifo fcntl F_SETPIPE_SZ %d
+07-14 08:43:08.319 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 0 diff: 319161 ****
+07-14 08:43:08.355 (hagodaemon)( 4370): [N| 4370|7f9f4dd010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+07-14 08:43:08.360 (hagodaemon)( 4370): [N| 4370|7f8175c130|SS  |FilterChainPacket.cc:272] [4] kDestroy
+07-14 08:43:08.363 (hagodaemon)( 4370): [N| 4370|7f9f4dd010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+07-14 08:43:08.365 (hagodaemon)( 4370): [N| 4370|7f8175c130|SS  |FilterChainPacket.cc:196] [4] kPlay
+07-14 08:43:08.365 (hagodaemon)( 4370): [N| 4370|7f84762130|SS  |Renderer.cc:499] [2000] kPlay
+07-14 08:43:08.366 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 1 diff: 47193 ****
+07-14 08:43:08.367 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 2 diff: 1038 ****
+07-14 08:43:08.368 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 3 diff: 1221 ****
+07-14 08:43:08.370 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 4 diff: 1531 ****
+07-14 08:43:08.371 (hagodaemon)( 4370): [N| 4370|7f84762130|SS  |Renderer.cc:210] [2000] AudioHal Open
+07-14 08:43:08.373 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 5 diff: 3431 ****
+07-14 08:43:08.374 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 6 diff: 1148 ****
+07-14 08:43:08.375 (hagodaemon)( 4370): [N| 4370|7f84762130|SS  |Renderer.cc:118] [2000] Start Sounds
+07-14 08:43:08.375 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 7 diff: 1037 ****
+07-14 08:43:08.377 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 8 diff: 1176 ****
+07-14 08:43:08.378 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 9 diff: 1035 ****
+07-14 08:43:08.379 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 10 diff: 973 ****
+07-14 08:43:08.380 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 11 diff: 1176 ****
+07-14 08:43:08.381 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 12 diff: 1081 ****
+07-14 08:43:08.382 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 13 diff: 1003 ****
+07-14 08:43:08.383 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 14 diff: 1110 ****
+07-14 08:43:08.384 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 15 diff: 1167 ****
+07-14 08:43:08.385 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 16 diff: 997 ****
+07-14 08:43:08.386 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 17 diff: 1139 ****
+07-14 08:43:08.387 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 18 diff: 1038 ****
+07-14 08:43:08.388 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 19 diff: 1189 ****
+07-14 08:43:08.389 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 20 diff: 1062 ****
+07-14 08:43:08.391 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 21 diff: 1165 ****
+07-14 08:43:08.392 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 22 diff: 1047 ****
+07-14 08:43:08.393 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 23 diff: 1123 ****
+07-14 08:43:08.394 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 24 diff: 1107 ****
+07-14 08:43:08.396 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 25 diff: 2283 ****
+07-14 08:43:08.399 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 26 diff: 2777 ****
+07-14 08:43:08.402 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 27 diff: 2882 ****
+07-14 08:43:08.405 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 28 diff: 2970 ****
+07-14 08:43:08.408 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 29 diff: 2881 ****
+07-14 08:43:08.411 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 30 diff: 2857 ****
+07-14 08:43:08.413 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 31 diff: 2908 ****
+07-14 08:43:08.416 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 32 diff: 2949 ****
+07-14 08:43:08.419 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 33 diff: 2911 ****
+07-14 08:43:08.422 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 34 diff: 2873 ****
+07-14 08:43:08.425 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 35 diff: 2906 ****
+07-14 08:43:08.428 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 36 diff: 2961 ****
+07-14 08:43:08.431 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 37 diff: 2779 ****
+07-14 08:43:08.434 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 38 diff: 2937 ****
+07-14 08:43:08.437 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 39 diff: 2897 ****
+
+
+
 
 
 
