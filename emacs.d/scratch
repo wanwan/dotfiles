@@ -213,6 +213,53 @@ step 31 から大体 2.6ms になっている.
 07-14 09:01:25.362 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:404] **** cnt: 33 diff: 2624 ****
 
 
+-----
+
+2ch pcm SsSocketSample の read 側の loop.
+書き込み側とほぼ同じ傾向であるのが見てとれる.
+おそらく書き込みが自由に cpu をとれて 読んで書いてが一定のところまで
+廻れているからこうなっているが, このコード自体はバッファから読んで track に
+書いてだけなのでバッファリングしていないと思われる.
+
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:57] SsSocketRead - start
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:345] IAudioTrack::Start[1]
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 0 diff: 13728 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 1 diff: 1366 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 2 diff: 906 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 3 diff: 937 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 4 diff: 1126 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 5 diff: 1920 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 6 diff: 1876 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 7 diff: 991 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 8 diff: 1208 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 9 diff: 780 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 10 diff: 849 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 11 diff: 785 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 12 diff: 819 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 13 diff: 772 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 14 diff: 738 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 15 diff: 836 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 16 diff: 769 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 17 diff: 900 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 18 diff: 803 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 19 diff: 818 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 20 diff: 866 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 21 diff: 1162 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 22 diff: 2904 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 23 diff: 2939 ****
+[E| 5211|7faa47a120|SS  |SsSocketLoopBack.cc:234] **** cnt: 24 diff: 2866 ****
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
