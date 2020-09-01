@@ -2,6 +2,23 @@
 ;; If you want to create a file, visit that file with C-x C-f,
 ;; then enter the text in that file's own buffer.
 
+
+* howm の取扱
+** long span の目標
+** 短期の backlog (2week?)
+に分割する.
+
+long span -> backlog の分解のフローをどうするかやる必要がある.
+backlog に全部いれて, 2week(todo) 分表示されるようなイメージではどうか?
+
+backlog -> todo および todo の残は 2week 毎に整理する.
+long span の目標との間の整合は 1month? で整合させる でどうか
+
+
+
+-------
+
+
 // SsSocketSample + 何もしないケース
 // 70sample くらいまでは 1000us でまわってそれ以降大体 1000->1000->6000 のループになる
 07-14 08:39:50.231 (hagodaemon)( 4509): [E| 4509|7f9e7fc130|SS  |SsCom.cc:404] **** cnt: 0 diff: 231189 ****
@@ -292,6 +309,7 @@ filter が現在くっているはずの値(fader?) とほぼ同じなので傾�
 
 16ch の場合. 16->19 で増えているぽいが...
 31 との間の差を考えるとちょっと説明がつかない.
+(3回やって同様の傾向なので誤差とかではない)
 
 07-14 08:44:19.624 (hagodaemon)( 4347): [N| 4347|7f9cf66130|SS  |Renderer.cc:222] [2000] AudioHal Open
 07-14 08:44:19.625 (hagodaemon)( 4347): [E| 4347|7f9cf66130|SS  |Renderer.cc:113] **** cnt: 0 diff: 625439 ****
@@ -318,8 +336,59 @@ filter が現在くっているはずの値(fader?) とほぼ同じなので傾�
 07-14 08:44:19.650 (hagodaemon)( 4347): [E| 4347|7f9cf66130|SS  |Renderer.cc:113] **** cnt: 20 diff: 2665 ****
 
 
+07-15 06:04:53.869 (hagodaemon)( 4242): [N| 4242|7f64cf0130|SS  |Renderer.cc:222] [2000] AudioHal Open
+07-15 06:04:53.870 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 0 diff: 870453 ****
+07-15 06:04:53.871 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 1 diff: 990 ****
+07-15 06:04:53.872 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 2 diff: 763 ****
+07-15 06:04:53.872 (hagodaemon)( 4242): [N| 4242|7f64cf0130|SS  |Renderer.cc:130] [2000] Start Sounds
+07-15 06:04:53.873 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 3 diff: 1211 ****
+07-15 06:04:53.875 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 4 diff: 993 ****
+07-15 06:04:53.875 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 5 diff: 891 ****
+07-15 06:04:53.876 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 6 diff: 1151 ****
+07-15 06:04:53.877 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 7 diff: 739 ****
+07-15 06:04:53.878 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 8 diff: 1239 ****
+07-15 06:04:53.879 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 9 diff: 1076 ****
+07-15 06:04:53.880 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 10 diff: 1297 ****
+07-15 06:04:53.882 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 11 diff: 1172 ****
+07-15 06:04:53.883 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 12 diff: 1092 ****
+07-15 06:04:53.884 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 13 diff: 1336 ****
+07-15 06:04:53.885 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 14 diff: 1100 ****
+07-15 06:04:53.886 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 15 diff: 1298 ****
+07-15 06:04:53.888 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 16 diff: 1260 ****
+07-15 06:04:53.889 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 17 diff: 1210 ****
+07-15 06:04:53.890 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 18 diff: 1385 ****
+07-15 06:04:53.893 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 19 diff: 2551 ****
+07-15 06:04:53.895 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 20 diff: 2650 ****
+07-15 06:04:53.898 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 21 diff: 2664 ****
+07-15 06:04:53.901 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 22 diff: 2666 ****
+07-15 06:04:53.903 (hagodaemon)( 4242): [E| 4242|7f64cf0130|SS  |Renderer.cc:113] **** cnt: 23 diff: 2668 ****
 
 
+07-14 08:49:09.968 (hagodaemon)( 4511): [N| 4511|7f95ffb130|SS  |Renderer.cc:222] [2000] AudioHal Open
+07-14 08:49:09.970 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 0 diff: 970292 ****
+07-14 08:49:09.971 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 1 diff: 760 ****
+07-14 08:49:09.972 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 2 diff: 1087 ****
+07-14 08:49:09.972 (hagodaemon)( 4511): [N| 4511|7f95ffb130|SS  |Renderer.cc:130] [2000] Start Sounds
+07-14 08:49:09.973 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 3 diff: 1002 ****
+07-14 08:49:09.974 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 4 diff: 1405 ****
+07-14 08:49:09.975 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 5 diff: 1033 ****
+07-14 08:49:09.977 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 6 diff: 1454 ****
+07-14 08:49:09.978 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 7 diff: 1135 ****
+07-14 08:49:09.979 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 8 diff: 1107 ****
+07-14 08:49:09.980 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 9 diff: 1216 ****
+07-14 08:49:09.981 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 10 diff: 1074 ****
+07-14 08:49:09.982 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 11 diff: 1188 ****
+07-14 08:49:09.984 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 12 diff: 1179 ****
+07-14 08:49:09.985 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 13 diff: 1140 ****
+07-14 08:49:09.986 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 14 diff: 1416 ****
+07-14 08:49:09.987 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 15 diff: 1193 ****
+07-14 08:49:09.989 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 16 diff: 1286 ****
+07-14 08:49:09.990 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 17 diff: 1299 ****
+07-14 08:49:09.991 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 18 diff: 1239 ****
+07-14 08:49:09.993 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 19 diff: 1521 ****
+07-14 08:49:09.995 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 20 diff: 2686 ****
+07-14 08:49:09.998 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 21 diff: 2650 ****
+07-14 08:49:10.001 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 22 diff: 2659 ****
 
 
 
