@@ -176,8 +176,8 @@
 ;;(setq howm-view-summary-persistent nil)  ;; 一覧バッファを消す. C-u して [return] だと, 一覧を残す.
 (setq howm-view-summary-persistent t)
 (setq howm-view-split-horizontally t)
-(setq howm-menu-schedule-days-before 0)  ;; 予定とToDoの表示数 ;; 今日から
-(setq howm-menu-schedule-days 60)        ;; 予定とToDoの表示数 ;; 2週間後まで
+(setq howm-menu-schedule-days-before -3)  ;; 予定とToDoの表示数 ;; 今日から
+(setq howm-menu-schedule-days 30)        ;; 予定とToDoの表示数 ;; 2週間後まで
 (setq howm-menu-todo-num 99)
 
 (setq howm-view-summary-persistent t)
