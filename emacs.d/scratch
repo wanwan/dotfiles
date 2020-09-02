@@ -391,6 +391,46 @@ filter が現在くっているはずの値(fader?) とほぼ同じなので傾�
 07-14 08:49:10.001 (hagodaemon)( 4511): [E| 4511|7f95ffb130|SS  |Renderer.cc:113] **** cnt: 22 diff: 2659 ****
 
 
+---------
+16ch SsSocket でとったログ
+
+
+SsSocketClient::LoopBack # [SsSocketClient:WatchThread:202]thread start
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:57] SsSocketRead - start
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:347] IAudioTrack::Start[1]
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 0 diff: 213492 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 1 diff: 1202 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 2 diff: 830 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 3 diff: 838 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 4 diff: 1856 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 5 diff: 3011 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 6 diff: 1292 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 7 diff: 1538 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 8 diff: 1062 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 9 diff: 1208 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 10 diff: 1207 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 11 diff: 1245 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 12 diff: 1277 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 13 diff: 1151 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 14 diff: 1090 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 15 diff: 996 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 16 diff: 1081 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 17 diff: 1079 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 18 diff: 1025 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 19 diff: 1022 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 20 diff: 1052 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 21 diff: 979 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 22 diff: 998 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 23 diff: 998 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 24 diff: 1093 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 25 diff: 1178 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 26 diff: 2100 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 27 diff: 2580 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 28 diff: 2690 ****
+[E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:235] **** cnt: 29 diff: 2694 ****
+
+
+
 
 
 
