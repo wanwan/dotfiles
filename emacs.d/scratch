@@ -393,7 +393,10 @@ filter が現在くっているはずの値(fader?) とほぼ同じなので傾�
 
 ---------
 16ch SsSocket でとったログ
-
+26pkt くらい不定値になっている.
+30pkt くらい送り側が不定なので 5 pkt くらい mrmc が吸収しているようにもみえる.
+一方で renderer は 19-20pkt くらいなので, こことの差は 7 pkt くらいある.
+2ch が 4,5 pkt なのでちょっと差がでているのが気になる.
 
 SsSocketClient::LoopBack # [SsSocketClient:WatchThread:202]thread start
 [E| 7527|7f837fe120|SS  |SsSocketLoopBack.cc:57] SsSocketRead - start
