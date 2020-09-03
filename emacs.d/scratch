@@ -564,6 +564,70 @@ pipe size の設定が 8192+header だが設定値が 16384 になっている. 
 
 
 
+--------------------------
+
+2ch で pipe write 時に pipe の使用量をとったもの.
+320->1024 が繰り返しで稀に 0 がある、という感じ.
+ここから読み解けるとは, パイプのバッファ中に header と data を書いたときに読み出し側が十分に
+廻っており, バッファへの滞留はないと思われる、ということになる.
+特に送受信を開始したあたりに出ている初期の非定常状態でもこの傾向があることから初期の
+非定常状態がパイプへのデータ滞留ではない、という可能性を示唆している.
+
+07-14 08:40:33.920 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:632] ***** SET PIPE SIZE header: 320 ch: 2 sample_num: 128 datasz: 1024 bufsz: 1344 *****
+07-14 08:40:33.921 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.921 (hagodaemon)( 4454): [N| 4454|7f7b9d8130|SS  |SsPipe.cc:250] update fifo fcntl F_SETPIPE_SZ 4096
+07-14 08:40:33.921 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.957 (hagodaemon)( 4454): [N| 4454|7f93426010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+07-14 08:40:33.962 (hagodaemon)( 4454): [N| 4454|7f75692130|SS  |FilterChainPacket.cc:272] [4] kDestroy
+07-14 08:40:33.965 (hagodaemon)( 4454): [N| 4454|7f93426010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+07-14 08:40:33.966 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.968 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 0 diff: 966678 write payload_sz: 1024 ****
+07-14 08:40:33.968 (hagodaemon)( 4454): [N| 4454|7f75692130|SS  |FilterChainPacket.cc:196] [4] kPlay
+07-14 08:40:33.968 (hagodaemon)( 4454): [N| 4454|7f78698130|SS  |Renderer.cc:513] [2000] kPlay
+07-14 08:40:33.968 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.968 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.969 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 1 diff: 1419 write payload_sz: 1024 ****
+07-14 08:40:33.969 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.969 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.969 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 2 diff: 1268 write payload_sz: 1024 ****
+07-14 08:40:33.970 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.970 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.970 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 3 diff: 1404 write payload_sz: 1024 ****
+07-14 08:40:33.974 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.974 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.974 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 4 diff: 1449 write payload_sz: 1024 ****
+07-14 08:40:33.974 (hagodaemon)( 4454): [N| 4454|7f78698130|SS  |Renderer.cc:224] [2000] AudioHal Open
+07-14 08:40:33.974 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.974 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.974 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 5 diff: 1293 write payload_sz: 1024 ****
+07-14 08:40:33.974 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.974 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.975 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 6 diff: 1328 write payload_sz: 1024 ****
+07-14 08:40:33.976 (hagodaemon)( 4454): [N| 4454|7f78698130|SS  |Renderer.cc:132] [2000] Start Sounds
+07-14 08:40:33.976 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.976 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.976 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 7 diff: 1428 write payload_sz: 1024 ****
+07-14 08:40:33.977 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.977 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.977 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 8 diff: 1245 write payload_sz: 1024 ****
+07-14 08:40:33.978 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.978 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.978 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 9 diff: 1117 write payload_sz: 1024 ****
+07-14 08:40:33.979 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.980 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.980 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 10 diff: 1075 write payload_sz: 1024 ****
+07-14 08:40:33.980 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.980 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.981 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 11 diff: 1164 write payload_sz: 1024 ****
+07-14 08:40:33.982 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.982 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.982 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 12 diff: 1074 write payload_sz: 1024 ****
+07-14 08:40:33.983 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.983 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.983 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 13 diff: 1024 write payload_sz: 1024 ****
+07-14 08:40:33.984 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 320
+07-14 08:40:33.984 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 1024
+07-14 08:40:33.984 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 14 diff: 1128 write payload_sz: 1024 ****
 
 
 
