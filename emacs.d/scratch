@@ -182,7 +182,7 @@ step25 からほぼコンスタントに 2.6+alpha (2700-3000) くらいの値�
 4k を越えるサイズになるので 2ch の場合に比較して定常状態に落ちるまでの時間が
 短いことを期待しているが, そうはなっていないっぽい.
 step 31 から大体 2.6ms になっている.
-(ちなみに 3 回繰替えしてほぼ同じなので再現性がある) 
+(ちなみに 3 回繰替えしてほぼ同じなので再現性がある)
 
 07-14 09:01:25.292 (hagodaemon)( 4370): [N| 4370|7f83760130|SS  |FilterChainPacket.cc:196] [0] kPlay
 07-14 09:01:25.303 (hagodaemon)( 4370): [E| 4370|7f85f65130|SS  |SsCom.cc:626] ***** SET PIPE SIZE header: 320 ch: 16 sample_num: 128 datasz: 8192 *****
@@ -769,6 +769,114 @@ pipe 中に滞留してしまっている.
 07-14 09:03:09.636 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 8832
 07-14 09:03:09.637 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsPipe.cc:321] write pipe used byte: 8512
 07-14 09:03:09.638 (hagodaemon)( 4454): [E| 4454|7f79e9b130|SS  |SsCom.cc:410] **** cnt: 37 diff: 2673 write payload_
+
+
+--------------------------------
+buffer 12 の場合の 2ch 再生
+
+* sscom
+07-14 08:40:20.780 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:632] ***** SET PIPE SIZE header: 320 ch: 2 sample_num: 128 datasz: 1024 bufsz: 1344 *****
+07-14 08:40:20.781 (hagodaemon)( 4368): [N| 4368|7f85104130|SS  |SsPipe.cc:250] update fifo fcntl F_SETPIPE_SZ 4096
+07-14 08:40:20.817 (hagodaemon)( 4368): [N| 4368|7f98b1e010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+07-14 08:40:20.822 (hagodaemon)( 4368): [N| 4368|7f627fc130|SS  |FilterChainPacket.cc:272] [4] kDestroy
+07-14 08:40:20.824 (hagodaemon)( 4368): [N| 4368|7f98b1e010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+07-14 08:40:20.826 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 0 diff: 826603 write payload_sz: 1024 ****
+07-14 08:40:20.827 (hagodaemon)( 4368): [N| 4368|7f627fc130|SS  |FilterChainPacket.cc:196] [4] kPlay
+07-14 08:40:20.828 (hagodaemon)( 4368): [N| 4368|7f7ddb6130|SS  |Renderer.cc:513] [2000] kPlay
+07-14 08:40:20.828 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 1 diff: 1350 write payload_sz: 1024 ****
+07-14 08:40:20.829 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 2 diff: 1054 write payload_sz: 1024 ****
+07-14 08:40:20.830 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 3 diff: 1189 write payload_sz: 1024 ****
+07-14 08:40:20.832 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 4 diff: 1593 write payload_sz: 1024 ****
+07-14 08:40:20.833 (hagodaemon)( 4368): [N| 4368|7f7ddb6130|SS  |Renderer.cc:224] [2000] AudioHal Open
+07-14 08:40:20.834 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 5 diff: 2136 write payload_sz: 1024 ****
+07-14 08:40:20.835 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 6 diff: 1196 write payload_sz: 1024 ****
+07-14 08:40:20.836 (hagodaemon)( 4368): [N| 4368|7f7ddb6130|SS  |Renderer.cc:132] [2000] Start Sounds
+07-14 08:40:20.836 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 7 diff: 981 write payload_sz: 1024 ****
+07-14 08:40:20.837 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 8 diff: 953 write payload_sz: 1024 ****
+07-14 08:40:20.838 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 9 diff: 1235 write payload_sz: 1024 ****
+07-14 08:40:20.839 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 10 diff: 1019 write payload_sz: 1024 ****
+07-14 08:40:20.840 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 11 diff: 1059 write payload_sz: 1024 ****
+07-14 08:40:20.841 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 12 diff: 1010 write payload_sz: 1024 ****
+07-14 08:40:20.842 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 13 diff: 1138 write payload_sz: 1024 ****
+07-14 08:40:20.843 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 14 diff: 1044 write payload_sz: 1024 ****
+07-14 08:40:20.844 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 15 diff: 1135 write payload_sz: 1024 ****
+07-14 08:40:20.845 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 16 diff: 1134 write payload_sz: 1024 ****
+07-14 08:40:20.847 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 17 diff: 1133 write payload_sz: 1024 ****
+07-14 08:40:20.848 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 18 diff: 1016 write payload_sz: 1024 ****
+07-14 08:40:20.849 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 19 diff: 1150 write payload_sz: 1024 ****
+07-14 08:40:20.850 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 20 diff: 1033 write payload_sz: 1024 ****
+07-14 08:40:20.851 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 21 diff: 1139 write payload_sz: 1024 ****
+07-14 08:40:20.852 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 22 diff: 1130 write payload_sz: 1024 ****
+07-14 08:40:20.854 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 23 diff: 1522 write payload_sz: 1024 ****
+07-14 08:40:20.857 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 24 diff: 2849 write payload_sz: 1024 ****
+07-14 08:40:20.859 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 25 diff: 2920 write payload_sz: 1024 ****
+07-14 08:40:20.862 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 26 diff: 2899 write payload_sz: 1024 ****
+07-14 08:40:20.865 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 27 diff: 2969 write payload_sz: 1024 ****
+
+
+
+
+
+----------
+16ch
+
+07-14 08:52:59.682 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:632] ***** SET PIPE SIZE header: 320 ch: 16 sample_num: 128 datasz: 8192 bufsz: 8512 *****
+07-14 08:52:59.682 (hagodaemon)( 4368): [N| 4368|7f85104130|SS  |SsPipe.cc:250] update fifo fcntl F_SETPIPE_SZ 16384
+07-14 08:52:59.682 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 0 diff: 94442 write payload_sz: 8192 ****
+07-14 08:52:59.684 (hagodaemon)( 4368): [N| 4368|7f98b1e010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+07-14 08:52:59.686 (hagodaemon)( 4368): [N| 4368|7f627fc130|SS  |FilterChainPacket.cc:272] [4] kDestroy
+07-14 08:52:59.688 (hagodaemon)( 4368): [N| 4368|7f98b1e010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+07-14 08:52:59.690 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 1 diff: 8401 write payload_sz: 8192 ****
+07-14 08:52:59.691 (hagodaemon)( 4368): [N| 4368|7f627fc130|SS  |FilterChainPacket.cc:196] [4] kPlay
+07-14 08:52:59.691 (hagodaemon)( 4368): [N| 4368|7f7ddb6130|SS  |Renderer.cc:513] [2000] kPlay
+07-14 08:52:59.692 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 2 diff: 1729 write payload_sz: 8192 ****
+07-14 08:52:59.694 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 3 diff: 1563 write payload_sz: 8192 ****
+07-14 08:52:59.695 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 4 diff: 1502 write payload_sz: 8192 ****
+07-14 08:52:59.697 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 5 diff: 1553 write payload_sz: 8192 ****
+07-14 08:52:59.698 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 6 diff: 1658 write payload_sz: 8192 ****
+07-14 08:52:59.699 (hagodaemon)( 4368): [N| 4368|7f7ddb6130|SS  |Renderer.cc:224] [2000] AudioHal Open
+07-14 08:52:59.701 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 7 diff: 1855 write payload_sz: 8192 ****
+07-14 08:52:59.701 (hagodaemon)( 4368): [N| 4368|7f7ddb6130|SS  |Renderer.cc:132] [2000] Start Sounds
+07-14 08:52:59.702 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 8 diff: 1560 write payload_sz: 8192 ****
+07-14 08:52:59.703 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 9 diff: 1478 write payload_sz: 8192 ****
+07-14 08:52:59.704 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 10 diff: 1418 write payload_sz: 8192 ****
+07-14 08:52:59.706 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 11 diff: 1470 write payload_sz: 8192 ****
+07-14 08:52:59.707 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 12 diff: 1091 write payload_sz: 8192 ****
+07-14 08:52:59.708 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 13 diff: 1400 write payload_sz: 8192 ****
+07-14 08:52:59.710 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 14 diff: 1203 write payload_sz: 8192 ****
+07-14 08:52:59.711 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 15 diff: 1145 write payload_sz: 8192 ****
+07-14 08:52:59.712 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 16 diff: 1143 write payload_sz: 8192 ****
+07-14 08:52:59.713 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 17 diff: 1171 write payload_sz: 8192 ****
+07-14 08:52:59.715 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 18 diff: 1482 write payload_sz: 8192 ****
+07-14 08:52:59.716 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 19 diff: 1366 write payload_sz: 8192 ****
+07-14 08:52:59.717 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 20 diff: 1080 write payload_sz: 8192 ****
+07-14 08:52:59.719 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 21 diff: 1542 write payload_sz: 8192 ****
+07-14 08:52:59.720 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 22 diff: 1379 write payload_sz: 8192 ****
+07-14 08:52:59.722 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 23 diff: 1448 write payload_sz: 8192 ****
+07-14 08:52:59.723 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 24 diff: 1399 write payload_sz: 8192 ****
+07-14 08:52:59.724 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 25 diff: 1397 write payload_sz: 8192 ****
+07-14 08:52:59.726 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 26 diff: 1286 write payload_sz: 8192 ****
+07-14 08:52:59.727 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 27 diff: 1188 write payload_sz: 8192 ****
+07-14 08:52:59.728 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 28 diff: 1462 write payload_sz: 8192 ****
+07-14 08:52:59.731 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 29 diff: 2629 write payload_sz: 8192 ****
+07-14 08:52:59.733 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 30 diff: 2720 write payload_sz: 8192 ****
+07-14 08:52:59.736 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 31 diff: 2604 write payload_sz: 8192 ****
+07-14 08:52:59.739 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 32 diff: 2678 write payload_sz: 8192 ****
+07-14 08:52:59.742 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 33 diff: 2760 write payload_sz: 8192 ****
+07-14 08:52:59.744 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 34 diff: 2573 write payload_sz: 8192 ****
+07-14 08:52:59.747 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 35 diff: 2667 write payload_sz: 8192 ****
+07-14 08:52:59.750 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 36 diff: 2702 write payload_sz: 8192 ****
+07-14 08:52:59.752 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 37 diff: 2625 write payload_sz: 8192 ****
+07-14 08:52:59.755 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 38 diff: 2681 write payload_sz: 8192 ****
+07-14 08:52:59.757 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 39 diff: 2720 write payload_sz: 8192 ****
+07-14 08:52:59.760 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 40 diff: 2602 write payload_sz: 8192 ****
+07-14 08:52:59.763 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 41 diff: 2671 write payload_sz: 8192 ****
+07-14 08:52:59.765 (hagodaemon)( 4368): [E| 4368|7f7f5b9130|SS  |SsCom.cc:410] **** cnt: 42 diff: 2730 write payload_sz: 8192 ****
+
+
+
+
+
 
 
 
