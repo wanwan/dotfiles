@@ -847,6 +847,96 @@ SsSocketClient::LoopBack # [E| 5239|7fa9a5b120|SS  |SsSocketLoopBack.cc:57] SsSo
 [E| 5239|7fa9a5b120|SS  |SsSocketLoopBack.cc:235] **** cnt: 27 diff: 2873 ****
 
 
+SsSocketClient::LoopBack # connect
+[SsSocketClient:Init:77]open fifo SUCCESS 4
+[SsSocketClient:Init:87]open notify fifo SUCCESS 5
+[SsSocketClient:Init:93]set fifo maxsz: ret: 65536 max_read_buf_size_ 49472
+SsSocketClient::LoopBack # [SsSocketClient:WatchThread:202]thread start
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:57] SsSocketRead - start
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:351] IAudioTrack::Start[1]
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 0 diff: 454392 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 1 diff: 947 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 2 diff: 694 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 3 diff: 1579 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 4 diff: 1574 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 5 diff: 1763 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 6 diff: 9238 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 7 diff: 1100 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 8 diff: 671 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 9 diff: 1199 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 10 diff: 1710 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 11 diff: 1449 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 12 diff: 1143 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 13 diff: 1222 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 14 diff: 1187 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 15 diff: 1099 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 16 diff: 1216 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 17 diff: 1218 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 18 diff: 3069 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 19 diff: 2864 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 20 diff: 2914 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 21 diff: 2915 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 22 diff: 2949 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 23 diff: 2882 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 24 diff: 2878 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 25 diff: 2896 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 26 diff: 2895 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 27 diff: 2900 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 28 diff: 2916 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 29 diff: 2935 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 30 diff: 2859 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 31 diff: 2909 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 32 diff: 2899 ****
+
+
+* renderer
+
+09-08 04:32:05.216 (hagodaemon)( 4323): [N| 4323|7f9ffff130|SS  |Matrix3.cc:401] [22] output ch mode changed to 5.0.2ch
+09-08 04:32:05.232 (hagodaemon)( 4323): [E| 4323|7f9f7fe130|SS  |SsCom.cc:632] ***** SET PIPE SIZE header: 320 ch: 12 sample_num: 128 datasz: 6144 bufsz: 6464 *****
+09-08 04:32:05.233 (hagodaemon)( 4323): [N| 4323|7fa565d130|SS  |SsPipe.cc:250] update fifo fcntl F_SETPIPE_SZ 8192
+09-08 04:32:05.269 (hagodaemon)( 4323): [N| 4323|7fb963b010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+09-08 04:32:05.273 (hagodaemon)( 4323): [N| 4323|7f827fc130|SS  |FilterChainPacket.cc:272] [4] kDestroy
+09-08 04:32:05.276 (hagodaemon)( 4323): [N| 4323|7fb963b010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+09-08 04:32:05.278 (hagodaemon)( 4323): [N| 4323|7f827fc130|SS  |FilterChainPacket.cc:196] [4] kPlay
+09-08 04:32:05.279 (hagodaemon)( 4323): [N| 4323|7f9dffb130|SS  |Renderer.cc:516] [2000] kPlay
+09-08 04:32:05.293 (hagodaemon)( 4323): [N| 4323|7f9dffb130|SS  |Renderer.cc:226] [2000] AudioHal Open
+09-08 04:32:05.294 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 0 diff: 294678 ****
+09-08 04:32:05.296 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 1 diff: 965 ****
+09-08 04:32:05.296 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 2 diff: 563 ****
+09-08 04:32:05.296 (hagodaemon)( 4323): [N| 4323|7f9dffb130|SS  |Renderer.cc:134] [2000] Start Sounds
+09-08 04:32:05.297 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 3 diff: 1179 ****
+09-08 04:32:05.298 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 4 diff: 957 ****
+09-08 04:32:05.299 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 5 diff: 860 ****
+09-08 04:32:05.300 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 6 diff: 1327 ****
+09-08 04:32:05.301 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 7 diff: 1204 ****
+09-08 04:32:05.303 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 8 diff: 1275 ****
+09-08 04:32:05.304 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 9 diff: 1253 ****
+09-08 04:32:05.305 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 10 diff: 1323 ****
+09-08 04:32:05.307 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 11 diff: 1432 ****
+09-08 04:32:05.311 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 12 diff: 4414 ****
+09-08 04:32:05.314 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 13 diff: 2896 ****
+09-08 04:32:05.317 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 14 diff: 2900 ****
+09-08 04:32:05.320 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 15 diff: 2904 ****
+09-08 04:32:05.323 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 16 diff: 2901 ****
+09-08 04:32:05.326 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 17 diff: 2901 ****
+09-08 04:32:05.328 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 18 diff: 2904 ****
+09-08 04:32:05.331 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 19 diff: 2901 ****
+09-08 04:32:05.334 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 20 diff: 2906 ****
+09-08 04:32:05.337 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 21 diff: 2905 ****
+09-08 04:32:05.340 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 22 diff: 2900 ****
+09-08 04:32:05.343 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 23 diff: 2901 ****
+09-08 04:32:05.346 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 24 diff: 2903 ****
+09-08 04:32:05.349 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 25 diff: 2900 ****
+09-08 04:32:05.352 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 26 diff: 2902 ****
+09-08 04:32:05.355 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 27 diff: 2906 ****
+09-08 04:32:05.357 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 28 diff: 2902 ****
+09-08 04:32:05.360 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 29 diff: 2900 ****
+09-08 04:32:05.363 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 30 diff: 2903 ****
+09-08 04:32:05.366 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 31 diff: 2909 ****
+09-08 04:32:05.369 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 32 diff: 2914 ****
+09-08 04:32:05.372 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 33 diff: 2889 ****
+09-08 04:32:05.375 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 34 diff: 2899 ****
+
 
 
 
@@ -913,7 +1003,86 @@ SsSocketClient::LoopBack # [E| 5239|7fa9a5b120|SS  |SsSocketLoopBack.cc:57] SsSo
 
 * SsSocketLoopback
 
+SsSocketClient::LoopBack # [E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:57] SsSocketRead - start
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:351] IAudioTrack::Start[1]
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 0 diff: 758667 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 1 diff: 604 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 2 diff: 1099 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 3 diff: 1186 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 4 diff: 1459 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 5 diff: 1638 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 6 diff: 11201 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 7 diff: 726 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 8 diff: 906 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 9 diff: 1756 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 10 diff: 1336 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 11 diff: 1187 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 12 diff: 1093 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 13 diff: 1117 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 14 diff: 1208 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 15 diff: 1411 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 16 diff: 1325 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 17 diff: 1263 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 18 diff: 2762 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 19 diff: 2732 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 20 diff: 2634 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 21 diff: 2647 ****
+[E| 5529|7faeffd120|SS  |SsSocketLoopBack.cc:238] **** cnt: 22 diff: 2697 ****
 
+
+* renderer
+
+
+09-08 04:38:57.798 (hagodaemon)( 4323): [N| 4323|7f9cff9130|SS  |FilterChainPacket.cc:196] [0] kPlay
+09-08 04:38:57.799 (hagodaemon)( 4323): [cpmix] update : mode:0 , ext_gain :  0.00000  0.00000  0.00000  0.00000
+09-08 04:38:57.799 (hagodaemon)( 4323): [cpmix] update : gain[0][0-4] :  0.00000  0.00000  0.00000  0.10000  0.00000
+09-08 04:38:57.800 (hagodaemon)( 4323): [cpmix] update : gain[1][0-4] :  0.00000  0.00000  0.00000  0.10000  0.00000
+09-08 04:38:57.800 (hagodaemon)( 4323): [cpmix] update : gain[2][0-4] :  0.00000  0.00000  0.00000  0.10000  0.00000
+09-08 04:38:57.800 (hagodaemon)( 4323): [cpmix] update : gain[3][0-4] :  0.00000  0.00000  0.00000  0.31623  0.00000
+09-08 04:38:57.812 (hagodaemon)( 4323): [E| 4323|7f9f7fe130|SS  |SsCom.cc:632] ***** SET PIPE SIZE header: 320 ch: 12 sample_num: 128 datasz: 6144 bufsz: 6464 *****
+09-08 04:38:57.812 (hagodaemon)( 4323): [N| 4323|7fa565d130|SS  |SsPipe.cc:250] update fifo fcntl F_SETPIPE_SZ 8192
+09-08 04:38:57.814 (hagodaemon)( 4323): [N| 4323|7fb963b010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+09-08 04:38:57.817 (hagodaemon)( 4323): [N| 4323|7f827fc130|SS  |FilterChainPacket.cc:272] [4] kDestroy
+09-08 04:38:57.819 (hagodaemon)( 4323): [N| 4323|7fb963b010|SS  |FilterChainPacket.cc:71] [4] kSetAudioInfo
+09-08 04:38:57.821 (hagodaemon)( 4323): [N| 4323|7f827fc130|SS  |FilterChainPacket.cc:196] [4] kPlay
+09-08 04:38:57.821 (hagodaemon)( 4323): [N| 4323|7f9dffb130|SS  |Renderer.cc:516] [2000] kPlay
+09-08 04:38:57.837 (hagodaemon)( 4323): [N| 4323|7f9dffb130|SS  |Renderer.cc:226] [2000] AudioHal Open
+09-08 04:38:57.840 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 0 diff: 276827 ****
+09-08 04:38:57.842 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 1 diff: 1292 ****
+09-08 04:38:57.843 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 2 diff: 943 ****
+09-08 04:38:57.843 (hagodaemon)( 4323): [N| 4323|7f9dffb130|SS  |Renderer.cc:134] [2000] Start Sounds
+09-08 04:38:57.845 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 3 diff: 1344 ****
+09-08 04:38:57.845 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 4 diff: 834 ****
+09-08 04:38:57.846 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 5 diff: 851 ****
+09-08 04:38:57.847 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 6 diff: 1027 ****
+09-08 04:38:57.848 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 7 diff: 1279 ****
+09-08 04:38:57.850 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 8 diff: 1524 ****
+09-08 04:38:57.851 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 9 diff: 1217 ****
+09-08 04:38:57.852 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 10 diff: 1442 ****
+09-08 04:38:57.854 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 11 diff: 1447 ****
+09-08 04:38:57.858 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 12 diff: 4056 ****
+09-08 04:38:57.860 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 13 diff: 2664 ****
+09-08 04:38:57.863 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 14 diff: 2670 ****
+09-08 04:38:57.866 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 15 diff: 2663 ****
+09-08 04:38:57.868 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 16 diff: 2672 ****
+09-08 04:38:57.871 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 17 diff: 2664 ****
+09-08 04:38:57.874 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 18 diff: 2672 ****
+09-08 04:38:57.876 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 19 diff: 2662 ****
+09-08 04:38:57.879 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 20 diff: 2660 ****
+09-08 04:38:57.882 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 21 diff: 2665 ****
+09-08 04:38:57.884 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 22 diff: 2672 ****
+09-08 04:38:57.887 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 23 diff: 2665 ****
+09-08 04:38:57.890 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 24 diff: 2672 ****
+09-08 04:38:57.892 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 25 diff: 2661 ****
+09-08 04:38:57.895 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 26 diff: 2667 ****
+09-08 04:38:57.898 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 27 diff: 2671 ****
+09-08 04:38:57.900 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 28 diff: 2663 ****
+09-08 04:38:57.903 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 29 diff: 2669 ****
+09-08 04:38:57.906 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 30 diff: 2664 ****
+09-08 04:38:57.908 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 31 diff: 2667 ****
+09-08 04:38:57.911 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 32 diff: 2668 ****
+09-08 04:38:57.914 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 33 diff: 2680 ****
+09-08 04:38:57.916 (hagodaemon)( 4323): [E| 4323|7f9dffb130|SS  |Renderer.cc:115] **** cnt: 34 diff: 2654 ****
 
 
 
@@ -1127,7 +1296,7 @@ slack: route384.slack.com
    上記(inazuma)理由で条件付きで可能
 ** The Internet
    上記(inazuma)理由で不可.
-   RAS 回線がきた場合, 申請した sony 貸与の windows マシンを持ち出せば可能かも.   
+   RAS 回線がきた場合, 申請した sony 貸与の windows マシンを持ち出せば可能かも.
 
 * github
 ** TJ Intra
