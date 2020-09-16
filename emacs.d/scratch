@@ -3,7 +3,29 @@
 ;; then enter the text in that file's own buffer.
 
 
-* slack (web
+windows
+(9/16 1300 - 1400)
+* slack (web browser a.k.a http/https) ok
+* github (web browser a.k.a http/https) ok
+* office outlook (web browser a.k.a http/https) ok
+* office onedrive (web browser a.k.a http/https) ok
+* office word (web browser a.k.a http/https) ok
+* office excel (web browser a.k.a http/https) ok
+* office powerpoint (web browser a.k.a http/https) ok
+* office onedrive (web browser a.k.a http/https) ok
+* office sharepoint (web browser a.k.a http/https) ok
+* office teams (web browser a.k.a http/https) ok
+* office 予定表 (web browser a.k.a http/https) ok
+* ras  ok
+* inazuma  --
+
+
+linux
+* repo
+* bitbake
+* inazuma
+* license server(ssh?)
+
 
 ---------------
 
