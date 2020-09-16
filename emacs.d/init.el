@@ -9,6 +9,7 @@
 (global-set-key [C-tab] 'other-window)
 (global-set-key "\M-g" 'goto-line)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-auto-revert-mode t)
 ;;(menu-bar-mode t)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
