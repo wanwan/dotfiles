@@ -3,6 +3,87 @@
 ;; then enter the text in that file's own buffer.
 
 
+ccache aarch64-poky-linux-g++
+--sysroot=/home/waka/workspace/hgrm/master/ebisu-bsp/out_sony-pf-habb_sony-pf-sc_debug/tmp/work/aarch64-mx8mm-poky-linux/hagoromo/1.0-r0/recipe-sysroot
+-iquote framework/core/include
+-iquote framework/binder/include
+-iquote framework/base/utils/include
+-iquote framework/base/emx/include
+-iquote framework/base/std/include
+-iquote framework/daemon/test
+-iquote services/audioinplayerservice/include
+-iquote services/cecservice/include
+-iquote services/hdmiservice/include
+-iquote services/pathmanagerservice/include
+-iquote services/pathmanagerservice/src
+-iquote services/spdifplayerservice/include
+-iquote opt/ssoptionalfuncizm/include
+-iquote services/soundpostcontrolservice/include
+-iquote services/soundpostcontrolservice/src/profile/include
+-iquote services/pathmanagerservice/test
+-iquote out_debug/target/product/pf-habb_device_pf-sc_product/obj/EXECUTABLES/PathManagerServiceTest_intermediates
+
+-std=c++11
+-c
+-Wall
+-Wno-sign-compare
+-Wstrict-aliasing
+
+-fPIC
+-fdata-sections
+-ffunction-sections
+-finline-functions
+-finline-limit=300
+-fno-exceptions
+-fstack-protector-strong
+-fstrict-aliasing
+-funswitch-loops
+-funwind-tables
+-ftrapv
+-fno-rtti
+-fno-rtti
+
+-g
+-gdwarf-2
+-O0
+
+-DENABLE_BINDER_LOG
+-DPST_TARGET_OS_POSIX
+-DENABLE_DISTRIBUTED_MODULE_CONFIGURATION
+-DPST_ENABLE_ASSERT
+-DPST_ENABLE_DEATHTEST
+-DPST_ENABLE_DEBUG
+-DSOUNDSERVICE_TYPE_SOUNDPOSTCONTROL
+-DDISABLE_FUNC_PLAYER
+-DPST_FILENAME=\"main.cc\"
+
+-Wcast-align
+-Wcast-qual
+-Wconversion
+-Wdisabled-optimization
+-Wdouble-promotion
+-Wextra
+-Wfloat-equal
+-Wformat=2
+-Wpacked
+-Wpedantic
+-Wredundant-decls
+-Wshadow
+-Wsign-compare
+-Wstack-protector
+-Wstrict-overflow
+-Wunused
+-Wwrite-strings
+-Werror
+-Wmissing-include-dirs
+
+-MD
+-MF out_debug/target/product/pf-habb_device_pf-sc_product/obj/EXECUTABLES/PathManagerServiceTest_intermediates/main.d
+-o out_debug/target/product/pf-habb_device_pf-sc_product/obj/EXECUTABLES/PathManagerServiceTest_intermediates/main.o
+services/pathmanagerservice/test/main.cc
+
+
+
 windows
 (9/16 1300 - 1400)
 * slack (web browser a.k.a http/https) ok
