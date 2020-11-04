@@ -579,7 +579,8 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck-rtags flycheck-irony flycheck-haskell company company-irony-c-headers flycheck company-rtags company-lsp howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc))))
+    (flycheck-rtags flycheck-irony flycheck-haskell company company-irony-c-headers flycheck company-rtags company-lsp howm ghc markdown-mode helm-gtags ggtags exec-path-from-shell cdb ccc)))
+ '(safe-local-variable-values (quote ((encoding . utf-8)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
