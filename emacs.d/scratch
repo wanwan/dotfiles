@@ -3,6 +3,12 @@
 ;; then enter the text in that file's own buffer.
 
 
+2598945bb470627eb7c56ca76dcc4ba936fddb90 ng
+
+
+
+
+
 ccache aarch64-poky-linux-g++
 --sysroot=/home/waka/workspace/hgrm/master/ebisu-bsp/out_sony-pf-habb_sony-pf-sc_debug/tmp/work/aarch64-mx8mm-poky-linux/hagoromo/1.0-r0/recipe-sysroot
 -iquote framework/core/include
