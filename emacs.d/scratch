@@ -8,10 +8,13 @@
 ** debug
 10-22 14:58:10.096 (hagodaemon)( 4476): [E| 4476|7f80b77130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:449|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 0 dtsOutInfo_.is_direct_mode: 184 ***
 
+0-22 15:00:55.806 (hagodaemon)( 4513): [E| 4513|7f94c28130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:449|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 0 dtsOutInfo_.is_direct_mode: 184 true: 1 false: 0 ***
+
+
 ** release
 0-22 15:05:05.975 (hagodaemon)( 4418): [E| 4418|7f6ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:449|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 33 dtsOutInfo_.is_direct_mode: 32 ***
 
-
+0-22 14:57:03.624 (hagodaemon)( 4468): [E| 4468|7f94ef8130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:449|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 33 dtsOutInfo_.is_direct_mode: 32 true: 1 false: 0 ***
 
 
 
