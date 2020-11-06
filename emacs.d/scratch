@@ -5,6 +5,15 @@
 
 * spdif memory 関係
 
+** debug
+10-22 14:58:10.096 (hagodaemon)( 4476): [E| 4476|7f80b77130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:449|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 0 dtsOutInfo_.is_direct_mode: 184 ***
+
+** release
+0-22 15:05:05.975 (hagodaemon)( 4418): [E| 4418|7f6ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:449|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 33 dtsOutInfo_.is_direct_mode: 32 ***
+
+
+
+
 
 
 
