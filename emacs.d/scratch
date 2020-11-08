@@ -3,6 +3,15 @@
 ;; then enter the text in that file's own buffer.
 
 
+* configv3 以下 toolchain/common/linux-gcc-release.mk を -O2 -> -O0 とすると
+現象自体は出なくなる.
+このため, 本現象がコンパイラの optimizer によるものではないかと推測される.
+(だた, そもそも debug 版の log の出方もおかしいと思うので...)
+
+
+
+
+
 * spdif memory 関係
 
 ** debug
@@ -15,7 +24,6 @@
 0-22 15:05:05.975 (hagodaemon)( 4418): [E| 4418|7f6ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:449|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 33 dtsOutInfo_.is_direct_mode: 32 ***
 
 0-22 14:57:03.624 (hagodaemon)( 4468): [E| 4468|7f94ef8130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:449|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 33 dtsOutInfo_.is_direct_mode: 32 true: 1 false: 0 ***
-
 
 
 
