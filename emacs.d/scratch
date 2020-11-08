@@ -21,93 +21,533 @@
 * disassemble
 ** release
 
-0000000000000000 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler16doDtsSendProcessEPNS0_10ParserInfoEPhjb>:
-   0:   a9b77bfd        stp     x29, x30, [sp, #-144]!
-   4:   52800066        mov     w6, #0x3                        // #3
-   8:   9106340b        add     x11, x0, #0x18d
-   c:   12001c84        and     w4, w4, #0xff
-  10:   910003fd        mov     x29, sp
-  14:   910243a5        add     x5, x29, #0x90
-  18:   a90153f3        stp     x19, x20, [sp, #16]
-  1c:   aa0003f3        mov     x19, x0
-  20:   90000014        adrp    x20, 0 <__stack_chk_guard>
-  24:   a903ffbf        stp     xzr, xzr, [x29, #56]
-  28:   b8198ca6        str     w6, [x5, #-104]!
-  2c:   f9400291        ldr     x17, [x20]
-  30:   f90010bf        str     xzr, [x5, #32]
-  34:   910118a0        add     x0, x5, #0x46
-  38:   a9057fbf        stp     xzr, xzr, [x29, #80]
-  3c:   f9400232        ldr     x18, [x17]
-  40:   f90047b2        str     x18, [x29, #136]
-  44:   d2800012        mov     x18, #0x0                       // #0
-  48:   f9001cbf        str     xzr, [x5, #56]
-  4c:   3940402a        ldrb    w10, [x1, #16]
-  50:   3940602e        ldrb    w14, [x1, #24]
-  54:   b940142f        ldr     w15, [x1, #20]
-  58:   f841a026        ldur    x6, [x1, #26]
-  5c:   a9007c1f        stp     xzr, xzr, [x0]
-  60:   f9400430        ldr     x16, [x1, #8]
-  64:   3940a429        ldrb    w9, [x1, #41]
-  68:   f841f02c        ldur    x12, [x1, #31]
-  6c:   3940642d        ldrb    w13, [x1, #25]
-  70:   390103ae        strb    w14, [x29, #64]
-  74:   7900b4bf        strh    wzr, [x5, #90]
-  78:   b80560bf        stur    wzr, [x5, #86]
-  7c:   b9003faf        str     w15, [x29, #60]
-  80:   f80423a6        stur    x6, [x29, #66]
-  84:   3900e3aa        strb    w10, [x29, #56]
-  88:   f9001bb0        str     x16, [x29, #48]
-  8c:   3940a827        ldrb    w7, [x1, #42]
-  90:   3940ac28        ldrb    w8, [x1, #43]
-  94:   b9403026        ldr     w6, [x1, #48]
-  98:   390107ad        strb    w13, [x29, #65]
-  9c:   3901a3a9        strb    w9, [x29, #104]
-  a0:   f80473ac        stur    x12, [x29, #71]
-  a4:   3946a269        ldrb    w9, [x19, #424]
-  a8:   b941ae6c        ldr     w12, [x19, #428]
-  ac:   b90073a6        str     w6, [x29, #112]
-  b0:   3940b42f        ldrb    w15, [x1, #45]
-  b4:   3940b026        ldrb    w6, [x1, #44]
-  b8:   b3607d89        bfi     x9, x12, #32, #32
-  bc:   f940016d        ldr     x13, [x11]
-  c0:   f8405161        ldur    x1, [x11, #5]
-  c4:   f9408660        ldr     x0, [x19, #264]
-  c8:   f805a3ad        stur    x13, [x29, #90]
-  cc:   b941a66e        ldr     w14, [x19, #420]
-  d0:   3946326d        ldrb    w13, [x19, #396]
-  d4:   3901a7a7        strb    w7, [x29, #105]
-  d8:   2a0800e7        orr     w7, w7, w8
-  dc:   3901afa6        strb    w6, [x29, #107]
-  e0:   2a0700c6        orr     w6, w6, w7
-  e4:   f805f3a1        stur    x1, [x29, #95]
-  e8:   52800301        mov     w1, #0x18                       // #24
-  ec:   3901aba8        strb    w8, [x29, #106]
-  f0:   710000df        cmp     w6, #0x0
-  f4:   390163a1        strb    w1, [x29, #88]
-  f8:   aa0503e1        mov     x1, x5
-  fc:   3901b3af        strb    w15, [x29, #108]
- 100:   1a9f0063        csel    w3, w3, wzr, eq  // eq = none
- 104:   3901b7a4        strb    w4, [x29, #109]
- 108:   7100009f        cmp     w4, #0x0
- 10c:   390143aa        strb    w10, [x29, #80]
- 110:   1a9f0063        csel    w3, w3, wzr, eq  // eq = none
- 114:   b90057ae        str     w14, [x29, #84]
- 118:   390167ad        strb    w13, [x29, #89]
- 11c:   f80743a9        stur    x9, [x29, #116]
- 120:   f9400005        ldr     x5, [x0]
- 124:   f94008a4        ldr     x4, [x5, #16]
- 128:   d63f0080        blr     x4
- 12c:   35000040        cbnz    w0, 134 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler16doDtsSendProcessEPNS0_10ParserInfoEPhjb+0x134>
- 130:   3907427f        strb    wzr, [x19, #464]
- 134:   f9400294        ldr     x20, [x20]
- 138:   f94047a2        ldr     x2, [x29, #136]
- 13c:   f9400281        ldr     x1, [x20]
- 140:   ca010041        eor     x1, x2, x1
- 144:   b5000081        cbnz    x1, 154 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler16doDtsSendProcessEPNS0_10ParserInfoEPhjb+0x154>
- 148:   a94153f3        ldp     x19, x20, [sp, #16]
- 14c:   a8c97bfd        ldp     x29, x30, [sp], #144
- 150:   d65f03c0        ret
- 154:   94000000        bl      0 <__stack_chk_fail>
+0000000000000000 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>:
+   0:   d103c3ff        sub     sp, sp, #0xf0
+   4:   a9047bfd        stp     x29, x30, [sp, #64]
+   8:   910103fd        add     x29, sp, #0x40
+   c:   f9002bf3        str     x19, [sp, #80]
+  10:   90000013        adrp    x19, 0 <__stack_chk_guard>
+  14:   f90037f6        str     x22, [sp, #104]
+  18:   aa0103f6        mov     x22, x1
+  1c:   f9400261        ldr     x1, [x19]
+  20:   f90043f9        str     x25, [sp, #128]
+  24:   aa0203f9        mov     x25, x2
+  28:   f9400022        ldr     x2, [x1]
+  2c:   f90057a2        str     x2, [x29, #168]
+  30:   d2800002        mov     x2, #0x0                        // #0
+  34:   b4002424        cbz     x4, 4b8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x4b8>
+  38:   a901d7b4        stp     x20, x21, [x29, #24]
+  3c:   90000015        adrp    x21, 0 <__pthread_key_create>
+  40:   a90363b7        stp     x23, x24, [x29, #48]
+  44:   91032014        add     x20, x0, #0xc8
+  48:   f94002a1        ldr     x1, [x21]
+  4c:   2a0303f8        mov     w24, w3
+  50:   a904efba        stp     x26, x27, [x29, #72]
+  54:   9100a2d7        add     x23, x22, #0x28
+  58:   f9002fbc        str     x28, [x29, #88]
+  5c:   aa0003fa        mov     x26, x0
+  60:   b900a7bf        str     wzr, [x29, #164]
+  64:   aa0403fc        mov     x28, x4
+  68:   b4000541        cbz     x1, 110 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x110>
+  6c:   aa1403e0        mov     x0, x20
+  70:   94000000        bl      0 <pthread_mutex_lock>
+  74:   35003d80        cbnz    w0, 824 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+  78:   b940c35b        ldr     w27, [x26, #192]
+  7c:   aa1403e0        mov     x0, x20
+  80:   94000000        bl      0 <pthread_mutex_unlock>
+  84:   71000f7f        cmp     w27, #0x3
+  88:   54000740        b.eq    170 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x170>  // b.none
+  8c:   7100177f        cmp     w27, #0x5
+  90:   54000700        b.eq    170 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x170>  // b.none
+  94:   7100077f        cmp     w27, #0x1
+  98:   54001580        b.eq    348 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x348>  // b.none
+  9c:   2a1b03e6        mov     w6, w27
+  a0:   90000005        adrp    x5, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+  a4:   90000004        adrp    x4, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+  a8:   90000003        adrp    x3, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+  ac:   90000001        adrp    x1, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+  b0:   910000a5        add     x5, x5, #0x0
+  b4:   91000084        add     x4, x4, #0x0
+  b8:   91000063        add     x3, x3, #0x0
+  bc:   52803362        mov     w2, #0x19b                      // #411
+  c0:   91000021        add     x1, x1, #0x0
+  c4:   52800060        mov     w0, #0x3                        // #3
+  c8:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
+  cc:   a941d7b4        ldp     x20, x21, [x29, #24]
+  d0:   52800059        mov     w25, #0x2                       // #2
+  d4:   a94363b7        ldp     x23, x24, [x29, #48]
+  d8:   a944efba        ldp     x26, x27, [x29, #72]
+  dc:   f9402fbc        ldr     x28, [x29, #88]
+  e0:   f9400273        ldr     x19, [x19]
+  e4:   2a1903e0        mov     w0, w25
+  e8:   f94057a2        ldr     x2, [x29, #168]
+  ec:   f9400261        ldr     x1, [x19]
+  f0:   ca010041        eor     x1, x2, x1
+  f4:   b50038e1        cbnz    x1, 810 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x810>
+  f8:   a9447bfd        ldp     x29, x30, [sp, #64]
+  fc:   f9402bf3        ldr     x19, [sp, #80]
+ 100:   f94037f6        ldr     x22, [sp, #104]
+ 104:   f94043f9        ldr     x25, [sp, #128]
+ 108:   9103c3ff        add     sp, sp, #0xf0
+ 10c:   d65f03c0        ret
+ 110:   b940c01b        ldr     w27, [x0, #192]
+ 114:   71000f7f        cmp     w27, #0x3
+ 118:   540002c0        b.eq    170 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x170>  // b.none
+ 11c:   7100177f        cmp     w27, #0x5
+ 120:   54000280        b.eq    170 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x170>  // b.none
+ 124:   7100077f        cmp     w27, #0x1
+ 128:   54fffba1        b.ne    9c <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x9c>  // b.any
+ 12c:   94000000        bl      0 <_ZN4hgrm5spdif21SpdifPlayerPacketBase9GetUnreadEv>
+ 130:   aa0003e1        mov     x1, x0
+ 134:   b5001e20        cbnz    x0, 4f8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x4f8>
+ 138:   52800040        mov     w0, #0x2                        // #2
+ 13c:   b900c340        str     w0, [x26, #192]
+ 140:   aa1703e1        mov     x1, x23
+ 144:   aa1a03e0        mov     x0, x26
+ 148:   94000000        bl      0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 14c:   2a0003f9        mov     w25, w0
+ 150:   350016c0        cbnz    w0, 428 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x428>
+ 154:   52800060        mov     w0, #0x3                        // #3
+ 158:   b900c340        str     w0, [x26, #192]
+ 15c:   a941d7b4        ldp     x20, x21, [x29, #24]
+ 160:   a94363b7        ldp     x23, x24, [x29, #48]
+ 164:   a944efba        ldp     x26, x27, [x29, #72]
+ 168:   f9402fbc        ldr     x28, [x29, #88]
+ 16c:   17ffffdd        b       e0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+ 170:   aa1903e2        mov     x2, x25
+ 174:   9105c346        add     x6, x26, #0x170
+ 178:   910293a5        add     x5, x29, #0xa4
+ 17c:   aa1c03e4        mov     x4, x28
+ 180:   2a1803e3        mov     w3, w24
+ 184:   aa1703e1        mov     x1, x23
+ 188:   aa1a03e0        mov     x0, x26
+ 18c:   94000000        bl      0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 190:   2a0003f9        mov     w25, w0
+ 194:   35001120        cbnz    w0, 3b8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x3b8>
+ 198:   f9400342        ldr     x2, [x26]
+ 19c:   aa1603e1        mov     x1, x22
+ 1a0:   aa1a03e0        mov     x0, x26
+ 1a4:   f9401c42        ldr     x2, [x2, #56]
+ 1a8:   d63f0040        blr     x2
+ 1ac:   2a0003f9        mov     w25, w0
+ 1b0:   35001b80        cbnz    w0, 520 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x520>
+ 1b4:   3944d340        ldrb    w0, [x26, #308]
+ 1b8:   34001cc0        cbz     w0, 550 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x550>
+ 1bc:   b940a7a3        ldr     w3, [x29, #164]
+ 1c0:   34000ae3        cbz     w3, 31c <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x31c>
+ 1c4:   3946c347        ldrb    w7, [x26, #432]
+ 1c8:   52800020        mov     w0, #0x1                        // #1
+ 1cc:   b9000bff        str     wzr, [sp, #8]
+ 1d0:   90000008        adrp    x8, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 1d4:   b90003e0        str     w0, [sp]
+ 1d8:   4a0000f4        eor     w20, w7, w0
+ 1dc:   90000001        adrp    x1, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 1e0:   90000000        adrp    x0, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 1e4:   91000023        add     x3, x1, #0x0
+ 1e8:   a90887a8        stp     x8, x1, [x29, #136]
+ 1ec:   91000004        add     x4, x0, #0x0
+ 1f0:   b9400af5        ldr     w21, [x23, #8]
+ 1f4:   b941a35b        ldr     w27, [x26, #416]
+ 1f8:   90000005        adrp    x5, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 1fc:   f9004fa0        str     x0, [x29, #152]
+ 200:   2a1403e6        mov     w6, w20
+ 204:   52800060        mov     w0, #0x3                        // #3
+ 208:   910000a5        add     x5, x5, #0x0
+ 20c:   52803822        mov     w2, #0x1c1                      // #449
+ 210:   91000101        add     x1, x8, #0x0
+ 214:   b9418759        ldr     w25, [x26, #388]
+ 218:   b9418b57        ldr     w23, [x26, #392]
+ 21c:   b9419f58        ldr     w24, [x26, #412]
+ 220:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
+ 224:   b9412740        ldr     w0, [x26, #292]
+ 228:   6b1b001f        cmp     w0, w27
+ 22c:   540000c0        b.eq    244 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x244>  // b.none
+ 230:   f9408340        ldr     x0, [x26, #256]
+ 234:   b4000060        cbz     x0, 240 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x240>
+ 238:   2a1b03e1        mov     w1, w27
+ 23c:   94000000        bl      0 <_ZN4hgrm5spdif22SpdifPlayerServiceCore19NotifyDtsAnalogGainEi>
+ 240:   b901275b        str     w27, [x26, #292]
+ 244:   b9413341        ldr     w1, [x26, #304]
+ 248:   b941a740        ldr     w0, [x26, #420]
+ 24c:   6b00003f        cmp     w1, w0
+ 250:   540000c0        b.eq    268 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x268>  // b.none
+ 254:   f9408341        ldr     x1, [x26, #256]
+ 258:   b4000061        cbz     x1, 264 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x264>
+ 25c:   b9042c20        str     w0, [x1, #1068]
+ 260:   b941a740        ldr     w0, [x26, #420]
+ 264:   b9013340        str     w0, [x26, #304]
+ 268:   b9411746        ldr     w6, [x26, #276]
+ 26c:   6b1500df        cmp     w6, w21
+ 270:   54002640        b.eq    738 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x738>  // b.none
+ 274:   f9408340        ldr     x0, [x26, #256]
+ 278:   b4000480        cbz     x0, 308 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x308>
+ 27c:   b9411b40        ldr     w0, [x26, #280]
+ 280:   2a1503e7        mov     w7, w21
+ 284:   3944b343        ldrb    w3, [x26, #300]
+ 288:   90000005        adrp    x5, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 28c:   b9411f41        ldr     w1, [x26, #284]
+ 290:   910000a5        add     x5, x5, #0x0
+ 294:   b9412342        ldr     w2, [x26, #288]
+ 298:   b90003e0        str     w0, [sp]
+ 29c:   f9404fa0        ldr     x0, [x29, #152]
+ 2a0:   b90013e1        str     w1, [sp, #16]
+ 2a4:   91000004        add     x4, x0, #0x0
+ 2a8:   f9404ba0        ldr     x0, [x29, #144]
+ 2ac:   b90023e2        str     w2, [sp, #32]
+ 2b0:   52803ac2        mov     w2, #0x1d6                      // #470
+ 2b4:   b90033e3        str     w3, [sp, #48]
+ 2b8:   91000003        add     x3, x0, #0x0
+ 2bc:   b9000bf7        str     w23, [sp, #8]
+ 2c0:   f94047a0        ldr     x0, [x29, #136]
+ 2c4:   b9001bf8        str     w24, [sp, #24]
+ 2c8:   b9002bf9        str     w25, [sp, #40]
+ 2cc:   91000001        add     x1, x0, #0x0
+ 2d0:   b9003bf4        str     w20, [sp, #56]
+ 2d4:   52800060        mov     w0, #0x3                        // #3
+ 2d8:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
+ 2dc:   f9408340        ldr     x0, [x26, #256]
+ 2e0:   91063741        add     x1, x26, #0x18d
+ 2e4:   f90003e1        str     x1, [sp]
+ 2e8:   52800007        mov     w7, #0x0                        // #0
+ 2ec:   2a1403e6        mov     w6, w20
+ 2f0:   52800005        mov     w5, #0x0                        // #0
+ 2f4:   2a1803e4        mov     w4, w24
+ 2f8:   2a1703e3        mov     w3, w23
+ 2fc:   2a1903e2        mov     w2, w25
+ 300:   2a1503e1        mov     w1, w21
+ 304:   94000000        bl      0 <_ZN4hgrm5spdif22SpdifPlayerServiceCore16NotifyUpdateInfoENS0_10FormatTypeEijjbbbPh>
+ 308:   91040340        add     x0, x26, #0x100
+ 30c:   3904b354        strb    w20, [x26, #300]
+ 310:   b940a7a3        ldr     w3, [x29, #164]
+ 314:   2902dc15        stp     w21, w23, [x0, #20]
+ 318:   2903e418        stp     w24, w25, [x0, #28]
+ 31c:   aa1c03e2        mov     x2, x28
+ 320:   aa1a03e0        mov     x0, x26
+ 324:   52800004        mov     w4, #0x0                        // #0
+ 328:   aa1603e1        mov     x1, x22
+ 32c:   94000000        bl      0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 330:   f9402fbc        ldr     x28, [x29, #88]
+ 334:   2a0003f9        mov     w25, w0
+ 338:   a941d7b4        ldp     x20, x21, [x29, #24]
+ 33c:   a94363b7        ldp     x23, x24, [x29, #48]
+ 340:   a944efba        ldp     x26, x27, [x29, #72]
+ 344:   17ffff67        b       e0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+ 348:   aa1403e0        mov     x0, x20
+ 34c:   94000000        bl      0 <pthread_mutex_lock>
+ 350:   350026a0        cbnz    w0, 824 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+ 354:   aa1a03e0        mov     x0, x26
+ 358:   94000000        bl      0 <_ZN4hgrm5spdif21SpdifPlayerPacketBase9GetUnreadEv>
+ 35c:   aa0003e1        mov     x1, x0
+ 360:   b5000cc0        cbnz    x0, 4f8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x4f8>
+ 364:   52800040        mov     w0, #0x2                        // #2
+ 368:   b900c340        str     w0, [x26, #192]
+ 36c:   aa1403e0        mov     x0, x20
+ 370:   94000000        bl      0 <pthread_mutex_unlock>
+ 374:   aa1703e1        mov     x1, x23
+ 378:   aa1a03e0        mov     x0, x26
+ 37c:   94000000        bl      0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 380:   2a0003f9        mov     w25, w0
+ 384:   35000520        cbnz    w0, 428 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x428>
+ 388:   aa1403e0        mov     x0, x20
+ 38c:   94000000        bl      0 <pthread_mutex_lock>
+ 390:   350024a0        cbnz    w0, 824 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+ 394:   52800060        mov     w0, #0x3                        // #3
+ 398:   b900c340        str     w0, [x26, #192]
+ 39c:   aa1403e0        mov     x0, x20
+ 3a0:   94000000        bl      0 <pthread_mutex_unlock>
+ 3a4:   f9402fbc        ldr     x28, [x29, #88]
+ 3a8:   a941d7b4        ldp     x20, x21, [x29, #24]
+ 3ac:   a94363b7        ldp     x23, x24, [x29, #48]
+ 3b0:   a944efba        ldp     x26, x27, [x29, #72]
+ 3b4:   17ffff4b        b       e0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+ 3b8:   90000000        adrp    x0, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 3bc:   91000004        add     x4, x0, #0x0
+ 3c0:   f9004fa0        str     x0, [x29, #152]
+ 3c4:   90000000        adrp    x0, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 3c8:   90000001        adrp    x1, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 3cc:   91000003        add     x3, x0, #0x0
+ 3d0:   f9004ba0        str     x0, [x29, #144]
+ 3d4:   91000020        add     x0, x1, #0x0
+ 3d8:   f90047a1        str     x1, [x29, #136]
+ 3dc:   9000001c        adrp    x28, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 3e0:   aa0003e1        mov     x1, x0
+ 3e4:   91000385        add     x5, x28, #0x0
+ 3e8:   f90037a0        str     x0, [x29, #104]
+ 3ec:   90000006        adrp    x6, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 3f0:   52802d82        mov     w2, #0x16c                      // #364
+ 3f4:   910000c6        add     x6, x6, #0x0
+ 3f8:   a90797a4        stp     x4, x5, [x29, #120]
+ 3fc:   52800060        mov     w0, #0x3                        // #3
+ 400:   f9003ba3        str     x3, [x29, #112]
+ 404:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
+ 408:   71001f3f        cmp     w25, #0x7
+ 40c:   54000d60        b.eq    5b8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x5b8>  // b.none
+ 410:   a941d7b4        ldp     x20, x21, [x29, #24]
+ 414:   a94363b7        ldp     x23, x24, [x29, #48]
+ 418:   a944efba        ldp     x26, x27, [x29, #72]
+ 41c:   f9402fbc        ldr     x28, [x29, #88]
+ 420:   17ffff30        b       e0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+ 424:   d503201f        nop
+ 428:   90000017        adrp    x23, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 42c:   90000016        adrp    x22, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 430:   910002f7        add     x23, x23, #0x0
+ 434:   910002d6        add     x22, x22, #0x0
+ 438:   90000015        adrp    x21, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 43c:   910002b5        add     x21, x21, #0x0
+ 440:   90000006        adrp    x6, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 444:   aa1703e5        mov     x5, x23
+ 448:   910000c6        add     x6, x6, #0x0
+ 44c:   aa1603e4        mov     x4, x22
+ 450:   aa1503e3        mov     x3, x21
+ 454:   90000014        adrp    x20, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 458:   52802b82        mov     w2, #0x15c                      // #348
+ 45c:   91000294        add     x20, x20, #0x0
+ 460:   aa1403e1        mov     x1, x20
+ 464:   52800060        mov     w0, #0x3                        // #3
+ 468:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
+ 46c:   52800001        mov     w1, #0x0                        // #0
+ 470:   aa1a03e0        mov     x0, x26
+ 474:   94000000        bl      0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 478:   34fffcc0        cbz     w0, 410 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x410>
+ 47c:   90000006        adrp    x6, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 480:   aa1703e5        mov     x5, x23
+ 484:   910000c6        add     x6, x6, #0x0
+ 488:   aa1603e4        mov     x4, x22
+ 48c:   aa1503e3        mov     x3, x21
+ 490:   aa1403e1        mov     x1, x20
+ 494:   52802be2        mov     w2, #0x15f                      // #351
+ 498:   52800060        mov     w0, #0x3                        // #3
+ 49c:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
+ 4a0:   a941d7b4        ldp     x20, x21, [x29, #24]
+ 4a4:   a94363b7        ldp     x23, x24, [x29, #48]
+ 4a8:   a944efba        ldp     x26, x27, [x29, #72]
+ 4ac:   f9402fbc        ldr     x28, [x29, #88]
+ 4b0:   17ffff0c        b       e0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+ 4b4:   d503201f        nop
+ 4b8:   90000006        adrp    x6, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 4bc:   90000005        adrp    x5, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 4c0:   90000004        adrp    x4, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 4c4:   90000003        adrp    x3, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 4c8:   90000001        adrp    x1, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 4cc:   910000c6        add     x6, x6, #0x0
+ 4d0:   910000a5        add     x5, x5, #0x0
+ 4d4:   91000084        add     x4, x4, #0x0
+ 4d8:   91000063        add     x3, x3, #0x0
+ 4dc:   52802862        mov     w2, #0x143                      // #323
+ 4e0:   91000021        add     x1, x1, #0x0
+ 4e4:   52800060        mov     w0, #0x3                        // #3
+ 4e8:   52800059        mov     w25, #0x2                       // #2
+ 4ec:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
+ 4f0:   17fffefc        b       e0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+ 4f4:   d503201f        nop
+ 4f8:   b941d742        ldr     w2, [x26, #468]
+ 4fc:   aa1a03e0        mov     x0, x26
+ 500:   0b010041        add     w1, w2, w1
+ 504:   b901d741        str     w1, [x26, #468]
+ 508:   94000000        bl      0 <_ZN4hgrm5spdif21SpdifPlayerPacketBase11ClearUnreadEv>
+ 50c:   f94002b5        ldr     x21, [x21]
+ 510:   52800040        mov     w0, #0x2                        // #2
+ 514:   b900c340        str     w0, [x26, #192]
+ 518:   b4ffe155        cbz     x21, 140 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x140>
+ 51c:   17ffff94        b       36c <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x36c>
+ 520:   90000006        adrp    x6, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 524:   90000005        adrp    x5, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 528:   90000004        adrp    x4, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 52c:   90000003        adrp    x3, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 530:   90000001        adrp    x1, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 534:   910000c6        add     x6, x6, #0x0
+ 538:   910000a5        add     x5, x5, #0x0
+ 53c:   91000084        add     x4, x4, #0x0
+ 540:   91000063        add     x3, x3, #0x0
+ 544:   528034c2        mov     w2, #0x1a6                      // #422
+ 548:   91000021        add     x1, x1, #0x0
+ 54c:   17ffffd3        b       498 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x498>
+ 550:   f94002b5        ldr     x21, [x21]
+ 554:   b40009f5        cbz     x21, 690 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x690>
+ 558:   aa1403e0        mov     x0, x20
+ 55c:   94000000        bl      0 <pthread_mutex_lock>
+ 560:   35001620        cbnz    w0, 824 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+ 564:   b940c355        ldr     w21, [x26, #192]
+ 568:   aa1403e0        mov     x0, x20
+ 56c:   94000000        bl      0 <pthread_mutex_unlock>
+ 570:   710012bf        cmp     w21, #0x4
+ 574:   54fff4e1        b.ne    410 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x410>  // b.any
+ 578:   aa1403e0        mov     x0, x20
+ 57c:   94000000        bl      0 <pthread_mutex_lock>
+ 580:   35001520        cbnz    w0, 824 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+ 584:   528000a0        mov     w0, #0x5                        // #5
+ 588:   b901db55        str     w21, [x26, #472]
+ 58c:   b900c340        str     w0, [x26, #192]
+ 590:   aa1403e0        mov     x0, x20
+ 594:   94000000        bl      0 <pthread_mutex_unlock>
+ 598:   52800020        mov     w0, #0x1                        // #1
+ 59c:   3904d340        strb    w0, [x26, #308]
+ 5a0:   a941d7b4        ldp     x20, x21, [x29, #24]
+ 5a4:   a94363b7        ldp     x23, x24, [x29, #48]
+ 5a8:   a944efba        ldp     x26, x27, [x29, #72]
+ 5ac:   f9402fbc        ldr     x28, [x29, #88]
+ 5b0:   17fffecc        b       e0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+ 5b4:   d503201f        nop
+ 5b8:   9102c3a2        add     x2, x29, #0xb0
+ 5bc:   52800024        mov     w4, #0x1                        // #1
+ 5c0:   2a1803e3        mov     w3, w24
+ 5c4:   aa1603e1        mov     x1, x22
+ 5c8:   aa1a03e0        mov     x0, x26
+ 5cc:   381f3c5f        strb    wzr, [x2, #-13]!
+ 5d0:   94000000        bl      0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 5d4:   35000fe0        cbnz    w0, 7d0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x7d0>
+ 5d8:   f94002a0        ldr     x0, [x21]
+ 5dc:   52800181        mov     w1, #0xc                        // #12
+ 5e0:   3904d35f        strb    wzr, [x26, #308]
+ 5e4:   b9013b41        str     w1, [x26, #312]
+ 5e8:   b4000c40        cbz     x0, 770 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x770>
+ 5ec:   aa1403e0        mov     x0, x20
+ 5f0:   94000000        bl      0 <pthread_mutex_lock>
+ 5f4:   35001180        cbnz    w0, 824 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+ 5f8:   aa1a03e0        mov     x0, x26
+ 5fc:   94000000        bl      0 <_ZN4hgrm5spdif21SpdifPlayerPacketBase9GetUnreadEv>
+ 600:   b4001020        cbz     x0, 804 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x804>
+ 604:   7100177f        cmp     w27, #0x5
+ 608:   54000fa0        b.eq    7fc <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x7fc>  // b.none
+ 60c:   b941d741        ldr     w1, [x26, #468]
+ 610:   0b000020        add     w0, w1, w0
+ 614:   b901d740        str     w0, [x26, #468]
+ 618:   aa1a03e0        mov     x0, x26
+ 61c:   94000000        bl      0 <_ZN4hgrm5spdif21SpdifPlayerPacketBase11ClearUnreadEv>
+ 620:   f94002a0        ldr     x0, [x21]
+ 624:   52800041        mov     w1, #0x2                        // #2
+ 628:   b900c341        str     w1, [x26, #192]
+ 62c:   b4000ac0        cbz     x0, 784 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x784>
+ 630:   aa1403e0        mov     x0, x20
+ 634:   94000000        bl      0 <pthread_mutex_unlock>
+ 638:   52800021        mov     w1, #0x1                        // #1
+ 63c:   aa1a03e0        mov     x0, x26
+ 640:   94000000        bl      0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 644:   2a0003f9        mov     w25, w0
+ 648:   34000340        cbz     w0, 6b0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x6b0>
+ 64c:   f9404fa0        ldr     x0, [x29, #152]
+ 650:   90000006        adrp    x6, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 654:   91000385        add     x5, x28, #0x0
+ 658:   910000c6        add     x6, x6, #0x0
+ 65c:   91000004        add     x4, x0, #0x0
+ 660:   f9404ba0        ldr     x0, [x29, #144]
+ 664:   52803082        mov     w2, #0x184                      // #388
+ 668:   91000003        add     x3, x0, #0x0
+ 66c:   f94047a0        ldr     x0, [x29, #136]
+ 670:   91000001        add     x1, x0, #0x0
+ 674:   52800060        mov     w0, #0x3                        // #3
+ 678:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
+ 67c:   aa1403e0        mov     x0, x20
+ 680:   94000000        bl      0 <pthread_mutex_lock>
+ 684:   35000d00        cbnz    w0, 824 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+ 688:   52800020        mov     w0, #0x1                        // #1
+ 68c:   17ffff43        b       398 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x398>
+ 690:   b940c340        ldr     w0, [x26, #192]
+ 694:   7100101f        cmp     w0, #0x4
+ 698:   54ffebc1        b.ne    410 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x410>  // b.any
+ 69c:   528000a1        mov     w1, #0x5                        // #5
+ 6a0:   b901db40        str     w0, [x26, #472]
+ 6a4:   b900c341        str     w1, [x26, #192]
+ 6a8:   17ffffbc        b       598 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x598>
+ 6ac:   d503201f        nop
+ 6b0:   aa1703e1        mov     x1, x23
+ 6b4:   aa1a03e0        mov     x0, x26
+ 6b8:   94000000        bl      0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 6bc:   2a0003f9        mov     w25, w0
+ 6c0:   34000980        cbz     w0, 7f0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x7f0>
+ 6c4:   f9404fa0        ldr     x0, [x29, #152]
+ 6c8:   9100039c        add     x28, x28, #0x0
+ 6cc:   90000006        adrp    x6, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 6d0:   aa1c03e5        mov     x5, x28
+ 6d4:   91000015        add     x21, x0, #0x0
+ 6d8:   f9404ba0        ldr     x0, [x29, #144]
+ 6dc:   910000c6        add     x6, x6, #0x0
+ 6e0:   aa1503e4        mov     x4, x21
+ 6e4:   91000014        add     x20, x0, #0x0
+ 6e8:   f94047a0        ldr     x0, [x29, #136]
+ 6ec:   aa1403e3        mov     x3, x20
+ 6f0:   52803182        mov     w2, #0x18c                      // #396
+ 6f4:   9100001b        add     x27, x0, #0x0
+ 6f8:   52800060        mov     w0, #0x3                        // #3
+ 6fc:   aa1b03e1        mov     x1, x27
+ 700:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
+ 704:   52800001        mov     w1, #0x0                        // #0
+ 708:   aa1a03e0        mov     x0, x26
+ 70c:   94000000        bl      0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 710:   34ffe800        cbz     w0, 410 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x410>
+ 714:   90000006        adrp    x6, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 718:   aa1c03e5        mov     x5, x28
+ 71c:   910000c6        add     x6, x6, #0x0
+ 720:   aa1503e4        mov     x4, x21
+ 724:   aa1403e3        mov     x3, x20
+ 728:   528031e2        mov     w2, #0x18f                      // #399
+ 72c:   aa1b03e1        mov     x1, x27
+ 730:   17ffff5a        b       498 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x498>
+ 734:   d503201f        nop
+ 738:   b9411b40        ldr     w0, [x26, #280]
+ 73c:   6b17001f        cmp     w0, w23
+ 740:   54ffd9a1        b.ne    274 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x274>  // b.any
+ 744:   b9411f40        ldr     w0, [x26, #284]
+ 748:   6b18001f        cmp     w0, w24
+ 74c:   54ffd941        b.ne    274 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x274>  // b.any
+ 750:   b9412340        ldr     w0, [x26, #288]
+ 754:   6b19001f        cmp     w0, w25
+ 758:   54ffd8e1        b.ne    274 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x274>  // b.any
+ 75c:   3944b340        ldrb    w0, [x26, #300]
+ 760:   6b14001f        cmp     w0, w20
+ 764:   54ffd881        b.ne    274 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x274>  // b.any
+ 768:   b940a7a3        ldr     w3, [x29, #164]
+ 76c:   17fffeec        b       31c <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x31c>
+ 770:   aa1a03e0        mov     x0, x26
+ 774:   94000000        bl      0 <_ZN4hgrm5spdif21SpdifPlayerPacketBase9GetUnreadEv>
+ 778:   b5000580        cbnz    x0, 828 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x828>
+ 77c:   52800040        mov     w0, #0x2                        // #2
+ 780:   b900c340        str     w0, [x26, #192]
+ 784:   52800021        mov     w1, #0x1                        // #1
+ 788:   aa1a03e0        mov     x0, x26
+ 78c:   94000000        bl      0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 790:   2a0003f9        mov     w25, w0
+ 794:   34fff8e0        cbz     w0, 6b0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x6b0>
+ 798:   f9404fa0        ldr     x0, [x29, #152]
+ 79c:   90000006        adrp    x6, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 7a0:   91000385        add     x5, x28, #0x0
+ 7a4:   910000c6        add     x6, x6, #0x0
+ 7a8:   91000004        add     x4, x0, #0x0
+ 7ac:   f9404ba0        ldr     x0, [x29, #144]
+ 7b0:   52803082        mov     w2, #0x184                      // #388
+ 7b4:   91000003        add     x3, x0, #0x0
+ 7b8:   f94047a0        ldr     x0, [x29, #136]
+ 7bc:   91000001        add     x1, x0, #0x0
+ 7c0:   52800060        mov     w0, #0x3                        // #3
+ 7c4:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
+ 7c8:   52800020        mov     w0, #0x1                        // #1
+ 7cc:   17fffe63        b       158 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x158>
+ 7d0:   a9468fa1        ldp     x1, x3, [x29, #104]
+ 7d4:   90000006        adrp    x6, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
+ 7d8:   a94797a4        ldp     x4, x5, [x29, #120]
+ 7dc:   910000c6        add     x6, x6, #0x0
+ 7e0:   52802e82        mov     w2, #0x174                      // #372
+ 7e4:   52800060        mov     w0, #0x3                        // #3
+ 7e8:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
+ 7ec:   17ffff7b        b       5d8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x5d8>
+ 7f0:   f94002b5        ldr     x21, [x21]
+ 7f4:   b5ffdcb5        cbnz    x21, 388 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x388>
+ 7f8:   17fffe57        b       154 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x154>
+ 7fc:   aa1a03e0        mov     x0, x26
+ 800:   94000000        bl      0 <_ZN4hgrm5spdif21SpdifPlayerPacketBase11ClearUnreadEv>
+ 804:   52800040        mov     w0, #0x2                        // #2
+ 808:   b900c340        str     w0, [x26, #192]
+ 80c:   17ffff89        b       630 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x630>
+ 810:   a901d7b4        stp     x20, x21, [x29, #24]
+ 814:   a90363b7        stp     x23, x24, [x29, #48]
+ 818:   a904efba        stp     x26, x27, [x29, #72]
+ 81c:   f9002fbc        str     x28, [x29, #88]
+ 820:   94000000        bl      0 <__stack_chk_fail>
+ 824:   94000000        bl      0 <_ZSt20__throw_system_errori>
+ 828:   7100177f        cmp     w27, #0x5
+ 82c:   54ffef01        b.ne    60c <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x60c>  // b.any
+ 830:   17ffff7a        b       618 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x618>
+
 
 
 ** debug
@@ -446,9 +886,6 @@ Disassembly of section .text._ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12do
  524:   aa0003e1        mov     x1, x0
  528:   52800060        mov     w0, #0x3                        // #3
  52c:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
-
-
-
  530:   b94053a0        ldr     w0, [x29, #80]
  534:   14000127        b       9d0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x9d0>
  538:   f9401fa0        ldr     x0, [x29, #56]
