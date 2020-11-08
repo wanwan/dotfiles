@@ -16,6 +16,14 @@
 (基本 debug/release 共, dtsOutInfo_is_direct_mode は ver 毎に同じ値で
 だしつづけているようだが, build を繰替えしたりしていると release では値が変わることが
 あるが, この結果は共通している)
+(元のコードが true/false をひっくりかえしているので optimize でそうなる可能性があるかと)
+
+* disassemble
+** release
+
+0000000000065e40 T _ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_
+
+
 
 
 
