@@ -21,6 +21,547 @@
 * disassemble
 ** release
 
+
+
+0000000000065e40 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>:
+   65e40:       d103c3ff        sub     sp, sp, #0xf0
+   65e44:       a9047bfd        stp     x29, x30, [sp, #64]
+   65e48:       910103fd        add     x29, sp, #0x40
+   65e4c:       f9002bf3        str     x19, [sp, #80]
+   65e50:       f00004f3        adrp    x19, 104000 <_ZNK4hgrm5spdif22SpdifPlayerAudioBuffer7GetKindEv@@Base+0x952c8>
+   65e54:       f90037f6        str     x22, [sp, #104]
+   65e58:       aa0103f6        mov     x22, x1
+   65e5c:       f946b261        ldr     x1, [x19, #3424]
+   65e60:       f90043f9        str     x25, [sp, #128]
+   65e64:       aa0203f9        mov     x25, x2
+   65e68:       f9400022        ldr     x2, [x1]
+   65e6c:       f90057a2        str     x2, [x29, #168]
+   65e70:       d2800002        mov     x2, #0x0                        // #0
+   65e74:       b4002424        cbz     x4, 662f8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x4b8>                                                        ## if (pOutBuffer == nullptr) {
+
+
+   65e78:       a901d7b4        stp     x20, x21, [x29, #24]
+   65e7c:       f00004f5        adrp    x21, 104000 <_ZNK4hgrm5spdif22SpdifPlayerAudioBuffer7GetKindEv@@Base+0x952c8>
+   65e80:       a90363b7        stp     x23, x24, [x29, #48]
+   65e84:       91032014        add     x20, x0, #0xc8
+   65e88:       f94696a1        ldr     x1, [x21, #3368]
+   65e8c:       2a0303f8        mov     w24, w3
+   65e90:       a904efba        stp     x26, x27, [x29, #72]
+   65e94:       9100a2d7        add     x23, x22, #0x28
+   65e98:       f9002fbc        str     x28, [x29, #88]
+   65e9c:       aa0003fa        mov     x26, x0
+   65ea0:       b900a7bf        str     wzr, [x29, #164]
+   65ea4:       aa0403fc        mov     x28, x4
+   65ea8:       b4000541        cbz     x1, 65f50 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x110>
+   65eac:       aa1403e0        mov     x0, x20
+   65eb0:       97ff0620        bl      27730 <pthread_mutex_lock@plt>
+   65eb4:       35003d80        cbnz    w0, 66664 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+   65eb8:       b940c35b        ldr     w27, [x26, #192]
+   65ebc:       aa1403e0        mov     x0, x20
+   65ec0:       97ff0854        bl      28010 <pthread_mutex_unlock@plt>
+   65ec4:       71000f7f        cmp     w27, #0x3
+   65ec8:       54000740        b.eq    65fb0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x170>  // b.none
+   65ecc:       7100177f        cmp     w27, #0x5
+   65ed0:       54000700        b.eq    65fb0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x170>  // b.none
+   65ed4:       7100077f        cmp     w27, #0x1
+   65ed8:       54001580        b.eq    66188 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x348>  // b.none
+   65edc:       2a1b03e6        mov     w6, w27
+   65ee0:       f0000325        adrp    x5, cc000 <_ZZN4hgrm5spdif23SpdifPlayerServiceDebug18DbgSetAlsaBufParamENS1_11debugInfo_tERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS9_EEE19__PRETTY_FUNCTION__+0x70>
+   65ee4:       d00004e4        adrp    x4, 103000 <__FRAME_END__+0x1099c>
+   65ee8:       90000343        adrp    x3, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   65eec:       90000341        adrp    x1, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   65ef0:       912ea0a5        add     x5, x5, #0xba8
+   65ef4:       911b4084        add     x4, x4, #0x6d0
+   65ef8:       912c6063        add     x3, x3, #0xb18
+   65efc:       52803362        mov     w2, #0x19b                      // #411
+   65f00:       911d0021        add     x1, x1, #0x740
+   65f04:       52800060        mov     w0, #0x3                        // #3
+   65f08:       97ff0786        bl      27d20 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z@plt>
+   65f0c:       a941d7b4        ldp     x20, x21, [x29, #24]
+   65f10:       52800059        mov     w25, #0x2                       // #2
+   65f14:       a94363b7        ldp     x23, x24, [x29, #48]
+   65f18:       a944efba        ldp     x26, x27, [x29, #72]
+   65f1c:       f9402fbc        ldr     x28, [x29, #88]
+   65f20:       f946b273        ldr     x19, [x19, #3424]
+   65f24:       2a1903e0        mov     w0, w25
+   65f28:       f94057a2        ldr     x2, [x29, #168]
+   65f2c:       f9400261        ldr     x1, [x19]
+   65f30:       ca010041        eor     x1, x2, x1
+   65f34:       b50038e1        cbnz    x1, 66650 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x810>
+   65f38:       a9447bfd        ldp     x29, x30, [sp, #64]
+   65f3c:       f9402bf3        ldr     x19, [sp, #80]
+   65f40:       f94037f6        ldr     x22, [sp, #104]
+   65f44:       f94043f9        ldr     x25, [sp, #128]
+   65f48:       9103c3ff        add     sp, sp, #0xf0
+   65f4c:       d65f03c0        ret
+   65f50:       b940c01b        ldr     w27, [x0, #192]
+   65f54:       71000f7f        cmp     w27, #0x3
+   65f58:       540002c0        b.eq    65fb0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x170>  // b.none
+   65f5c:       7100177f        cmp     w27, #0x5
+   65f60:       54000280        b.eq    65fb0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x170>  // b.none
+   65f64:       7100077f        cmp     w27, #0x1
+   65f68:       54fffba1        b.ne    65edc <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x9c>  // b.any
+   65f6c:       97ff0ac1        bl      28a70 <_ZN4hgrm5spdif21SpdifPlayerPacketBase9GetUnreadEv@plt>
+   65f70:       aa0003e1        mov     x1, x0
+   65f74:       b5001e20        cbnz    x0, 66338 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x4f8>
+   65f78:       52800040        mov     w0, #0x2                        // #2
+   65f7c:       b900c340        str     w0, [x26, #192]
+   65f80:       aa1703e1        mov     x1, x23
+   65f84:       aa1a03e0        mov     x0, x26
+   65f88:       97ff0ba6        bl      28e20 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler7initDtsEPNS0_17ParserDynamicInfoE@plt>
+   65f8c:       2a0003f9        mov     w25, w0
+   65f90:       350016c0        cbnz    w0, 66268 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x428>
+   65f94:       52800060        mov     w0, #0x3                        // #3
+   65f98:       b900c340        str     w0, [x26, #192]
+   65f9c:       a941d7b4        ldp     x20, x21, [x29, #24]
+   65fa0:       a94363b7        ldp     x23, x24, [x29, #48]
+   65fa4:       a944efba        ldp     x26, x27, [x29, #72]
+   65fa8:       f9402fbc        ldr     x28, [x29, #88]
+   65fac:       17ffffdd        b       65f20 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+   65fb0:       aa1903e2        mov     x2, x25
+   65fb4:       9105c346        add     x6, x26, #0x170
+   65fb8:       910293a5        add     x5, x29, #0xa4
+   65fbc:       aa1c03e4        mov     x4, x28
+   65fc0:       2a1803e3        mov     w3, w24
+   65fc4:       aa1703e1        mov     x1, x23
+   65fc8:       aa1a03e0        mov     x0, x26
+   65fcc:       97ff065d        bl      27940 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler9decodeDtsEPNS0_17ParserDynamicInfoEPhjS4_PjPNS0_10DtsOutInfoE@plt>
+   65fd0:       2a0003f9        mov     w25, w0
+   65fd4:       35001120        cbnz    w0, 661f8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x3b8>
+   65fd8:       f9400342        ldr     x2, [x26]
+   65fdc:       aa1603e1        mov     x1, x22
+   65fe0:       aa1a03e0        mov     x0, x26
+   65fe4:       f9401c42        ldr     x2, [x2, #56]
+   65fe8:       d63f0040        blr     x2
+   65fec:       2a0003f9        mov     w25, w0
+   65ff0:       35001b80        cbnz    w0, 66360 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x520>
+   65ff4:       3944d340        ldrb    w0, [x26, #308]
+   65ff8:       34001cc0        cbz     w0, 66390 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x550>
+   65ffc:       b940a7a3        ldr     w3, [x29, #164]
+   66000:       34000ae3        cbz     w3, 6615c <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x31c>
+   66004:       3946c347        ldrb    w7, [x26, #432]
+   66008:       52800020        mov     w0, #0x1                        // #1
+   6600c:       b9000bff        str     wzr, [sp, #8]
+   66010:       f0000328        adrp    x8, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66014:       b90003e0        str     w0, [sp]
+   66018:       4a0000f4        eor     w20, w7, w0
+   6601c:       f0000321        adrp    x1, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66020:       b00004e0        adrp    x0, 103000 <__FRAME_END__+0x1099c>
+   66024:       912c6023        add     x3, x1, #0xb18
+   66028:       a90887a8        stp     x8, x1, [x29, #136]
+   6602c:       911b4004        add     x4, x0, #0x6d0
+   66030:       b9400af5        ldr     w21, [x23, #8]
+   66034:       b941a35b        ldr     w27, [x26, #416]
+   66038:       f0000325        adrp    x5, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   6603c:       f9004fa0        str     x0, [x29, #152]
+   66040:       2a1403e6        mov     w6, w20
+   66044:       52800060        mov     w0, #0x3                        // #3
+   66048:       9115e0a5        add     x5, x5, #0x578
+   6604c:       52803822        mov     w2, #0x1c1                      // #449
+   66050:       911d0101        add     x1, x8, #0x740
+   66054:       b9418759        ldr     w25, [x26, #388]
+   66058:       b9418b57        ldr     w23, [x26, #392]
+   6605c:       b9419f58        ldr     w24, [x26, #412]
+   66060:       97ff0730        bl      27d20 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z@plt>
+   66064:       b9412740        ldr     w0, [x26, #292]
+   66068:       6b1b001f        cmp     w0, w27
+   6606c:       540000c0        b.eq    66084 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x244>  // b.none
+   66070:       f9408340        ldr     x0, [x26, #256]
+   66074:       b4000060        cbz     x0, 66080 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x240>
+   66078:       2a1b03e1        mov     w1, w27
+   6607c:       97ff0b01        bl      28c80 <_ZN4hgrm5spdif22SpdifPlayerServiceCore19NotifyDtsAnalogGainEi@plt>
+   66080:       b901275b        str     w27, [x26, #292]
+   66084:       b9413341        ldr     w1, [x26, #304]
+   66088:       b941a740        ldr     w0, [x26, #420]
+   6608c:       6b00003f        cmp     w1, w0
+   66090:       540000c0        b.eq    660a8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x268>  // b.none
+   66094:       f9408341        ldr     x1, [x26, #256]
+   66098:       b4000061        cbz     x1, 660a4 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x264>
+   6609c:       b9042c20        str     w0, [x1, #1068]
+   660a0:       b941a740        ldr     w0, [x26, #420]
+   660a4:       b9013340        str     w0, [x26, #304]
+   660a8:       b9411746        ldr     w6, [x26, #276]
+   660ac:       6b1500df        cmp     w6, w21
+   660b0:       54002640        b.eq    66578 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x738>  // b.none
+   660b4:       f9408340        ldr     x0, [x26, #256]
+   660b8:       b4000480        cbz     x0, 66148 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x308>
+   660bc:       b9411b40        ldr     w0, [x26, #280]
+   660c0:       2a1503e7        mov     w7, w21
+   660c4:       3944b343        ldrb    w3, [x26, #300]
+   660c8:       f0000325        adrp    x5, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   660cc:       b9411f41        ldr     w1, [x26, #284]
+   660d0:       911760a5        add     x5, x5, #0x5d8
+   660d4:       b9412342        ldr     w2, [x26, #288]
+   660d8:       b90003e0        str     w0, [sp]
+   660dc:       f9404fa0        ldr     x0, [x29, #152]
+   660e0:       b90013e1        str     w1, [sp, #16]
+   660e4:       911b4004        add     x4, x0, #0x6d0
+   660e8:       f9404ba0        ldr     x0, [x29, #144]
+   660ec:       b90023e2        str     w2, [sp, #32]
+   660f0:       52803ac2        mov     w2, #0x1d6                      // #470
+   660f4:       b90033e3        str     w3, [sp, #48]
+   660f8:       912c6003        add     x3, x0, #0xb18
+   660fc:       b9000bf7        str     w23, [sp, #8]
+   66100:       f94047a0        ldr     x0, [x29, #136]
+   66104:       b9001bf8        str     w24, [sp, #24]
+   66108:       b9002bf9        str     w25, [sp, #40]
+   6610c:       911d0001        add     x1, x0, #0x740
+   66110:       b9003bf4        str     w20, [sp, #56]
+   66114:       52800060        mov     w0, #0x3                        // #3
+   66118:       97ff0702        bl      27d20 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z@plt>
+   6611c:       f9408340        ldr     x0, [x26, #256]
+   66120:       91063741        add     x1, x26, #0x18d
+   66124:       f90003e1        str     x1, [sp]
+   66128:       52800007        mov     w7, #0x0                        // #0
+   6612c:       2a1403e6        mov     w6, w20
+   66130:       52800005        mov     w5, #0x0                        // #0
+   66134:       2a1803e4        mov     w4, w24
+   66138:       2a1703e3        mov     w3, w23
+   6613c:       2a1903e2        mov     w2, w25
+   66140:       2a1503e1        mov     w1, w21
+   66144:       97ff0e27        bl      299e0 <_ZN4hgrm5spdif22SpdifPlayerServiceCore16NotifyUpdateInfoENS0_10FormatTypeEijjbbbPh@plt>
+   66148:       91040340        add     x0, x26, #0x100
+   6614c:       3904b354        strb    w20, [x26, #300]
+   66150:       b940a7a3        ldr     w3, [x29, #164]
+   66154:       2902dc15        stp     w21, w23, [x0, #20]
+   66158:       2903e418        stp     w24, w25, [x0, #28]
+   6615c:       aa1c03e2        mov     x2, x28
+   66160:       aa1a03e0        mov     x0, x26
+   66164:       52800004        mov     w4, #0x0                        // #0
+   66168:       aa1603e1        mov     x1, x22
+   6616c:       97ff07d5        bl      280c0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler16doDtsSendProcessEPNS0_10ParserInfoEPhjb@plt>
+   66170:       f9402fbc        ldr     x28, [x29, #88]
+   66174:       2a0003f9        mov     w25, w0
+   66178:       a941d7b4        ldp     x20, x21, [x29, #24]
+   6617c:       a94363b7        ldp     x23, x24, [x29, #48]
+   66180:       a944efba        ldp     x26, x27, [x29, #72]
+   66184:       17ffff67        b       65f20 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+   66188:       aa1403e0        mov     x0, x20
+   6618c:       97ff0569        bl      27730 <pthread_mutex_lock@plt>
+   66190:       350026a0        cbnz    w0, 66664 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+   66194:       aa1a03e0        mov     x0, x26
+   66198:       97ff0a36        bl      28a70 <_ZN4hgrm5spdif21SpdifPlayerPacketBase9GetUnreadEv@plt>
+   6619c:       aa0003e1        mov     x1, x0
+   661a0:       b5000cc0        cbnz    x0, 66338 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x4f8>
+   661a4:       52800040        mov     w0, #0x2                        // #2
+   661a8:       b900c340        str     w0, [x26, #192]
+   661ac:       aa1403e0        mov     x0, x20
+   661b0:       97ff0798        bl      28010 <pthread_mutex_unlock@plt>
+   661b4:       aa1703e1        mov     x1, x23
+   661b8:       aa1a03e0        mov     x0, x26
+   661bc:       97ff0b19        bl      28e20 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler7initDtsEPNS0_17ParserDynamicInfoE@plt>
+   661c0:       2a0003f9        mov     w25, w0
+   661c4:       35000520        cbnz    w0, 66268 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x428>
+   661c8:       aa1403e0        mov     x0, x20
+   661cc:       97ff0559        bl      27730 <pthread_mutex_lock@plt>
+   661d0:       350024a0        cbnz    w0, 66664 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+   661d4:       52800060        mov     w0, #0x3                        // #3
+   661d8:       b900c340        str     w0, [x26, #192]
+   661dc:       aa1403e0        mov     x0, x20
+   661e0:       97ff078c        bl      28010 <pthread_mutex_unlock@plt>
+   661e4:       f9402fbc        ldr     x28, [x29, #88]
+   661e8:       a941d7b4        ldp     x20, x21, [x29, #24]
+   661ec:       a94363b7        ldp     x23, x24, [x29, #48]
+   661f0:       a944efba        ldp     x26, x27, [x29, #72]
+   661f4:       17ffff4b        b       65f20 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+   661f8:       b00004e0        adrp    x0, 103000 <__FRAME_END__+0x1099c>
+   661fc:       911b4004        add     x4, x0, #0x6d0
+   66200:       f9004fa0        str     x0, [x29, #152]
+   66204:       f0000320        adrp    x0, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66208:       f0000321        adrp    x1, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   6620c:       912c6003        add     x3, x0, #0xb18
+   66210:       f9004ba0        str     x0, [x29, #144]
+   66214:       911d0020        add     x0, x1, #0x740
+   66218:       f90047a1        str     x1, [x29, #136]
+   6621c:       b00002fc        adrp    x28, c3000 <CSWTCH.240+0x5c0>
+   66220:       aa0003e1        mov     x1, x0
+   66224:       91116385        add     x5, x28, #0x458
+   66228:       f90037a0        str     x0, [x29, #104]
+   6622c:       f0000326        adrp    x6, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66230:       52802d82        mov     w2, #0x16c                      // #364
+   66234:       911520c6        add     x6, x6, #0x548
+   66238:       a90797a4        stp     x4, x5, [x29, #120]
+   6623c:       52800060        mov     w0, #0x3                        // #3
+   66240:       f9003ba3        str     x3, [x29, #112]
+   66244:       97ff06b7        bl      27d20 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z@plt>
+   66248:       71001f3f        cmp     w25, #0x7
+   6624c:       54000d60        b.eq    663f8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x5b8>  // b.none
+   66250:       a941d7b4        ldp     x20, x21, [x29, #24]
+   66254:       a94363b7        ldp     x23, x24, [x29, #48]
+   66258:       a944efba        ldp     x26, x27, [x29, #72]
+   6625c:       f9402fbc        ldr     x28, [x29, #88]
+   66260:       17ffff30        b       65f20 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+   66264:       d503201f        nop
+   66268:       b00002f7        adrp    x23, c3000 <CSWTCH.240+0x5c0>
+   6626c:       b00004f6        adrp    x22, 103000 <__FRAME_END__+0x1099c>
+   66270:       911162f7        add     x23, x23, #0x458
+   66274:       911b42d6        add     x22, x22, #0x6d0
+   66278:       f0000335        adrp    x21, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   6627c:       912c62b5        add     x21, x21, #0xb18
+   66280:       f0000326        adrp    x6, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66284:       aa1703e5        mov     x5, x23
+   66288:       9114e0c6        add     x6, x6, #0x538
+   6628c:       aa1603e4        mov     x4, x22
+   66290:       aa1503e3        mov     x3, x21
+   66294:       f0000334        adrp    x20, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66298:       52802b82        mov     w2, #0x15c                      // #348
+   6629c:       911d0294        add     x20, x20, #0x740
+   662a0:       aa1403e1        mov     x1, x20
+   662a4:       52800060        mov     w0, #0x3                        // #3
+   662a8:       97ff069e        bl      27d20 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z@plt>
+   662ac:       52800001        mov     w1, #0x0                        // #0
+   662b0:       aa1a03e0        mov     x0, x26
+   662b4:       97ff03f7        bl      27290 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler10destroyDtsEb@plt>
+   662b8:       34fffcc0        cbz     w0, 66250 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x410>
+   662bc:       f0000326        adrp    x6, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   662c0:       aa1703e5        mov     x5, x23
+   662c4:       911c20c6        add     x6, x6, #0x708
+   662c8:       aa1603e4        mov     x4, x22
+   662cc:       aa1503e3        mov     x3, x21
+   662d0:       aa1403e1        mov     x1, x20
+   662d4:       52802be2        mov     w2, #0x15f                      // #351
+   662d8:       52800060        mov     w0, #0x3                        // #3
+   662dc:       97ff0691        bl      27d20 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z@plt>
+   662e0:       a941d7b4        ldp     x20, x21, [x29, #24]
+   662e4:       a94363b7        ldp     x23, x24, [x29, #48]
+   662e8:       a944efba        ldp     x26, x27, [x29, #72]
+   662ec:       f9402fbc        ldr     x28, [x29, #88]
+   662f0:       17ffff0c        b       65f20 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+   662f4:       d503201f        nop
+   662f8:       90000326        adrp    x6, ca000 <_ZZNK4hgrm5spdif21SpdifPlayerPacketBase9getPacketENS0_10MemoryKindEE19__PRETTY_FUNCTION__+0x5b0>
+   662fc:       b00002e5        adrp    x5, c3000 <CSWTCH.240+0x5c0>
+   66300:       b00004e4        adrp    x4, 103000 <__FRAME_END__+0x1099c>
+   66304:       f0000323        adrp    x3, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66308:       f0000321        adrp    x1, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   6630c:       913900c6        add     x6, x6, #0xe40
+   66310:       911160a5        add     x5, x5, #0x458
+   66314:       911b4084        add     x4, x4, #0x6d0
+   66318:       912c6063        add     x3, x3, #0xb18
+   6631c:       52802862        mov     w2, #0x143                      // #323
+   66320:       911d0021        add     x1, x1, #0x740
+   66324:       52800060        mov     w0, #0x3                        // #3
+   66328:       52800059        mov     w25, #0x2                       // #2
+   6632c:       97ff067d        bl      27d20 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z@plt>
+   66330:       17fffefc        b       65f20 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+   66334:       d503201f        nop
+   66338:       b941d742        ldr     w2, [x26, #468]
+   6633c:       aa1a03e0        mov     x0, x26
+   66340:       0b010041        add     w1, w2, w1
+   66344:       b901d741        str     w1, [x26, #468]
+   66348:       97ff1052        bl      2a490 <_ZN4hgrm5spdif21SpdifPlayerPacketBase11ClearUnreadEv@plt>
+   6634c:       f94696b5        ldr     x21, [x21, #3368]
+   66350:       52800040        mov     w0, #0x2                        // #2
+   66354:       b900c340        str     w0, [x26, #192]
+   66358:       b4ffe155        cbz     x21, 65f80 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x140>
+   6635c:       17ffff94        b       661ac <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x36c>
+   66360:       f0000326        adrp    x6, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66364:       b00002e5        adrp    x5, c3000 <CSWTCH.240+0x5c0>
+   66368:       b00004e4        adrp    x4, 103000 <__FRAME_END__+0x1099c>
+   6636c:       f0000323        adrp    x3, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66370:       f0000321        adrp    x1, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66374:       911580c6        add     x6, x6, #0x560
+   66378:       911160a5        add     x5, x5, #0x458
+   6637c:       911b4084        add     x4, x4, #0x6d0
+   66380:       912c6063        add     x3, x3, #0xb18
+   66384:       528034c2        mov     w2, #0x1a6                      // #422
+   66388:       911d0021        add     x1, x1, #0x740
+   6638c:       17ffffd3        b       662d8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x498>
+   66390:       f94696b5        ldr     x21, [x21, #3368]
+   66394:       b40009f5        cbz     x21, 664d0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x690>
+   66398:       aa1403e0        mov     x0, x20
+   6639c:       97ff04e5        bl      27730 <pthread_mutex_lock@plt>
+   663a0:       35001620        cbnz    w0, 66664 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+   663a4:       b940c355        ldr     w21, [x26, #192]
+   663a8:       aa1403e0        mov     x0, x20
+   663ac:       97ff0719        bl      28010 <pthread_mutex_unlock@plt>
+   663b0:       710012bf        cmp     w21, #0x4
+   663b4:       54fff4e1        b.ne    66250 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x410>  // b.any
+   663b8:       aa1403e0        mov     x0, x20
+   663bc:       97ff04dd        bl      27730 <pthread_mutex_lock@plt>
+   663c0:       35001520        cbnz    w0, 66664 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+   663c4:       528000a0        mov     w0, #0x5                        // #5
+   663c8:       b901db55        str     w21, [x26, #472]
+   663cc:       b900c340        str     w0, [x26, #192]
+   663d0:       aa1403e0        mov     x0, x20
+   663d4:       97ff070f        bl      28010 <pthread_mutex_unlock@plt>
+   663d8:       52800020        mov     w0, #0x1                        // #1
+   663dc:       3904d340        strb    w0, [x26, #308]
+   663e0:       a941d7b4        ldp     x20, x21, [x29, #24]
+   663e4:       a94363b7        ldp     x23, x24, [x29, #48]
+   663e8:       a944efba        ldp     x26, x27, [x29, #72]
+   663ec:       f9402fbc        ldr     x28, [x29, #88]
+   663f0:       17fffecc        b       65f20 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0xe0>
+   663f4:       d503201f        nop
+   663f8:       9102c3a2        add     x2, x29, #0xb0
+   663fc:       52800024        mov     w4, #0x1                        // #1
+   66400:       2a1803e3        mov     w3, w24
+   66404:       aa1603e1        mov     x1, x22
+   66408:       aa1a03e0        mov     x0, x26
+   6640c:       381f3c5f        strb    wzr, [x2, #-13]!
+   66410:       97ff072c        bl      280c0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler16doDtsSendProcessEPNS0_10ParserInfoEPhjb@plt>
+   66414:       35000fe0        cbnz    w0, 66610 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x7d0>
+   66418:       f94696a0        ldr     x0, [x21, #3368]
+   6641c:       52800181        mov     w1, #0xc                        // #12
+   66420:       3904d35f        strb    wzr, [x26, #308]
+   66424:       b9013b41        str     w1, [x26, #312]
+   66428:       b4000c40        cbz     x0, 665b0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x770>
+   6642c:       aa1403e0        mov     x0, x20
+   66430:       97ff04c0        bl      27730 <pthread_mutex_lock@plt>
+   66434:       35001180        cbnz    w0, 66664 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+   66438:       aa1a03e0        mov     x0, x26
+   6643c:       97ff098d        bl      28a70 <_ZN4hgrm5spdif21SpdifPlayerPacketBase9GetUnreadEv@plt>
+   66440:       b4001020        cbz     x0, 66644 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x804>
+   66444:       7100177f        cmp     w27, #0x5
+   66448:       54000fa0        b.eq    6663c <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x7fc>  // b.none
+   6644c:       b941d741        ldr     w1, [x26, #468]
+   66450:       0b000020        add     w0, w1, w0
+   66454:       b901d740        str     w0, [x26, #468]
+   66458:       aa1a03e0        mov     x0, x26
+   6645c:       97ff100d        bl      2a490 <_ZN4hgrm5spdif21SpdifPlayerPacketBase11ClearUnreadEv@plt>
+   66460:       f94696a0        ldr     x0, [x21, #3368]
+   66464:       52800041        mov     w1, #0x2                        // #2
+   66468:       b900c341        str     w1, [x26, #192]
+   6646c:       b4000ac0        cbz     x0, 665c4 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x784>
+   66470:       aa1403e0        mov     x0, x20
+   66474:       97ff06e7        bl      28010 <pthread_mutex_unlock@plt>
+   66478:       52800021        mov     w1, #0x1                        // #1
+   6647c:       aa1a03e0        mov     x0, x26
+   66480:       97ff0384        bl      27290 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler10destroyDtsEb@plt>
+   66484:       2a0003f9        mov     w25, w0
+   66488:       34000340        cbz     w0, 664f0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x6b0>
+   6648c:       f9404fa0        ldr     x0, [x29, #152]
+   66490:       f0000326        adrp    x6, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66494:       91116385        add     x5, x28, #0x458
+   66498:       911c20c6        add     x6, x6, #0x708
+   6649c:       911b4004        add     x4, x0, #0x6d0
+   664a0:       f9404ba0        ldr     x0, [x29, #144]
+   664a4:       52803082        mov     w2, #0x184                      // #388
+   664a8:       912c6003        add     x3, x0, #0xb18
+   664ac:       f94047a0        ldr     x0, [x29, #136]
+   664b0:       911d0001        add     x1, x0, #0x740
+   664b4:       52800060        mov     w0, #0x3                        // #3
+   664b8:       97ff061a        bl      27d20 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z@plt>
+   664bc:       aa1403e0        mov     x0, x20
+   664c0:       97ff049c        bl      27730 <pthread_mutex_lock@plt>
+   664c4:       35000d00        cbnz    w0, 66664 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x824>
+   664c8:       52800020        mov     w0, #0x1                        // #1
+   664cc:       17ffff43        b       661d8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x398>
+   664d0:       b940c340        ldr     w0, [x26, #192]
+   664d4:       7100101f        cmp     w0, #0x4
+   664d8:       54ffebc1        b.ne    66250 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x410>  // b.any
+   664dc:       528000a1        mov     w1, #0x5                        // #5
+   664e0:       b901db40        str     w0, [x26, #472]
+   664e4:       b900c341        str     w1, [x26, #192]
+   664e8:       17ffffbc        b       663d8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x598>
+   664ec:       d503201f        nop
+   664f0:       aa1703e1        mov     x1, x23
+   664f4:       aa1a03e0        mov     x0, x26
+   664f8:       97ff0a4a        bl      28e20 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler7initDtsEPNS0_17ParserDynamicInfoE@plt>
+   664fc:       2a0003f9        mov     w25, w0
+   66500:       34000980        cbz     w0, 66630 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x7f0>
+   66504:       f9404fa0        ldr     x0, [x29, #152]
+   66508:       9111639c        add     x28, x28, #0x458
+   6650c:       f0000326        adrp    x6, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66510:       aa1c03e5        mov     x5, x28
+   66514:       911b4015        add     x21, x0, #0x6d0
+   66518:       f9404ba0        ldr     x0, [x29, #144]
+   6651c:       9114e0c6        add     x6, x6, #0x538
+   66520:       aa1503e4        mov     x4, x21
+   66524:       912c6014        add     x20, x0, #0xb18
+   66528:       f94047a0        ldr     x0, [x29, #136]
+   6652c:       aa1403e3        mov     x3, x20
+   66530:       52803182        mov     w2, #0x18c                      // #396
+   66534:       911d001b        add     x27, x0, #0x740
+   66538:       52800060        mov     w0, #0x3                        // #3
+   6653c:       aa1b03e1        mov     x1, x27
+   66540:       97ff05f8        bl      27d20 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z@plt>
+   66544:       52800001        mov     w1, #0x0                        // #0
+   66548:       aa1a03e0        mov     x0, x26
+   6654c:       97ff0351        bl      27290 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler10destroyDtsEb@plt>
+   66550:       34ffe800        cbz     w0, 66250 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x410>
+   66554:       f0000326        adrp    x6, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   66558:       aa1c03e5        mov     x5, x28
+   6655c:       911c20c6        add     x6, x6, #0x708
+   66560:       aa1503e4        mov     x4, x21
+   66564:       aa1403e3        mov     x3, x20
+   66568:       528031e2        mov     w2, #0x18f                      // #399
+   6656c:       aa1b03e1        mov     x1, x27
+   66570:       17ffff5a        b       662d8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x498>
+   66574:       d503201f        nop
+   66578:       b9411b40        ldr     w0, [x26, #280]
+   6657c:       6b17001f        cmp     w0, w23
+   66580:       54ffd9a1        b.ne    660b4 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x274>  // b.any
+   66584:       b9411f40        ldr     w0, [x26, #284]
+   66588:       6b18001f        cmp     w0, w24
+   6658c:       54ffd941        b.ne    660b4 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x274>  // b.any
+   66590:       b9412340        ldr     w0, [x26, #288]
+   66594:       6b19001f        cmp     w0, w25
+   66598:       54ffd8e1        b.ne    660b4 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x274>  // b.any
+   6659c:       3944b340        ldrb    w0, [x26, #300]
+   665a0:       6b14001f        cmp     w0, w20
+   665a4:       54ffd881        b.ne    660b4 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x274>  // b.any
+   665a8:       b940a7a3        ldr     w3, [x29, #164]
+   665ac:       17fffeec        b       6615c <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x31c>
+   665b0:       aa1a03e0        mov     x0, x26
+   665b4:       97ff092f        bl      28a70 <_ZN4hgrm5spdif21SpdifPlayerPacketBase9GetUnreadEv@plt>
+   665b8:       b5000580        cbnz    x0, 66668 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x828>
+   665bc:       52800040        mov     w0, #0x2                        // #2
+   665c0:       b900c340        str     w0, [x26, #192]
+   665c4:       52800021        mov     w1, #0x1                        // #1
+   665c8:       aa1a03e0        mov     x0, x26
+   665cc:       97ff0331        bl      27290 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler10destroyDtsEb@plt>
+   665d0:       2a0003f9        mov     w25, w0
+   665d4:       34fff8e0        cbz     w0, 664f0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x6b0>
+   665d8:       f9404fa0        ldr     x0, [x29, #152]
+   665dc:       f0000326        adrp    x6, cd000 <_ZZN4hgrm5spdif31SpdifPlayerServiceAacDecHandler11dataCopyAacEPPhiS2_PjRNS0_11MultiChInfoEiiS4_E19__PRETTY_FUNCTION__+0x70>
+   665e0:       91116385        add     x5, x28, #0x458
+   665e4:       911c20c6        add     x6, x6, #0x708
+   665e8:       911b4004        add     x4, x0, #0x6d0
+   665ec:       f9404ba0        ldr     x0, [x29, #144]
+   665f0:       52803082        mov     w2, #0x184                      // #388
+   665f4:       912c6003        add     x3, x0, #0xb18
+   665f8:       f94047a0        ldr     x0, [x29, #136]
+   665fc:       911d0001        add     x1, x0, #0x740
+   66600:       52800060        mov     w0, #0x3                        // #3
+   66604:       97ff05c7        bl      27d20 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z@plt>
+                                                                        ## ELOG
+
+   66608:       52800020        mov     w0, #0x1                        // #1
+   6660c:       17fffe63        b       65f98 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x158>
+   66610:       a9468fa1        ldp     x1, x3, [x29, #104]
+   66614:       90000326        adrp    x6, ca000 <_ZZNK4hgrm5spdif21SpdifPlayerPacketBase9getPacketENS0_10MemoryKindEE19__PRETTY_FUNCTION__+0x5b0>
+   66618:       a94797a4        ldp     x4, x5, [x29, #120]
+   6661c:       913880c6        add     x6, x6, #0xe20
+   66620:       52802e82        mov     w2, #0x174                      // #372
+   66624:       52800060        mov     w0, #0x3                        // #3
+   66628:       97ff05be        bl      27d20 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z@plt>
+   6662c:       17ffff7b        b       66418 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x5d8>
+   66630:       f94696b5        ldr     x21, [x21, #3368]
+   66634:       b5ffdcb5        cbnz    x21, 661c8 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x388>
+   66638:       17fffe57        b       65f94 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x154>
+   6663c:       aa1a03e0        mov     x0, x26
+   66640:       97ff0f94        bl      2a490 <_ZN4hgrm5spdif21SpdifPlayerPacketBase11ClearUnreadEv@plt>
+   66644:       52800040        mov     w0, #0x2                        // #2
+   66648:       b900c340        str     w0, [x26, #192]
+   6664c:       17ffff89        b       66470 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x630>
+   66650:       a901d7b4        stp     x20, x21, [x29, #24]
+   66654:       a90363b7        stp     x23, x24, [x29, #48]
+   66658:       a904efba        stp     x26, x27, [x29, #72]
+   6665c:       f9002fbc        str     x28, [x29, #88]
+   66660:       97ff049c        bl      278d0 <__stack_chk_fail@plt>
+   66664:       97ff0723        bl      282f0 <_ZSt20__throw_system_errori@plt>
+   66668:       7100177f        cmp     w27, #0x5
+   6666c:       54ffef01        b.ne    6644c <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x60c>  // b.any
+   66670:       17ffff7a        b       66458 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x618>
+   66674:       00000000        .inst   0x00000000 ; undefined
+
+
+
+
+
+
+
+
 0000000000000000 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>:
    0:   d103c3ff        sub     sp, sp, #0xf0
    4:   a9047bfd        stp     x29, x30, [sp, #64]
@@ -580,7 +1121,13 @@ high
 
 
 
-
+    FormatType inFormatType = pDynamicInfo->format;
+    uint32_t strmSampleRate = dtsOutInfo_.strmRate;
+    uint32_t inChMask       = dtsOutInfo_.in_chmask;
+    int32_t analogGain      = dtsOutInfo_.analog_gain;
+    int32_t bitStream       = static_cast<int32_t>(dtsOutInfo_.bitStrmType);
+    bool isUpmixer          = dtsOutInfo_.is_direct_mode == false ?
+                                true : false;
 
    be568:       f9403fa0        ldr     x0, [x29, #120]
    be56c:       b9400800        ldr     w0, [x0, #8]
