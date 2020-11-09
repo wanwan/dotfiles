@@ -549,9 +549,36 @@
  830:   17ffff7a        b       618 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x618>
 
 
-
 ** debug
 Disassembly of section .text._ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_:
+
+
+debug ver stack
+
+
+   8:   910103fd        add     x29, sp, #0x40
+
+
+low
+  -> sp
+     local variables..
+     ...
+     ...   <- sp + 0x40 = fp
+     x30
+     x29
+     ..... <- 0xd0 - (sp + 0x40 + 2x8) だと思うが calling convention 的になにかいる約束? (local variable?)
+  -> initial (sp + 0xd0)
+high
+
+                                               (ここ多分だが, 変数の順番は compiler で保証されていないのでずれてるかも)
+   c:   f9001fa0        str     x0, [x29, #56]  ret?
+  10:   f9001ba1        str     x1, [x29, #48]  ParserInfo *pPsrInfo
+  14:   f90017a2        str     x2, [x29, #40]  uint8_t *pData
+  18:   b90027a3        str     w3, [x29, #36]  uint8_t size
+  1c:   f9000fa4        str     x4, [x29, #24]  uint8_t *pOutBuffer
+
+
+
 
 0000000000000000 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>:
    0:   d10343ff        sub     sp, sp, #0xd0
@@ -568,7 +595,7 @@ Disassembly of section .text._ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12do
   2c:   f90047a1        str     x1, [x29, #136]
   30:   d2800001        mov     x1, #0x0                        // #0
   34:   f9400fa0        ldr     x0, [x29, #24]
-  38:   f100001f        cmp     x0, #0x0
+  38:   f100001f        cmp     x0, #0x0                        ## if (pOutBuffer == nullptr) {
   3c:   540002a1        b.ne    90 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x90>  // b.any
   40:   90000000        adrp    x0, 0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
   44:   91000004        add     x4, x0, #0x0
@@ -590,12 +617,15 @@ Disassembly of section .text._ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12do
   84:   94000000        bl      0 <_ZN3pst3log5PrintENS0_11log_level_tEPKciS3_PKNS0_9LogModuleES3_z>
   88:   52800040        mov     w0, #0x2                        // #2
   8c:   14000251        b       9d0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_+0x9d0>
+                                                                ## }
+
+
   90:   b90053bf        str     wzr, [x29, #80]
   94:   f9401ba0        ldr     x0, [x29, #48]
   98:   9100a000        add     x0, x0, #0x28
   9c:   f9003fa0        str     x0, [x29, #120]
-  a0:   b9004fbf        str     wzr, [x29, #76]
-  a4:   f90043bf        str     xzr, [x29, #128]
+  a0:   b9004fbf        str     wzr, [x29, #76]                 ## uint32_t outSize=0
+  a4:   f90043bf        str     xzr, [x29, #128]                ## size_t queSize = 0
   a8:   f9401fa0        ldr     x0, [x29, #56]
   ac:   91032000        add     x0, x0, #0xc8
   b0:   94000000        bl      0 <_ZN4hgrm5spdif31SpdifPlayerServiceDtsDecHandler12doDtsProcessEPNS0_10ParserInfoEPhjS4_>
