@@ -42,6 +42,13 @@
 
    65e78:       a901d7b4        stp     x20, x21, [x29, #24]
    65e7c:       f00004f5        adrp    x21, 104000 <_ZNK4hgrm5spdif22SpdifPlayerAudioBuffer7GetKindEv@@Base+0x952c8>
+
+  libSpdifPlayerService.so でこうなっているので, 104000 hal ro data
+  [19] .data.rel.ro      PROGBITS         0000000000103468  000f3468
+       0000000000001550  0000000000000000  WA       0     0     8
+
+
+
    65e80:       a90363b7        stp     x23, x24, [x29, #48]
    65e84:       91032014        add     x20, x0, #0xc8
    65e88:       f94696a1        ldr     x1, [x21, #3368]
