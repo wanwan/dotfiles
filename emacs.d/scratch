@@ -5,6 +5,41 @@
 BISYAMON3G-973
 
 
+# ログ足し (stack dump ツールがまちがってるんじゃね、part2)
+
+* debug
+neural x はでない
+
+10-22 14:57:19.196 (hagodaemon)( 4344): [E| 4344|7f7242b130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:461|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 0 dtsOutInfo_.is_direct_mode: 184 true: 1 false: 0 sampleRate: 96000 inChMask: 975  analogGain: 0 bitStream: 9 sizeof(dtsOutInfo_): 68 ***
+
+[offset]:
+spkMask: 0x7f60000f4c
+chNum: 0x7f60000f50
+bitStrmType: 0x7f60000f54
+strmRate: 0x7f60000f58
+outChInfo: 0x7f60000f5c
+in_chmask: 0x7f60000f6c
+analog_gain: 0x7f60000f70
+outRate: 0x7f60000f74
+is_objectAudio: 0x7f60000f78
+ChannelConfig: 0x7f60000f7c
+is_direct_mode: 0x7f60000f80
+
+spkMask:0a 00 00 00
+chNum:01 00 00 00
+bitStrmType:00 00 00 00
+strmRate:3f a0 00 00
+outChInfo:08 00 00 00 09 00 00 00 00 77 01 00 08 02 03 07
+in_chmask:08 05 06 01
+analog_gain:04 00 00 00
+outRate:00 00 00 00
+is_objectAudio:cf 03 00 00
+ChannelConfig:00 00 00 00
+is_direct_mode:00 77 01 00
+
+
+----
+
 # ログ足し (stack dump ツールがまちがってるんじゃね、の確認)
 
 * debug
