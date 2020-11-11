@@ -3,6 +3,23 @@
 ;; then enter the text in that file's own buffer.
 
 
+# 昨日の isUpmixer を member にしたものが true/false の判定を間違っていたので直した
+
+* debug
+(が何故か neural X がでる)
+
+
+10-22 14:58:14.266 (hagodaemon)( 4615): [E| 4615|7f977fe130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:457|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 1 dtsOutInfo_.is_direct_mode: 184 true: 1 false: 0 ***
+
+10-22 14:58:14.267 (hagodaemon)( 4615): [E| 4615|7f977fe130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:459|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [offset]: spkMask: 0x7f80000cbc chNum: 0x7f80000cc0 bitStrmType: 0x7f80000cc4 strmRate: 0x7f80000cc8 outChInfo: 0x7f80000ccc in_chmask: 0x7f80000cdc analog_gain: 0x7f80000ce0 outRate: 0x7f80000ce4 is_objectAudio: 0x7f80000ce8 ChannelConfig: 0x7f80000cec is_direct_mode: 0x7f80000cf0 ***
+10-22 14:58:14.267 (hagodaemon)( 4615): [E| 4615|7f977fe130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:472|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! spkMask:0a000000 chNum:01000000 bitStrmType:00000000 strmRate:3fa00000
+10-22 14:58:14.267 (hagodaemon)( 4615): [E| 4615|7f977fe130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:473|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! outChInfo:08000000090000000077010008020307
+10-22 14:58:14.267 (hagodaemon)( 4615): [E| 4615|7f977fe130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:474|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! in_chmask:08050601 analog_gain:04000000 outRate:00000000 is_objectAudio:cf030000 
+10-22 14:58:14.267 (hagodaemon)( 4615): [E| 4615|7f977fe130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:476|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! ChannelConfig:00000000 is_direct_mode:00770100
+
+
+
+--
 
 # isUpmixer を元にもどした
 
@@ -23,6 +40,37 @@ outRate: 0x7f7c000ce4
 is_objectAudio: 0x7f7c000ce8
 ChannelConfig: 0x7f7c000cec
 is_direct_mode: 0x7f7c000cf0
+
+
+spkMask:0a000000
+chNum:01000000
+bitStrmType:00000000
+strmRate:3fa00000
+outChInfo:08000000090000000077010008020307
+in_chmask:08050601
+analog_gain:04000000
+outRate:00000000
+is_objectAudio:cf030000
+ChannelConfig:00000000
+is_direct_mode:00770100
+
+
+* release
+(neural x でる)
+
+10-22 15:02:26.060 (hagodaemon)( 4467): [E| 4467|7fae7fc130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:457|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 153 dtsOutInfo_.is_direct_mode: 152 true: 1 false: 0 ***
+
+spkMask: 0x7f9c000cbc
+chNum: 0x7f9c000cc0
+bitStrmType: 0x7f9c000cc4
+strmRate: 0x7f9c000cc8
+outChInfo: 0x7f9c000ccc
+in_chmask: 0x7f9c000cdc
+analog_gain: 0x7f9c000ce0
+outRate: 0x7f9c000ce4
+is_objectAudio: 0x7f9c000ce8
+ChannelConfig: 0x7f9c000cec
+is_direct_mode: 0x7f9c000cf0
 
 
 spkMask:0a000000
