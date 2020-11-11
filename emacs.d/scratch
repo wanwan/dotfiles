@@ -5,7 +5,39 @@
 BISYAMON3G-973
 
 
-# ログ足し (stack dump ツールがまちがってるんじゃね、part3)
+# isUpmixer を local 変数にもどした
+
+* debug
+neural x はでない.
+
+10-22 14:57:30.359 (hagodaemon)( 4356): [E| 4356|7f6ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:461|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 0 dtsOutInfo_.is_direct_mode: 184 true: 1 false: 0 sampleRate: 96000 inChMask: 975  analogGain: 0 bitStream: 9 sizeof(dtsOutInfo_): 68 ***
+10-22 14:57:30.359 (hagodaemon)( 4356): [E| 4356|7f6ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:463|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [offset]: streamType 0x7f5c000cb0 highCh 0x7f5c000cb4 repType 0x7f5c000cb8 spkMask: 0x7f5c000cbc chNum: 0x7f5c000cc0 bitStrmType: 0x7f5c000cc4 strmRate: 0x7f5c000cc8 outChInfo: 0x7f5c000ccc in_chmask: 0x7f5c000cdc analog_gain: 0x7f5c000ce0 outRate: 0x7f5c000ce4 is_objectAudio: 0x7f5c000ce8 ChannelConfig: 0x7f5c000cec is_direct_mode: 0x7f5c000cf0 ***
+10-22 14:57:30.359 (hagodaemon)( 4356): [E| 4356|7f6ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:466|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! streamType:0a000000 highCh:01000000 repType:00000000 spkMask:3fa00000
+10-22 14:57:30.359 (hagodaemon)( 4356): [E| 4356|7f6ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:467|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! chNum:08000000 bitStrmType:09000000 strmRate:00770100
+10-22 14:57:30.359 (hagodaemon)( 4356): [E| 4356|7f6ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:468|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! outChInfo:08020307080506010400000000000000
+10-22 14:57:30.359 (hagodaemon)( 4356): [E| 4356|7f6ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:469|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! in_chmask:cf030000 analog_gain:00000000 outRate:00770100 is_objectAudio:01000000 
+10-22 14:57:30.359 (hagodaemon)( 4356): [E| 4356|7f6ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:470|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! ChannelConfig:00000000 is_direct_mode:b8000000
+
+
+* release
+neuralx が出る
+
+10-22 14:57:23.798 (hagodaemon)( 4378): [E| 4378|7f988a1130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:461|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 1 dtsOutInfo_.is_direct_mode: 0 true: 1 false: 0 sampleRate: 96000 inChMask: 975  analogGain: 0 bitStream: 9 sizeof(dtsOutInfo_): 68 ***
+10-22 14:57:23.798 (hagodaemon)( 4378): [E| 4378|7f988a1130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:463|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [offset]: streamType 0x7f80000cb0 highCh 0x7f80000cb4 repType 0x7f80000cb8 spkMask: 0x7f80000cbc chNum: 0x7f80000cc0 bitStrmType: 0x7f80000cc4 strmRate: 0x7f80000cc8 outChInfo: 0x7f80000ccc in_chmask: 0x7f80000cdc analog_gain: 0x7f80000ce0 outRate: 0x7f80000ce4 is_objectAudio: 0x7f80000ce8 ChannelConfig: 0x7f80000cec is_direct_mode: 0x7f80000cf0 ***
+10-22 14:57:23.799 (hagodaemon)( 4378): [E| 4378|7f988a1130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:466|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! streamType:0a000000 highCh:01000000 repType:00000000 spkMask:3fa00000
+10-22 14:57:23.799 (hagodaemon)( 4378): [E| 4378|7f988a1130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:467|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! chNum:08000000 bitStrmType:09000000 strmRate:00770100
+10-22 14:57:23.799 (hagodaemon)( 4378): [E| 4378|7f988a1130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:468|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! outChInfo:08020307080506010400000000000000
+10-22 14:57:23.799 (hagodaemon)( 4378): [E| 4378|7f988a1130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:469|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! in_chmask:cf030000 analog_gain:00000000 outRate:00770100 is_objectAudio:01000000 
+10-22 14:57:23.799 (hagodaemon)( 4378): [E| 4378|7f988a1130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:470|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! ChannelConfig:00000000 is_direct_mode:00000000
+
+
+
+
+
+----
+
+
+# ログ足し (stack dump ツールがまちがってるんじゃね、part3 / たぶん正しい)
 
 * debug
 neural x はでない
