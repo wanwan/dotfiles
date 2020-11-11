@@ -6,6 +6,8 @@ BISYAMON3G-973
 
 
 
+-----
+
 # 三項演算をそのままで isUpmixer をmember val にしたもの
 
 * debug
@@ -27,9 +29,6 @@ BISYAMON3G-973
 10-22 15:02:38.551 (hagodaemon)( 4401): [E| 4401|7f9ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:475|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! outChInfo:08000000090000000077010008020307
 10-22 15:02:38.551 (hagodaemon)( 4401): [E| 4401|7f9ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:476|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! in_chmask:08050601 analog_gain:04000000 outRate:00000000 is_objectAudio:cf030000 
 10-22 15:02:38.551 (hagodaemon)( 4401): [E| 4401|7f9ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:478|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! ChannelConfig:00000000 is_direct_mode:00770100
-
-
-
 
 
 ------
