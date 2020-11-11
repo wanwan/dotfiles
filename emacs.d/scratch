@@ -3,6 +3,48 @@
 ;; then enter the text in that file's own buffer.
 
 
+
+# isUpmixer を元にもどした
+
+* debug
+(neural X は出ない)
+
+
+10-22 14:58:31.917 (hagodaemon)( 4389): [E| 4389|7f8e42b130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:457|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 0 dtsOutInfo_.is_direct_mode: 184 true: 1 false: 0 ***
+
+spkMask: 0x7f7c000cbc
+chNum: 0x7f7c000cc0
+bitStrmType: 0x7f7c000cc4
+strmRate: 0x7f7c000cc8
+outChInfo: 0x7f7c000ccc
+in_chmask: 0x7f7c000cdc
+analog_gain: 0x7f7c000ce0
+outRate: 0x7f7c000ce4
+is_objectAudio: 0x7f7c000ce8
+ChannelConfig: 0x7f7c000cec
+is_direct_mode: 0x7f7c000cf0
+
+
+spkMask:0a000000
+chNum:01000000
+bitStrmType:00000000
+strmRate:3fa00000
+outChInfo:08000000090000000077010008020307
+in_chmask:08050601
+analog_gain:04000000
+outRate:00000000
+is_objectAudio:cf030000
+ChannelConfig:00000000
+is_direct_mode:00770100
+
+
+
+
+
+---
+
+# isUpMixer を member に移したりした
+
 * debug
 
 (ちなみに neural x 表示はでる)
