@@ -4,6 +4,23 @@
 
 
 * debug
+
+(ちなみに neural x 表示はでる)
+
+10-22 15:54:38.535 (hagodaemon)( 4305): [E| 4305|7f80c28130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:457|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 1 dtsOutInfo_.is_direct_mode: 184 true: 1 false: 0 ***
+10-22 15:54:38.536 (hagodaemon)( 4305): [E| 4305|7f80c28130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:459|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [offset]: spkMask: 0x7f6c000cbc chNum: 0x7f6c000cc0 bitStrmType: 0x7f6c000cc4 strmRate: 0x7f6c000cc8 outChInfo: 0x7f6c000ccc in_chmask: 0x7f6c000cdc analog_gain: 0x7f6c000ce0 outRate: 0x7f6c000ce4 is_objectAudio: 0x7f6c000ce8 ChannelConfig: 0x7f6c000cec is_direct_mode: 0x7f6c000cf0 ***
+10-22 15:54:38.536 (hagodaemon)( 4305): [E| 4305|7f80c28130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:472|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! spkMask:0a000000 chNum:01000000 bitStrmType:00000000 strmRate:3fa00000
+10-22 15:54:38.536 (hagodaemon)( 4305): [E| 4305|7f80c28130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:473|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! outChInfo:08000000090000000077010008020307
+10-22 15:54:38.536 (hagodaemon)( 4305): [E| 4305|7f80c28130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:474|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! in_chmask:08050601 analog_gain:04000000 outRate:00000000 is_objectAudio:cf030000 
+10-22 15:54:38.536 (hagodaemon)( 4305): [E| 4305|7f80c28130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:476|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! ChannelConfig:00000000 is_direct_mode:00770100
+
+
+
+
+
+
+
+* debug
 addr
 
 10-22 14:57:48.869 (hagodaemon)( 4351): [E| 4351|7fb1c2a130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:456|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! *** [spdifdebug] isUpmixer: 1 dtsOutInfo_.is_direct_mode: 184 true: 1 false: 0 ***
