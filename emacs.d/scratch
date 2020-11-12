@@ -32,6 +32,30 @@ BISYAMON3G-973
 
 
 * release
+ Error! ##### DirectMode=0 #####
+10-22 15:12:57.300 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:330|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, ui
+nt8_t*, uint32_t, uint8_t*)] Error! ##### milestone0 0 #####
+10-22 15:12:57.301 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:711|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::decodeDts(hgrm::spdif::ParserDynamicInfo*
+, uint8_t*, uint32_t, uint8_t*, uint32_t*, hgrm::spdif::DtsOutInfo*)] Error! ##### ---> decodeDts: 0 #####
+10-22 15:12:57.320 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:715|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::decodeDts(hgrm::spdif::ParserDynamicInfo*, uint8_t*, uint32_t, uint8_t*, uint32_t*, hgrm::spdif::DtsOutInfo*)] Error! ##### <--- decodeDts: 0 #####
+10-22 15:12:57.320 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:128|virtual hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::switchSoundMode(hgrm::spdif::ParserInfo*)] Error! ##### milestone-1-1 0 #####
+10-22 15:12:57.320 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceCore.cc:1156|void hgrm::spdif::SpdifPlayerServiceCore::GetDecodeMode(hgrm::spdif::SrcFormTypeV2, hgrm::spdif::DecodeMode*, bool*)] Error! ##### srcIndex: 9
+10-22 15:12:57.320 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceCore.cc:1178|void hgrm::spdif::SpdifPlayerServiceCore::GetDecodeMode(hgrm::spdif::SrcFormTypeV2, hgrm::spdif::DecodeMode*, bool*)] Error! ##### src_type: 0 src_type2: 9 dlb_direct: 0 mix_type: 0 ch_setting: 11 v_proc: 0 v_ch_setting: 0 dapprofile: 0
+10-22 15:12:57.321 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:187|virtual hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::switchSoundMode(hgrm::spdif::ParserInfo*)] Error! ##### milestone-1-1-0 0 decMode:  #####
+10-22 15:12:57.321 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:1185|void hgrm::spdif::SpdifPlayerServiceDtsDecHandler::getDecInfoForDecMode(hgrm::spdif::DecodeMode, hgrm::spdif::DtsDecodeInfo*)] Error! ##### m-x-1
+10-22 15:12:57.321 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:1191|void hgrm::spdif::SpdifPlayerServiceDtsDecHandler::getDecInfoForDecMode(hgrm::spdif::DecodeMode, hgrm::spdif::DtsDecodeInfo*)] Error! ##### m-x-2
+10-22 15:12:57.321 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:1228|void hgrm::spdif::SpdifPlayerServiceDtsDecHandler::getDecInfoForDecMode(hgrm::spdif::DecodeMode, hgrm::spdif::DtsDecodeInfo*)] Error! ##### m-x-7: 9
+10-22 15:12:57.321 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:1249|void hgrm::spdif::SpdifPlayerServiceDtsDecHandler::getDecInfoForDecMode(hgrm::spdif::DecodeMode, hgrm::spdif::DtsDecodeInfo*)] Error! ##### m-x-9: 0
+10-22 15:12:57.321 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:1269|void hgrm::spdif::SpdifPlayerServiceDtsDecHandler::getDecInfoForDecMode(hgrm::spdif::DecodeMode, hgrm::spdif::DtsDecodeInfo*)] Error! ##### m-x-12
+10-22 15:12:57.321 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:192|virtual hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::switchSoundMode(hgrm::spdif::ParserInfo*)] Error! ##### milestone-1-2 0 #####
+10-22 15:12:57.388 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:684|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::initDts(hgrm::spdif::ParserDynamicInfo*)] Error! ##### DirectMode=0 #####
+10-22 15:12:57.390 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:330|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! ##### milestone0 0 #####
+10-22 15:12:57.391 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:711|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::decodeDts(hgrm::spdif::ParserDynamicInfo*, uint8_t*, uint32_t, uint8_t*, uint32_t*, hgrm::spdif::DtsOutInfo*)] Error! ##### ---> decodeDts: 0 #####
+10-22 15:12:57.391 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:715|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::decodeDts(hgrm::spdif::ParserDynamicInfo*, uint8_t*, uint32_t, uint8_t*, uint32_t*, hgrm::spdif::DtsOutInfo*)] Error! ##### <--- decodeDts: 0 #####
+10-22 15:12:57.391 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:128|virtual hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::switchSoundMode(hgrm::spdif::ParserInfo*)] Error! ##### milestone-1-1 0 #####
+10-22 15:12:57.391 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceCore.cc:1156|void hgrm::spdif::SpdifPlayerServiceCore::GetDecodeMode(hgrm::spdif::SrcFormTypeV2, hgrm::spdif::DecodeMode*, bool*)] Error! ##### srcIndex: 9
+10-22 15:12:57.391 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceCore.cc:1178|void hgrm::spdif::SpdifPlayerServiceCore::GetDecodeMode(hgrm::spdif::SrcFormTypeV2, hgrm::spdif::DecodeMode*, bool*)] Error! ##### src_type: 0 src_type2: 9 dlb_direct: 0 mix_type: 0 ch_setting: 11 v_proc: 0 v_ch_setting: 0 dapprofile: 0
+10-22 15:12:57.401 (hagodaemon)( 4494): [E| 4494|7f85429130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:330|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! ##### milestone0 0 #####
 
 
 
