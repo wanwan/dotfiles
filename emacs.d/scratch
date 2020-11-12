@@ -5,6 +5,40 @@
 BISYAMON3G-973
 
 
+* debug
+
+10-22 14:59:33.059 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:684|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::initDts(hgrm::spdif::ParserDynamicInfo*)] Error! ##### DirectMode=0 #####
+10-22 14:59:33.061 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:330|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! ##### milestone0 0 #####
+10-22 14:59:33.062 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:711|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::decodeDts(hgrm::spdif::ParserDynamicInfo*, uint8_t*, uint32_t, uint8_t*, uint32_t*, hgrm::spdif::DtsOutInfo*)] Error! ##### ---> decodeDts: 0 #####
+10-22 14:59:33.062 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:715|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::decodeDts(hgrm::spdif::ParserDynamicInfo*, uint8_t*, uint32_t, uint8_t*, uint32_t*, hgrm::spdif::DtsOutInfo*)] Error! ##### <--- decodeDts: 0 #####
+10-22 14:59:33.063 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:128|virtual hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::switchSoundMode(hgrm::spdif::ParserInfo*)] Error! ##### milestone-1-1 0 #####
+10-22 14:59:33.063 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceCore.cc:1156|void hgrm::spdif::SpdifPlayerServiceCore::GetDecodeMode(hgrm::spdif::SrcFormTypeV2, hgrm::spdif::DecodeMode*, bool*)] Error! ##### srcIndex: 12
+10-22 14:59:33.065 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:330|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! ##### milestone0 0 #####
+10-22 14:59:33.067 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:711|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::decodeDts(hgrm::spdif::ParserDynamicInfo*, uint8_t*, uint32_t, uint8_t*, uint32_t*, hgrm::spdif::DtsOutInfo*)] Error! ##### ---> decodeDts: 0 #####
+10-22 14:59:33.075 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:715|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::decodeDts(hgrm::spdif::ParserDynamicInfo*, uint8_t*, uint32_t, uint8_t*, uint32_t*, hgrm::spdif::DtsOutInfo*)] Error! ##### <--- decodeDts: 0 #####
+10-22 14:59:33.076 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:128|virtual hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::switchSoundMode(hgrm::spdif::ParserInfo*)] Error! ##### milestone-1-1 0 #####
+10-22 14:59:33.076 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceCore.cc:1156|void hgrm::spdif::SpdifPlayerServiceCore::GetDecodeMode(hgrm::spdif::SrcFormTypeV2, hgrm::spdif::DecodeMode*, bool*)] Error! ##### srcIndex: 9
+10-22 14:59:33.077 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceCore.cc:1178|void hgrm::spdif::SpdifPlayerServiceCore::GetDecodeMode(hgrm::spdif::SrcFormTypeV2, hgrm::spdif::DecodeMode*, bool*)] Error! ##### src_type: 0 src_type2: 9 dlb_direct: 0 mix_type: 0 ch_setting: 11 v_proc: 0 v_ch_setting: 0 dapprofile: 0
+10-22 14:59:33.077 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:187|virtual hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::switchSoundMode(hgrm::spdif::ParserInfo*)] Error! ##### milestone-1-1-0 184 decMode:  #####
+10-22 14:59:33.077 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:1185|void hgrm::spdif::SpdifPlayerServiceDtsDecHandler::getDecInfoForDecMode(hgrm::spdif::DecodeMode, hgrm::spdif::DtsDecodeInfo*)] Error! ##### m-x-1
+10-22 14:59:33.077 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:1191|void hgrm::spdif::SpdifPlayerServiceDtsDecHandler::getDecInfoForDecMode(hgrm::spdif::DecodeMode, hgrm::spdif::DtsDecodeInfo*)] Error! ##### m-x-2
+10-22 14:59:33.077 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:1228|void hgrm::spdif::SpdifPlayerServiceDtsDecHandler::getDecInfoForDecMode(hgrm::spdif::DecodeMode, hgrm::spdif::DtsDecodeInfo*)] Error! ##### m-x-7: 9
+10-22 14:59:33.078 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:1249|void hgrm::spdif::SpdifPlayerServiceDtsDecHandler::getDecInfoForDecMode(hgrm::spdif::DecodeMode, hgrm::spdif::DtsDecodeInfo*)] Error! ##### m-x-9: 0
+10-22 14:59:33.081 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:1269|void hgrm::spdif::SpdifPlayerServiceDtsDecHandler::getDecInfoForDecMode(hgrm::spdif::DecodeMode, hgrm::spdif::DtsDecodeInfo*)] Error! ##### m-x-12
+10-22 14:59:33.083 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:192|virtual hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::switchSoundMode(hgrm::spdif::ParserInfo*)] Error! ##### milestone-1-2 184 #####
+10-22 14:59:33.104 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:684|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::initDts(hgrm::spdif::ParserDynamicInfo*)] Error! ##### DirectMode=184 #####
+10-22 14:59:33.114 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:330|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::doDtsProcess(hgrm::spdif::ParserInfo*, uint8_t*, uint32_t, uint8_t*)] Error! ##### milestone0 0 #####
+10-22 14:59:33.114 (hagodaemon)( 4560): [E| 4560|7f8ffff130|SPDIF|SpdifPlayerServiceDtsDecHandler.cc:711|hgrm::spdif::Result hgrm::spdif::SpdifPlayerServiceDtsDecHandler::decodeDts(hgrm::spdif::ParserDynamicInfo*, uint8_t*, uint32_t, uint8_t*, uint32_t*, hgrm::spdif::DtsOutInfo*)] Error! ##### ---> decodeDts: 184 #####
+
+
+* release
+
+
+
+
+
+----
+
 # isUpmixer を local 変数にもどした
 
 * debug
