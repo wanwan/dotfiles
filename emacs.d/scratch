@@ -3,6 +3,39 @@
 ;; then enter the text in that file's own buffer.
 
 
+void SoundServiceFw::PowerControlChange(const bool& power_status) {
+  SS_FTRACE0();
+
+  int ret;
+  // true when audio-dev is on, false when auto
+  if (power_status) {
+    const char* command[] = {
+      "sh",
+      "-c",
+      "echo on > /sys/devices/platform/audio-dev/power/control",
+      nullptr};
+    ret = hgrm_util_ExecuteCommand("/bin/sh", command, nullptr);
+    if (ret != 0) {
+      SS_ERR("Err power control on");
+      return;
+    }
+  } else {
+    const char* command[] = {
+      "sh",
+      "-c",
+      "echo auto > /sys/devices/platform/audio-dev/power/control",
+      nullptr};
+    ret = hgrm_util_ExecuteCommand("/bin/sh", command, nullptr);
+    if (ret != 0) {
+      SS_ERR("Err power control auto");
+      return;
+    }
+  }
+}
+
+
+
+
 こんな条件でぱっとみてみる.
 
 lela:~/workspace/hgrm/master/hagoromo $ find . -name "*.cc" -print0 | xargs -0 -e grep  -nH echo | grep sys
