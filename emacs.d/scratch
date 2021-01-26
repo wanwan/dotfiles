@@ -2,6 +2,36 @@
 ;; If you want to create a file, visit that file with C-x C-f,
 ;; then enter the text in that file's own buffer.
 
+
+こんな条件でぱっとみてみる.
+
+lela:~/workspace/hgrm/master/hagoromo $ find . -name "*.cc" -print0 | xargs -0 -e grep  -nH echo | grep sys
+./services/dcacservice/src/DCACService.cc:728:    ret = system("echo on > /sys/devices/platform/mic-dev/power/control");
+./services/dcacservice/src/DCACService.cc:734:    ret = system("echo auto > /sys/devices/platform/mic-dev/power/control");
+./services/soundpostcontrolservice/src/service/SoundServiceFw.cc:416:    ret = system("echo on > /sys/devices/platform/audio-dev/power/control");
+./services/soundpostcontrolservice/src/service/SoundServiceFw.cc:422:    ret = system("echo auto > /sys/devices/platform/audio-dev/power/control");
+./services/cecservice/src/itron/CODE/CEC/common/cec_system_audio_ctrl.cc:51:    #include "cec_echo_cancel.h"
+./services/cecservice/src/itron/CODE/CEC/common/cec_system_audio_ctrl.cc:1671:          cec_echo_cancel_ctrl(CMD_CEC_ECHO_CAN__MUTING_ON, muting);
+./services/cecservice/src/itron/CODE/CEC/common/cec_system_audio_ctrl.cc:1697:          cec_echo_cancel_ctrl(CMD_CEC_ECHO_CAN__MUTING_ON, muting);
+./services/hdmiservice/sample/Hdmiapp/benten_app/hdmiapp.cc:1286:    const char* command[]= {"sh", "-c", "echo tslog f>/sys/kernel/debug/hdmi", nullptr};
+./services/hdmiservice/sample/Hdmiapp/benten_app/hdmiapp.cc:1289:    const char* command[]= {"sh", "-c", "echo tslog d>/sys/kernel/debug/hdmi", nullptr};
+./services/hdmiservice/sample/Hdmiapp/benten_app/hdmiapp.cc:1591:    const char* command[]= {"sh", "-c", "echo rslog:0xffffff>/sys/kernel/debug/hdmirx", nullptr};
+./services/hdmiservice/sample/Hdmiapp/benten_app/hdmiapp.cc:1594:    const char* command[]= {"sh", "-c", "echo rslog:0x0>/sys/kernel/debug/hdmirx", nullptr};
+./services/hdmiservice/sample/Hdmiapp/benten_app/hdmiapp.cc:2906:    const char* command[]= {"sh", "-c", "echo N > /sys/module/printk/parameters/disable_uart", nullptr};
+./services/hdmiservice/sample/Hdmiapp/benten_app/hdmiapp.cc:2909:    const char* command[]= {"sh", "-c", "echo Y > /sys/module/printk/parameters/disable_uart", nullptr};
+./services/hdmiservice/src/ebisu_src/HdmiServiceCore.cc:2526:      "echo on > /sys/devices/platform/hdmi-dev/power/control",
+./services/hdmiservice/src/ebisu_src/HdmiServiceCore.cc:2534:      "echo auto > /sys/devices/platform/hdmi-dev/power/control",
+./services/ifconservice/src/IfConPowerHandle.cc:42:  #define IFCON_DRIVER_CONTROL_SUSPEND    "echo auto > /sys/devices/platform/30820000.ecspi/spi_master/spi0/spi0.0/power/control"
+./services/ifconservice/src/IfConPowerHandle.cc:43:  #define IFCON_DRIVER_CONTROL_RESUME     "echo on > /sys/devices/platform/30820000.ecspi/spi_master/spi0/spi0.0/power/control"
+./services/ifconservice/src/IfConPowerHandle.cc:45:  #define OLED_DRIVER_CONTROL_AUTO        "echo auto > /sys/devices/platform/oled-dev/power/control"
+./services/ifconservice/src/IfConPowerHandle.cc:46:  #define OLED_DRIVER_CONTROL_ON          "echo on > /sys/devices/platform/oled-dev/power/control"
+./services/memmonservice/src/MemmonProc.cc:231:  //int ret = ::system("sync; echo 3 > /proc/sys/vm/drop_caches");
+./services/storageservice/sample/speedtest.cc:91:    if (system("echo 3 > /proc/sys/vm/drop_caches") < 0) {
+
+
+
+
+
 # test contents onmyoji
 # TmAl(#139)
         iae=on  iae=off
