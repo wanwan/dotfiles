@@ -3,6 +3,127 @@
 ;; then enter the text in that file's own buffer.
 
 
+
+------>
+02-17 06:18:26.885 (hagodaemon)(  919): [N|  919|7f9affd130|SPDIF||:0||] SpdifPlayerServiceCore.cc         [1830] ueventHandler             uevent (0x00000002) received.
+02-17 06:18:26.885 (hagodaemon)(  919): [N|  919|7f9bfff130|SPDIF||:0||] SpdifPlayerServiceCore.cc         [2259] checkMatrixStatusByPort   Dimension( Matrix_B)
+02-17 06:18:26.885 (hagodaemon)(  919): [N|  919|7f9bfff130|SPDIF||:0||] SpdifPlayerServiceReader.cc       [ 204] SetLockStatus             Latest counter:0 state:0 Now state:1 pre:1 Instant:0
+02-17 06:18:26.889 (hagodaemon)(  919): [I|  919|7f9b7fe130|DATMOS|unia_datmos_decoder.cc:264|pst::dolby::UniADAtmosStatus pst::dolby::UniADAtmosDecoder::UniADAtmos_destroy()] deleteDatmos() start
+02-17 06:18:26.896 (hagodaemon)( 1021): [N| 1021|7f9a435130|SS  |FilterChainPacket.cc:219] [0] kStop
+02-17 06:18:26.898 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1200] [32] Stop-cmd (path:0) - full : 0
+02-17 06:18:26.898 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1203] [32] not exec fade-out (cp:0 disable)
+02-17 06:18:26.898 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1230] [32] receive "last" Stop-cmd
+02-17 06:18:26.898 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1290] [32] Stopped without Drain
+02-17 06:18:26.899 (hagodaemon)(  919): [N|  919|7fa18f4130|SPDIF||:0||] SpdifPlayerService.cc             [ 181] NotifyPlugStatus          Unplugged
+02-17 06:18:26.900 (hagodaemon)(  985): [I|  985|7f967fc130|MCS |TransportManagerMain.cc:883] Received kLoopBackStop
+02-17 06:18:26.900 (hagodaemon)(  985): [I|  985|7f967fc130|MCS |NeoTransportAPI.cc:161] MCTRANS_api_mute()
+02-17 06:18:26.900 (hagodaemon)(  985): [     89820.556513][SONY_MC INFO:Mute(): remaining bytes = 0]
+02-17 06:18:26.900 (hagodaemon)(  985): [     89820.556527][SONY_MC INFO:Mute(): remaining valid samples = 896]
+02-17 06:18:26.900 (hagodaemon)(  985): [     89820.556553][SONY_MC INFO:Mute(): [lis#0xE0000042] remaining send valid = 5]
+02-17 06:18:26.900 (hagodaemon)(  985): [     89820.556569][SONY_MC INFO:Mute(): [ch#3758096450] remaining pcm bytes = 0]
+02-17 06:18:26.900 (hagodaemon)(  985): [     89820.556579][SONY_MC INFO:Mute(): [lis#0xE0000043] remaining send valid = 5]
+02-17 06:18:26.900 (hagodaemon)(  985): [     89820.556587][SONY_MC INFO:Mute(): [ch#3758096451] remaining pcm bytes = 0]
+02-17 06:18:26.900 (hagodaemon)(  985): [     89820.556595][SONY_MC INFO:Mute(): [ch#0] remaining pcm bytes = 0]
+02-17 06:18:26.900 (hagodaemon)(  985): [     89820.556603][SONY_MC INFO:tsfacc_stop]
+02-17 06:18:26.900 (hagodaemon)(  990): [N| 1190|7f819da4a0|DFPSND|SoundParameterController.cc:1830] opt status: Fs=48000 Gain Offs(F:20.0 Fin:20.0 Fwl:20.0 Fwr:20.0 C:20.0 Ctv:20.0 S:20.0 H:20.0 Hr:20.0 W:20.0 FSW:20.0) upmix=0 virtual=4 codec=7 rear=1
+02-17 06:18:26.900 (hagodaemon)(  990): [N| 1190|7f819da4a0|EMgr|EventDispatcher.cc:200] [Dispatch] >>>>>>>>>>>> Start: EventId=362(kEventId_SpdifPlayer_NotifyPlugStatus)
+02-17 06:18:26.900 (hagodaemon)(  990): [N| 1190|7f819da4a0|EMgr|EventDispatcher.cc:209] [Dispatch] >>>>>>>>>>>> End:   EventId=362(kEventId_SpdifPlayer_NotifyPlugStatus)
+02-17 06:18:26.901 (hagodaemon)(  985): [     89820.558570][SONY_MC INFO:PlaybackFunc(215): Exit Playback loop with status(3)]
+02-17 06:18:26.904 (hagodaemon)( 1021): [N| 1021|7f87fff130|SS  |FilterChainPacket.cc:219] [4] kStop
+02-17 06:18:26.905 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():4
+02-17 06:18:26.905 (hagodaemon)( 1021): [N| 1021|7f87fff130|SS  |FilterChainPacket.cc:272] [4] kDestroy
+02-17 06:18:26.905 (hagodaemon)(  985): [     89820.561952][SONY_MC INFO:DSP::Close(drain=1): res=0]
+02-17 06:18:26.905 (hagodaemon)(  985): [     89820.561976][SONY_MC INFO:McTransAudioPlayer Thread End]
+02-17 06:18:26.906 (hagodaemon)(  985): [     89820.561987][SONY_MC INFO:ExecuteThreadWorker: Thread end: 0x7f902a1eb0]
+02-17 06:18:26.907 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():3
+02-17 06:18:26.909 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():2
+02-17 06:18:26.912 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():1
+02-17 06:18:26.915 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():0
+02-17 06:18:26.915 (hagodaemon)( 1021): [N| 1021|7f9b437130|SS  |Renderer.cc:508] [2000] kStop
+<------
+
+------>
+02-17 06:18:36.898 (hagodaemon)( 1021): [N| 1021|7f9a435130|SS  |FilterChainPacket.cc:219] [0] kStop
+02-17 06:18:36.900 (hagodaemon)(  919): [N|  919|7f9affd130|SPDIF||:0||] SpdifPlayerServiceCore.cc         [1830] ueventHandler             uevent (0x00000002) received.
+02-17 06:18:36.900 (hagodaemon)(  919): [N|  919|7f9bfff130|SPDIF||:0||] SpdifPlayerServiceCore.cc         [2259] checkMatrixStatusByPort   Dimension( Matrix_B)
+02-17 06:18:36.901 (hagodaemon)(  919): [N|  919|7f9bfff130|SPDIF||:0||] SpdifPlayerServiceReader.cc       [ 204] SetLockStatus             Latest counter:0 state:0 Now state:1 pre:1 Instant:0
+02-17 06:18:36.901 (hagodaemon)(  919): [I|  919|7f9b7fe130|DATMOS|unia_datmos_decoder.cc:264|pst::dolby::UniADAtmosStatus pst::dolby::UniADAtmosDecoder::UniADAtmos_destroy()] deleteDatmos() start
+02-17 06:18:36.901 (hagodaemon)(  985): [I|  985|7f967fc130|MCS |TransportManagerMain.cc:883] Received kLoopBackStop
+02-17 06:18:36.901 (hagodaemon)(  985): [I|  985|7f967fc130|MCS |NeoTransportAPI.cc:161] MCTRANS_api_mute()
+02-17 06:18:36.901 (hagodaemon)(  985): [     89830.558454][SONY_MC INFO:Mute(): remaining bytes = 0]
+02-17 06:18:36.901 (hagodaemon)(  985): [     89830.558486][SONY_MC INFO:Mute(): remaining valid samples = 1024]
+02-17 06:18:36.902 (hagodaemon)(  985): [     89830.558508][SONY_MC INFO:Mute(): [lis#0xE0000042] remaining send valid = 6]
+02-17 06:18:36.901 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1200] [32] Stop-cmd (path:0) - full : 0
+02-17 06:18:36.902 (hagodaemon)(  985): [     89830.558519][SONY_MC INFO:Mute(): [ch#3758096450] remaining pcm bytes = 0]
+02-17 06:18:36.902 (hagodaemon)(  985): [     89830.558536][SONY_MC INFO:Mute(): [lis#0xE0000043] remaining send valid = 6]
+02-17 06:18:36.902 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1203] [32] not exec fade-out (cp:0 disable)
+02-17 06:18:36.902 (hagodaemon)(  985): [     89830.558575][SONY_MC INFO:Mute(): [ch#3758096451] remaining pcm bytes = 0]
+02-17 06:18:36.902 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1230] [32] receive "last" Stop-cmd
+02-17 06:18:36.902 (hagodaemon)(  985): [     89830.558587][SONY_MC INFO:Mute(): [ch#0] remaining pcm bytes = 0]
+02-17 06:18:36.902 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1290] [32] Stopped without Drain
+02-17 06:18:36.902 (hagodaemon)(  985): [     89830.558595][SONY_MC INFO:tsfacc_stop]
+02-17 06:18:36.902 (hagodaemon)(  985): [     89830.558860][SONY_MC WARNING:GetPlayPacket(112): Data Packet Buffer is Empty, ip addr(0xE0000043)]
+02-17 06:18:36.902 (hagodaemon)(  985): [     89830.558886][SONY_MC WARNING:PopPlayPacket(84): Data Packet Buffer is Empty, ip addr(0xE0000042)]
+02-17 06:18:36.902 (hagodaemon)(  985): [     89830.558905][SONY_MC WARNING:PopPlayPacket(84): Data Packet Buffer is Empty, ip addr(0xE0000043)]
+02-17 06:18:36.902 (hagodaemon)(  985): [     89830.559587][SONY_MC INFO:PlaybackFunc(215): Exit Playback loop with status(3)]
+02-17 06:18:36.903 (hagodaemon)(  990): [N| 1190|7f819da4a0|DFPSND|SoundParameterController.cc:1830] opt status: Fs=48000 Gain Offs(F:20.0 Fin:20.0 Fwl:20.0 Fwr:20.0 C:20.0 Ctv:20.0 S:20.0 H:20.0 Hr:20.0 W:20.0 F
+SW:20.0) upmix=0 virtual=4 codec=7 rear=1
+02-17 06:18:36.905 (hagodaemon)( 1021): [N| 1021|7f87fff130|SS  |FilterChainPacket.cc:219] [4] kStop
+02-17 06:18:36.906 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():4
+02-17 06:18:36.906 (hagodaemon)( 1021): [N| 1021|7f87fff130|SS  |FilterChainPacket.cc:272] [4] kDestroy
+02-17 06:18:36.906 (hagodaemon)(  985): [     89830.563052][SONY_MC INFO:DSP::Close(drain=1): res=0]
+02-17 06:18:36.906 (hagodaemon)(  985): [     89830.563078][SONY_MC INFO:McTransAudioPlayer Thread End]
+02-17 06:18:36.906 (hagodaemon)(  985): [     89830.563085][SONY_MC INFO:ExecuteThreadWorker: Thread end: 0x7f902a1eb0]
+02-17 06:18:36.908 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():3
+02-17 06:18:36.910 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():2
+02-17 06:18:36.913 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():1
+02-17 06:18:36.916 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():0
+02-17 06:18:36.916 (hagodaemon)( 1021): [N| 1021|7f9b437130|SS  |Renderer.cc:508] [2000] kStop
+<------
+
+------>
+02-17 06:18:45.302 (hagodaemon)(  985): [     89838.958731][SONY_MC WARNING:getPairData(708): getLatchedTsf() failure: 2 ]
+02-17 06:18:45.341 (hagodaemon)(  985): [     89838.998490][SONY_MC WARNING:getPairData(692): reqLatchTsf() failure: 3 ]
+02-17 06:18:45.603 (hagodaemon)(  985): [     89839.259150][SONY_MC WARNING:getPairData(708): getLatchedTsf() failure: 2 ]
+02-17 06:18:45.642 (hagodaemon)(  985): [     89839.299045][SONY_MC WARNING:getPairData(692): reqLatchTsf() failure: 3 ]
+02-17 06:18:46.907 (hagodaemon)(  919): [N|  919|7f9affd130|SPDIF||:0||] SpdifPlayerServiceCore.cc         [1830] ueventHandler             uevent (0x00000002) received.
+02-17 06:18:46.910 (hagodaemon)(  919): [N|  919|7f9bfff130|SPDIF||:0||] SpdifPlayerServiceCore.cc         [2259] checkMatrixStatusByPort   Dimension( Matrix_B)
+02-17 06:18:46.916 (hagodaemon)( 1021): [N| 1021|7f9a435130|SS  |FilterChainPacket.cc:219] [0] kStop
+02-17 06:18:46.918 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1200] [32] Stop-cmd (path:0) - full : 0
+02-17 06:18:46.918 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1203] [32] not exec fade-out (cp:0 disable)
+02-17 06:18:46.918 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1230] [32] receive "last" Stop-cmd
+02-17 06:18:46.918 (hagodaemon)( 1021): [N| 1021|7f9ec3e130|SS  |SCpMix.cc:1290] [32] Stopped without Drain
+02-17 06:18:46.919 (hagodaemon)(  985): [I|  985|7f967fc130|MCS |TransportManagerMain.cc:883] Received kLoopBackStop
+02-17 06:18:46.919 (hagodaemon)(  985): [I|  985|7f967fc130|MCS |NeoTransportAPI.cc:161] MCTRANS_api_mute()
+02-17 06:18:46.919 (hagodaemon)(  985): [     89840.576116][SONY_MC INFO:Mute(): remaining bytes = 0]
+02-17 06:18:46.919 (hagodaemon)(  985): [     89840.576130][SONY_MC INFO:Mute(): remaining valid samples = 896]
+02-17 06:18:46.919 (hagodaemon)(  985): [     89840.576148][SONY_MC INFO:Mute(): [lis#0xE0000042] remaining send valid = 5]
+02-17 06:18:46.919 (hagodaemon)(  985): [     89840.576165][SONY_MC INFO:Mute(): [ch#3758096450] remaining pcm bytes = 0]
+02-17 06:18:46.919 (hagodaemon)(  985): [     89840.576176][SONY_MC INFO:Mute(): [lis#0xE0000043] remaining send valid = 5]
+02-17 06:18:46.919 (hagodaemon)(  985): [     89840.576190][SONY_MC INFO:Mute(): [ch#3758096451] remaining pcm bytes = 0]
+02-17 06:18:46.919 (hagodaemon)(  985): [     89840.576201][SONY_MC INFO:Mute(): [ch#0] remaining pcm bytes = 0]
+02-17 06:18:46.919 (hagodaemon)(  985): [     89840.576214][SONY_MC INFO:tsfacc_stop]
+02-17 06:18:46.919 (hagodaemon)(  990): [N| 1190|7f819da4a0|DFPSND|SoundParameterController.cc:1830] opt status: Fs=48000 Gain Offs(F:20.0 Fin:20.0 Fwl:20.0 Fwr:20.0 C:20.0 Ctv:20.0 S:20.0 H:20.0 Hr:20.0 W:20.0 F
+SW:20.0) upmix=0 virtual=4 codec=7 rear=1
+02-17 06:18:46.914 (hagodaemon)(  919): [N|  919|7f9bfff130|SPDIF||:0||] SpdifPlayerServiceReader.cc       [ 204] SetLockStatus             Latest counter:0 state:0 Now state:1 pre:1 Instant:0
+02-17 06:18:46.920 (hagodaemon)(  919): [I|  919|7f9b7fe130|DATMOS|unia_datmos_decoder.cc:264|pst::dolby::UniADAtmosStatus pst::dolby::UniADAtmosDecoder::UniADAtmos_destroy()] deleteDatmos() start
+02-17 06:18:46.921 (hagodaemon)(  985): [     89840.578115][SONY_MC INFO:PlaybackFunc(215): Exit Playback loop with status(3)]
+02-17 06:18:46.924 (hagodaemon)( 1021): [N| 1021|7f87fff130|SS  |FilterChainPacket.cc:219] [4] kStop
+02-17 06:18:46.924 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():4
+02-17 06:18:46.924 (hagodaemon)( 1021): [N| 1021|7f87fff130|SS  |FilterChainPacket.cc:272] [4] kDestroy
+02-17 06:18:46.924 (hagodaemon)(  985): [     89840.581533][SONY_MC INFO:DSP::Close(drain=1): res=0]
+02-17 06:18:46.925 (hagodaemon)(  985): [     89840.581570][SONY_MC INFO:McTransAudioPlayer Thread End]
+02-17 06:18:46.925 (hagodaemon)(  985): [     89840.581584][SONY_MC INFO:ExecuteThreadWorker: Thread end: 0x7f902a1eb0]
+02-17 06:18:46.926 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():3
+02-17 06:18:46.929 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():2
+02-17 06:18:46.932 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():1
+02-17 06:18:46.934 (hagodaemon)( 1021): [N| 1021|7fa2445130|SS  |Fader.cc:550] [106] reserved_audio_packet_.size():0
+02-17 06:18:46.934 (hagodaemon)( 1021): [N| 1021|7f9b437130|SS  |Renderer.cc:508] [2000] kStop
+<------
+
+
+
+
 void SoundServiceFw::PowerControlChange(const bool& power_status) {
   SS_FTRACE0();
 
