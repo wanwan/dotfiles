@@ -72,15 +72,35 @@
                     'append)
   (add-to-list 'default-frame-alist '(font . "fontset-menlokakugo")))
 
+;; for X
 (when (eq window-system 'x)
   ;; Japanese font
-  (set-default-font "Inconsolata-11")
-  (set-face-font 'variable-pitch "Inconsolata-11")
-  (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty")))
-  ;;(set-fontset-font t 'japanese-jisx0208 (font-spec :family "IPAExGothic")))
-  ;;(set-fontset-font (frame-parameter nil 'font)
-  ;;                'japanese-jisx0208
-  ;;                '("Takaoゴシック" . "unicode-bmp")))
+  (if (version<= "27.1" emacs-version)
+      (progn
+	;; emacs version >= 27.1
+	(if (string-match "-[Mm]icrosoft" operating-system-release)
+	    ;; WSL: WSL1 has "-Microsoft", WSL2 has "-microsoft-standard"
+	    (progn
+	      (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty"))
+	      (set-face-attribute 'default nil :height 130)
+;;	      (setq face-font-rescale-alist '(("Ricty" . 1.4)))
+	      )
+	  ;; not WSL (may be native linux or unix like os
+	  (progn
+	    )
+	  )
+	)
+    (progn
+      ;; emacs version < 27.1
+      ;;(set-default-font "Inconsolata-11")
+      (set-face-font 'variable-pitch "Inconsolata-11")
+      (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Ricty"))
+    ;;(set-fontset-font t 'japanese-jisx0208 (font-spec :family "IPAExGothic")))
+    ;;(set-fontset-font (frame-parameter nil 'font)
+    ;;                'japanese-jisx0208
+    ;;                '("Takaoゴシック" . "unicode-bmp")))
+      )
+    ))
 
 ;; for windows
 (when (eq window-system 'w32)
@@ -282,8 +302,6 @@
 ;;     t)
 
 
-
-
 ;; tramp
 (require 'tramp)
 (when (or (equal system-type 'w32) (equal system-type 'windows-nt)) 
@@ -295,7 +313,14 @@
 (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
 (add-to-list 'tramp-remote-path "/system/xbin")
 ;;(add-to-list 'tramp-remote-process-environment "TMPDIR=$HOME") ;; for non-rooted device
-
+;; WSL SSH (use windows OpenSSH and config under windows home dir
+(add-to-list 'tramp-methods
+  '("wslssh"
+    (tramp-login-program        "/mnt/c/Windows/System32/OpenSSH/ssh.exe")
+    (tramp-login-args           (("%h")))
+    (tramp-remote-shell         "/bin/sh")
+    (tramp-remote-shell-args    ("-c"))
+    (tramp-default-port         22)))
 
 ;; isearch
 (add-hook 'isearch-mode-hook 'skk-isearch-mode-setup) ; isearch で skk のセットアップ
